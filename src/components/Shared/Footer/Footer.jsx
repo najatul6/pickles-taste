@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
-    <footer className="shadow-inner tracking-wide">
+    <footer className="shadow-2xl bg-white/5 text-white tracking-wide">
     <div className="py-12 px-12">
       <div className="flex flex-wrap items-center sm:justify-between max-sm:flex-col gap-6">
         <div>
