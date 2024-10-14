@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { NavMenu } from "../../Utils/utils";
+import PropTypes from "prop-types";
 const ResponsiveMenu = ({ open, absolute }) => {
   return (
     <AnimatePresence mode="wait">
@@ -31,6 +32,11 @@ const ResponsiveMenu = ({ open, absolute }) => {
       )}
     </AnimatePresence>
   )
+}
+
+ResponsiveMenu.propTypes = {
+  open: PropTypes.bool.isRequired,
+  absolute: PropTypes.string.isRequired,
 }
 
 export default ResponsiveMenu
