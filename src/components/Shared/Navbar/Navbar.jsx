@@ -1,5 +1,4 @@
 import { AiFillAndroid } from "react-icons/ai";
-import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { MdClose, MdMenu } from "react-icons/md";
 import { useState } from "react";
@@ -17,7 +16,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className="border px-5">
+      <nav className="px-2 lg:px-5">
         <div className="container relative flex justify-between items-center py-8 bg-gradient-back backdrop-blur-[50px]">
           {/* Logo Section  */}
           <div className="md:text-2xl font-bold uppercase flex items-center gap-2">
