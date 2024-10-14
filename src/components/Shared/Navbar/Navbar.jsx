@@ -44,9 +44,7 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <button className="text-2xl text-white hover:text-primary hover:bg-white p-2 rounded-full duration-200">
-              <CiSearch />
-            </button>
+            
             <button className="text-2xl text-white hover:text-primary hover:bg-white p-2 rounded-full duration-200">
               <PiShoppingCartThin />
             </button>
