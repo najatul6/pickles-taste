@@ -6,16 +6,14 @@ const ErrorPage = () => {
   const error = useRouteError();
   console.log(error);
   return (
-    <div className="bg-[#181181A]">
-      <div className="flex flex-col min-h-screen items-center justify-center">
-        <Lottie animationData={errorImg}></Lottie>
-        <Link
-          to="/"
-          className="bg-white/5 py-4 px-5 uppercase font-bold rounded-full flex justify-center items-center gap-4 hover:bg-white/10"
-        >
-          Go to home
-        </Link>
-      </div>
+    <div className="flex flex-col min-h-screen items-center justify-center">
+      <Lottie animationData={errorImg} className="max-w-[500px] "></Lottie>
+      <Link
+        to="/"
+        className="bg-white/5 py-4 px-5 uppercase font-bold rounded-full flex justify-center items-center gap-4 hover:bg-white/10"
+      >
+        Go to home
+      </Link>
     </div>
   );
 };

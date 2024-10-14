@@ -1,7 +1,13 @@
+import { Outlet } from "react-router-dom"
 
 const MainLayout = () => {
   return (
-    <div>MainLayout</div>
+    <div>
+        <h1 className="text-red-500">
+        header
+        </h1>
+        <Outlet/>
+    </div>
   )
 }
 
