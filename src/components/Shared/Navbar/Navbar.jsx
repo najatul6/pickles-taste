@@ -1,9 +1,10 @@
 import { AiFillAndroid } from "react-icons/ai";
-import { NavMenu } from "../../Utils/utils";
 import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { MdClose, MdMenu } from "react-icons/md";
 import { useState } from "react";
+import { NavMenu } from "../../../Utils/utils";
+import ResponsiveMenu from "../../ResponsiveMenu/ResponsiveMenu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

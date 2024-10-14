@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-const ResponsiveMenu = () => {
+import { NavMenu } from "../../Utils/utils";
+const ResponsiveMenu = ({ open, absolute }) => {
   return (
     <AnimatePresence mode="wait">
       {open && (
