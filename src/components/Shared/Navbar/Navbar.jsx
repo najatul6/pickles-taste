@@ -67,7 +67,7 @@ const Navbar = () => {
       {/* Mobile Sidebar section  */}
       <ResponsiveMenu open={isOpen} absolute={absolute} />
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

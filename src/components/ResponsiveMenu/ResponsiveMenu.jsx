@@ -31,12 +31,12 @@ const ResponsiveMenu = ({ open, absolute }) => {
         </motion.div>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};
 
 ResponsiveMenu.propTypes = {
   open: PropTypes.bool.isRequired,
   absolute: PropTypes.string.isRequired,
-}
+};
 
-export default ResponsiveMenu
+export default ResponsiveMenu;
