@@ -1,5 +1,19 @@
+import { AiFillAndroid } from "react-icons/ai";
+import { NavMenu } from "../../Utils/utils";
+import { CiSearch } from "react-icons/ci";
+import { PiShoppingCartThin } from "react-icons/pi";
+import { MdClose, MdMenu } from "react-icons/md";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const absolute = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100vh",
+  };
   return (
     <>
       <nav>
