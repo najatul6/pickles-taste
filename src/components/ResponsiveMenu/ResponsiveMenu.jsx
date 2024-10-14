@@ -14,6 +14,7 @@ const ResponsiveMenu = ({ open, absolute }) => {
         >
           <div className="text-xl font-semibold uppercase shadow-inner text-white py-10 bg-gradient-back backdrop-blur-[50px]">
             <ul className="flex flex-col justify-center items-center gap-6">
+             
               {NavMenu.map((item) => {
                 return (
                   <li key={item.id}>
@@ -26,6 +27,9 @@ const ResponsiveMenu = ({ open, absolute }) => {
                   </li>
                 );
               })}
+               <button className=" md:block font-semibold text-white border-2 rounded-md border-white px-6 py-2 duration-200 hover:bg-white hover:text-primary">
+                Login
+              </button>
             </ul>
           </div>
         </motion.div>
@@ -35,8 +39,8 @@ const ResponsiveMenu = ({ open, absolute }) => {
 };
 
 ResponsiveMenu.propTypes = {
-  open: PropTypes.bool.isRequired,
-  absolute: PropTypes.string.isRequired,
+  open: PropTypes.node.isRequired,
+  absolute: PropTypes.node.isRequired,
 };
 
 export default ResponsiveMenu;

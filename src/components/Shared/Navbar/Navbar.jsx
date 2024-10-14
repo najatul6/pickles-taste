@@ -17,10 +17,10 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav>
+      <nav className="border px-5">
         <div className="container relative flex justify-between items-center py-8 bg-gradient-back backdrop-blur-[50px]">
           {/* Logo Section  */}
-          <div className="text-2xl font-bold uppercase flex items-center gap-2">
+          <div className="md:text-2xl font-bold uppercase flex items-center gap-2">
             <AiFillAndroid className="text-white" />
             <p>Android</p>
             <p className="text-white">Hub</p>
