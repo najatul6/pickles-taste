@@ -27,19 +27,19 @@ const Category = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={banner1} alt="aca" />
+          <img src={banner1} alt="category banner" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={banner1} alt="aca" />
+          <img src={banner1} alt="category banner" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={banner1} alt="aca" />
+          <img src={banner1} alt="category banner" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={banner1} alt="aca" />
+          <img src={banner1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={banner1} alt="aca" />
+          <img src={banner1} alt="category banner" />
         </SwiperSlide>
       </Swiper>
     </>
