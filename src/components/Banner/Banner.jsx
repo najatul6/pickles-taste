@@ -22,6 +22,9 @@ const Banner = () => {
       <div>
         <img src={banner1} />
       </div>
+      <div>
+        <img src={banner1} />
+      </div>
    
     </Carousel>
   );
