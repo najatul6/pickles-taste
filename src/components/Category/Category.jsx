@@ -22,14 +22,11 @@ const Category = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>{banner1}</SwiperSlide>
-        <SwiperSlide>{banner1}</SwiperSlide>
-        <SwiperSlide>{banner1}</SwiperSlide>
-        <SwiperSlide>{banner1}</SwiperSlide>
-        <SwiperSlide>{banner1}</SwiperSlide>
-        <SwiperSlide>{banner1}</SwiperSlide>
-        <SwiperSlide>{banner1}</SwiperSlide>
-        <SwiperSlide>{banner1}</SwiperSlide>
+        <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
         
       </Swiper>
     </>
