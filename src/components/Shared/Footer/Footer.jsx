@@ -18,7 +18,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      <hr className="my-6 " />
+      <hr className="my-6" />
 
       <p className='text-center  text-base'>&copy; <Link className="font-bold underline" to="htttps://najatul-islam.vercel.app">Najatul Islam</Link>. All rights reserved.</p>
     </div>
