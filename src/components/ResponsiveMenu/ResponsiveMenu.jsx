@@ -17,12 +17,12 @@ const ResponsiveMenu = ({ open, absolute }) => {
              
               {NavMenu.map((item) => {
                 return (
-                  <li key={item.id}>
+                  <li key={item?.id}>
                     <a
-                      href={item.link}
+                      href={item?.link}
                       className="inline-block py-1 px-3 font-semibold hover:text-brand-color"
                     >
-                      {item.name}
+                      {item?.name}
                     </a>
                   </li>
                 );

@@ -1,4 +1,4 @@
-import logo from "../../../assets/logo.svg"
+import logo from "../../../assets/logo.svg";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { MdClose, MdMenu } from "react-icons/md";
 import { useState } from "react";
@@ -25,14 +25,14 @@ const Navbar = () => {
           {/* Menu Section  */}
           <div className="hidden md:block">
             <ul className="flex justify-center items-center gap-6 text-white">
-              {NavMenu.map((item) => {
+              {NavMenu?.map((item) => {
                 return (
-                  <li key={item.id}>
+                  <li key={item?.id}>
                     <a
-                      href={item.link}
+                      href={item?.link}
                       className="inline-block py-1 px-3 font-semibold hover:text-brand-color"
                     >
-                      {item.name}
+                      {item?.name}
                     </a>
                   </li>
                 );
@@ -41,7 +41,6 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            
             <button className="text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200">
               <PiShoppingCartThin />
             </button>
