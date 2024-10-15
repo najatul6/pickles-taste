@@ -20,14 +20,14 @@ const ResponsiveMenu = ({ open, absolute }) => {
                   <li key={item.id}>
                     <a
                       href={item.link}
-                      className="inline-block py-1 px-3 font-semibold hover:text-primary"
+                      className="inline-block py-1 px-3 font-semibold hover:text-brand-color"
                     >
                       {item.name}
                     </a>
                   </li>
                 );
               })}
-               <button className=" md:block font-semibold text-white border-2 rounded-md border-white px-6 py-2 duration-200 hover:bg-white hover:text-primary">
+               <button className=" md:block font-semibold text-white border-2 rounded-md border-white px-6 py-2 duration-200 hover:bg-brand-color hover:text-white">
                 Login
               </button>
             </ul>
