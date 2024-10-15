@@ -8,7 +8,6 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 
 import banner1 from "../../assets/banner/01.png";
-import banner2 from "../../assets/banner/1.jfif"
 
 const Category = () => {
   return (
