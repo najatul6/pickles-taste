@@ -4,6 +4,7 @@ import { MdClose, MdMenu } from "react-icons/md";
 import { useState } from "react";
 import { NavMenu } from "../../../Utils/utils";
 import ResponsiveMenu from "../../ResponsiveMenu/ResponsiveMenu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,10 +19,18 @@ const Navbar = () => {
     <>
       <nav className="px-2 lg:px-5">
         <div className="container relative flex justify-between items-center py-8 bg-gradient-back backdrop-blur-[50px]">
-          {/* Logo Section  */}
-          <div className="w-28">
-            <img src={logo} alt="brand logo" className="w-full" />
+          {/* Mobile hamburger Menu Section  */}
+          <div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? (
+              <MdClose className="text-4xl" />
+            ) : (
+              <MdMenu className="text-4xl" />
+            )}
           </div>
+          {/* Logo Section  */}
+          <Link to="/" className="w-28">
+            <img src={logo} alt="brand logo" className="w-full" />
+          </Link>
           {/* Menu Section  */}
           <div className="hidden md:block">
             <ul className="flex justify-center items-center gap-6 text-white">
@@ -48,14 +57,7 @@ const Navbar = () => {
               Login
             </button>
           </div>
-          {/* Mobile hamburger Menu Section  */}
-          <div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? (
-              <MdClose className="text-4xl" />
-            ) : (
-              <MdMenu className="text-4xl" />
-            )}
-          </div>
+          
         </div>
       </nav>
       {/* Mobile Sidebar section  */}
