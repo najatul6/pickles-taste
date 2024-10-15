@@ -8,7 +8,7 @@ const MainLayout = () => {
       <div className="fixed top-0 z-[999] w-full mx-auto left-0 right-0">
       <Navbar />
       </div>
-      <div className="mt-[38%] md:mt-[17%] lg:mt-0">
+      <div className="mt-[20%] md:mt-[0%] lg:mt-0">
       <Outlet />
       </div>
       <Footer />
