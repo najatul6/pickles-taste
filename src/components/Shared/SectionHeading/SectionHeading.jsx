@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 const SectionHeading = ({title,subTitle}) => {
   return (
@@ -8,6 +9,11 @@ const SectionHeading = ({title,subTitle}) => {
         <hr className="w-1/4" />
     </section>
   )
+}
+
+SectionHeading.propTypes = {
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string.isRequired
 }
 
 export default SectionHeading
