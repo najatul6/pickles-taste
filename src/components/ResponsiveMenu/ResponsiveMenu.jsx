@@ -12,7 +12,7 @@ const ResponsiveMenu = ({ open, absolute }) => {
           transition={{ duration: 0.3 }}
           className={absolute}
         >
-          <div className="text-xl font-semibold border uppercase shadow-inner text-white py-10 bg-gradient-back backdrop-blur-[50px]">
+          <div className="text-xl font-semibold uppercase shadow-inner text-white py-10 bg-gradient-back backdrop-blur-[50px]">
             <ul className="flex flex-col justify-center items-center gap-6">
              
               {NavMenu.map((item) => {
@@ -27,9 +27,7 @@ const ResponsiveMenu = ({ open, absolute }) => {
                   </li>
                 );
               })}
-               <button className=" md:block font-semibold text-white border-2 rounded-md border-white px-6 py-2 duration-200 hover:bg-brand-color hover:text-white">
-                Login
-              </button>
+
             </ul>
           </div>
         </motion.div>
