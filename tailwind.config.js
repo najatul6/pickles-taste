@@ -20,6 +20,9 @@ export default {
           xl:'4rem',
           '2xl':'6rem',
         },
+      },
+      maxWidth:{
+        'screen-7xl':'1920px'
       }
 
     },

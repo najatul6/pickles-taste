@@ -14,7 +14,7 @@ const Category = () => {
   return (
     <section>
       <SectionHeading subTitle={"From 11:00 AM to 11:00 PM"} title={"Order Online"}/>
-      <div >
+      <div className="flex justify-center items-center">
         <Swiper
           slidesPerView={3}
           spaceBetween={30}

@@ -1,8 +1,8 @@
 
 const SectionHeading = ({title,subTitle}) => {
   return (
-    <section className="text-white flex flex-col justify-center items-center gap-4 my-10">
-        <p className="text-brand-color">--- {subTitle} ---</p>
+    <section className="text-white text-center flex flex-col justify-center items-center gap-4 my-10">
+        <p className="text-brand-color font-bold">--- {subTitle} ---</p>
         <hr className="w-1/4" />
         <h2 className="text-4xl uppercase">{title}</h2>
         <hr className="w-1/4" />
