@@ -36,7 +36,7 @@ const Category = () => {
           <img src={banner1} alt="category banner" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={banner1} alt="" />
+          <img src={banner1} alt="category banner" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={banner1} alt="category banner" />
