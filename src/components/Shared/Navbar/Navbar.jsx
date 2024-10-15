@@ -20,7 +20,7 @@ const Navbar = () => {
       <nav>
         <div className="container relative flex justify-between items-center py-8 bg-gradient-back backdrop-blur-[50px]">
           {/* Mobile hamburger Menu Section  */}
-          <div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <div className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
               <MdClose className="text-4xl" />
             ) : (
@@ -32,7 +32,7 @@ const Navbar = () => {
             <img src={logo} alt="brand logo" className="w-full" />
           </Link>
           {/* Menu Section  */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <ul className="flex justify-center items-center gap-6 text-white">
               {NavMenu?.map((item) => {
                 return (
