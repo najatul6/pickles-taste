@@ -3,7 +3,7 @@ import Category from "../../components/Category/Category"
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="">
       <Banner/>
       <Category/>
     </div>
