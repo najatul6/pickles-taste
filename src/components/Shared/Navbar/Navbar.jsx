@@ -1,3 +1,4 @@
+import logo from "../../../assets/logo.svg"
 import { AiFillAndroid } from "react-icons/ai";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { MdClose, MdMenu } from "react-icons/md";
@@ -19,10 +20,8 @@ const Navbar = () => {
       <nav className="px-2 lg:px-5">
         <div className="container relative flex justify-between items-center py-8 bg-gradient-back backdrop-blur-[50px]">
           {/* Logo Section  */}
-          <div className="md:text-2xl font-bold uppercase flex items-center gap-2">
-            <AiFillAndroid className="text-white" />
-            <p>Android</p>
-            <p className="text-white">Hub</p>
+          <div className="w-28">
+            <img src={logo} alt="brand logo" className="w-full" />
           </div>
           {/* Menu Section  */}
           <div className="hidden md:block">
