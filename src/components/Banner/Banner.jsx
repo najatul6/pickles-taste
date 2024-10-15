@@ -25,7 +25,6 @@ const Banner = () => {
       <div>
         <img src={banner1} />
       </div>
-   
     </Carousel>
   );
 };
