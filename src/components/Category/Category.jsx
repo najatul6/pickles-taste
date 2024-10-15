@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 import banner1 from '../../assets/banner/01.png'
 
@@ -15,10 +15,15 @@ const Category = () => {
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
+        loop={true}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay,Pagination]}
         className="mySwiper"
       >
         <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
