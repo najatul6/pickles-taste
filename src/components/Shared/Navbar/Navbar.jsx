@@ -17,7 +17,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className="px-2 lg:px-5">
+      <nav>
         <div className="container relative flex justify-between items-center py-8 bg-gradient-back backdrop-blur-[50px]">
           {/* Mobile hamburger Menu Section  */}
           <div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
