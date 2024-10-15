@@ -20,7 +20,7 @@ const Footer = () => {
 
       <hr className="my-6" />
 
-      <p className='text-center  text-base'>&copy; <Link className="font-bold underline" to="htttps://najatul-islam.vercel.app">Najatul Islam</Link>. All rights reserved.</p>
+      <p className='text-center  text-base'>&copy; <Link className="font-bold underline" to="https://najatul-islam.vercel.app/" target="_blank">Najatul Islam</Link>. All rights reserved.</p>
     </div>
   </footer>
   )
