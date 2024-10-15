@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const absolute = {
+  const positionMenu = {
     position: "absolute",
     top: 0,
     left: 0,
@@ -61,7 +61,7 @@ const Navbar = () => {
         </div>
       </nav>
       {/* Mobile Sidebar section  */}
-      <ResponsiveMenu open={isOpen} absolute={absolute} />
+      <ResponsiveMenu open={isOpen} positionMenu={positionMenu} />
     </>
   );
 };

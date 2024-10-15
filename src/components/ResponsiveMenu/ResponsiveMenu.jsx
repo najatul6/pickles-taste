@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { NavMenu } from "../../Utils/utils";
 import PropTypes from "prop-types";
-const ResponsiveMenu = ({ open, absolute }) => {
+const ResponsiveMenu = ({ open, positionMenu }) => {
   return (
     <AnimatePresence mode="wait">
       {open && (
@@ -10,7 +10,7 @@ const ResponsiveMenu = ({ open, absolute }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.3 }}
-          className={absolute}
+          className={positionMenu}
         >
           <div className="text-xl font-semibold uppercase shadow-inner text-white py-10 bg-gradient-back backdrop-blur-[50px]">
             <ul className="flex flex-col justify-center items-center gap-6">
@@ -38,7 +38,7 @@ const ResponsiveMenu = ({ open, absolute }) => {
 
 ResponsiveMenu.propTypes = {
   open: PropTypes.node.isRequired,
-  absolute: PropTypes.node.isRequired,
+  positionMenu: PropTypes.object.isRequired,
 };
 
 export default ResponsiveMenu;
