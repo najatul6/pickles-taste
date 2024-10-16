@@ -1,7 +1,10 @@
+import SectionHeading from "../Shared/SectionHeading/SectionHeading"
 
 const Featured = () => {
   return (
-    <div>Featured</div>
+    <div>
+        <SectionHeading subTitle=""/>
+    </div>
   )
 }
 
