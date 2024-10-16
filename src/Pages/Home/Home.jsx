@@ -1,5 +1,6 @@
 import Banner from "../../components/Banner/Banner"
 import BgParallax from "../../components/BgParallax/BgParallax"
+import CallUs from "../../components/CallUs/CallUs"
 import Category from "../../components/Category/Category"
 import PopularPickles from "../../components/PopularPickles/PopularPickles"
 
@@ -10,6 +11,7 @@ const Home = () => {
       <Category/>
       <BgParallax/>
       <PopularPickles/>
+      <CallUs/>
     </div>
   )
 }

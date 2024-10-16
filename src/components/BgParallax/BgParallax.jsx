@@ -2,7 +2,7 @@ import SimpleParallax from "simple-parallax-js";
 import bgImage from "../../assets/banner/01.png";
 const BgParallax = () => {
   return (
-    <div className="relative w-11/12 mx-auto my-10 overflow-hidden ">
+    <div className="relative w-11/12 mx-auto overflow-hidden ">
       <SimpleParallax delay={0.4} transition="cubic-bezier(0,0,0,1)">
         <img src={bgImage} alt={"image"} className="blur-[2px]"/>
       </SimpleParallax>
