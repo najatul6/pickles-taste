@@ -13,9 +13,9 @@ const PopularPickles = () => {
       });
   }, []);
   return (
-    <section>
+    <section className="w-11/12 mx-auto">
       <SectionHeading title="Popular Items" subTitle="Check it out" />
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {menu?.map((item) => (
          <MenuItemCard key={item?._id} item={item}/>
         ))}

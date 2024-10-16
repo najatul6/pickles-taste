@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        bengali: "Baloo Da 2, sans-serif",
+        nunito:"Nunito Sans, sans-serif",
+      },
       colors:{
         "brand-color":"#FEC010",
         "darkness":"#18181A",
