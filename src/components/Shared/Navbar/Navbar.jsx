@@ -39,7 +39,7 @@ const Navbar = () => {
                   <li key={item?.id}>
                     <a
                       href={item?.link}
-                      className="inline-block py-1 px-3 font-semibold hover:text-brand-color"
+                      className="inline-block py-1 px-3 font-semibold hover:text-brand-color uppercase"
                     >
                       {item?.name}
                     </a>
