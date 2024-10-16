@@ -21,7 +21,11 @@ const ResponsiveMenu = ({ open, positionMenu }) => {
                   <li key={item?.id}>
                     <NavLink
                       to={item?.link}
-                      className="inline-block py-1 uppercase px-3 font-semibold hover:text-brand-color"
+                      className={({ isActive }) =>
+                        `inline-block py-1 px-3 font-semibold uppercase ${
+                          isActive ? 'text-brand-color' : 'hover:text-brand-color'
+                        }`
+                      }
                     >
                       {item?.name}
                     </NavLink>
