@@ -1,6 +1,7 @@
 import { useState } from "react"
 import SectionHeading from "../Shared/SectionHeading/SectionHeading"
 import { useEffect } from "react"
+import ItemCard from "../Shared/ItemCard/ItemCard"
 
 const Recommended = () => {
     const [offered,setOffered] =useState([])
@@ -15,7 +16,11 @@ const Recommended = () => {
   return (
     <div>
         <SectionHeading subTitle="Should Try" title="Our Recommends"/>
-        
+        <div>
+            {
+                offered?.map(items=><ItemCard key={items?._id} item={items}/>)
+            }
+        </div>
     </div>
   )
 }
