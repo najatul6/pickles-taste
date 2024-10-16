@@ -9,6 +9,7 @@ export default {
       fontFamily:{
         bengali: "Baloo Da 2, sans-serif",
         nunito:"Nunito Sans, sans-serif",
+        Raleway:"Raleway, sans-serif",
       },
       colors:{
         "brand-color":"#FEC010",
