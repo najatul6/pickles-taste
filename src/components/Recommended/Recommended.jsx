@@ -15,7 +15,7 @@ const Recommended = () => {
   return (
     <div>
         <SectionHeading subTitle="Should Try" title="Our Recommends"/>
-
+        
     </div>
   )
 }
