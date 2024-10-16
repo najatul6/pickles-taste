@@ -1,7 +1,12 @@
+import { Helmet } from "react-helmet-async"
 
 const LogIn = () => {
   return (
-    <div>LogIn</div>
+    <div>
+      <Helmet>
+        <title>Log In | Pickles Taste </title>
+      </Helmet>
+      LogIn</div>
   )
 }
 

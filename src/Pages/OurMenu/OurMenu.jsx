@@ -1,7 +1,15 @@
+import { Helmet } from "react-helmet-async"
 
 const OurMenu = () => {
   return (
-    <div>OurMenu</div>
+    <div>
+      <Helmet>
+        <title>Our Menu | Pickles Taste</title>
+        <meta name="description" content="Our menu page" />
+      </Helmet>
+      OurMenu
+
+    </div>
   )
 }
 

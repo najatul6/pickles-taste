@@ -1,7 +1,12 @@
+import { Helmet } from "react-helmet-async"
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <div>
+      <Helmet>
+        <title>Register | Pickles Taste</title>
+        
+        </Helmet> Register</div>
   )
 }
 
