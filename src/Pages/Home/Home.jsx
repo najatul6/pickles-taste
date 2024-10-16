@@ -8,8 +8,8 @@ const Home = () => {
     <div className="">
       <Banner/>
       <Category/>
-      <PopularPickles/>
       <BgParallax/>
+      <PopularPickles/>
     </div>
   )
 }
