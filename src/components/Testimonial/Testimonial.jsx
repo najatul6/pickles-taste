@@ -21,8 +21,9 @@ const Testimonial = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
+
   return (
-    <section>
+    <section className="w-11/12 mx-auto pb-10">
       <SectionHeading subTitle="What Our Clients Say" title="TESTIMONIALS" />
       <div>
         <Swiper
@@ -38,13 +39,15 @@ const Testimonial = () => {
         >
           {reviews?.map((review) => (
             <SwiperSlide key={review?._id}>
-              <div>
+              <div className="flex justify-center items-center flex-col space-y-6 w-3/4 mx-auto">
                 <Rating
                   style={{ maxWidth: 250 }}
                   readOnly
                   value={review?.rating}
                 />
-                <FaQuoteLeft />
+                <FaQuoteLeft size={50}/>
+                <p className="text-center text-xl text-white">{review?.details}</p>
+                <h2 className="text-2xl font-bold text-brand-color">{review?.name}</h2>
               </div>
             </SwiperSlide>
           ))}
