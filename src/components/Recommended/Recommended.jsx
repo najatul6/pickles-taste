@@ -6,6 +6,11 @@ const Recommended = () => {
     const [offered,setOffered] =useState([])
     useEffect(()=>{
         fetch('/menu.json')
+        .then(res=>res.json())
+        .then(data=>{
+            const offeredItem = data.filter(item=> item.category === 'offered')
+            setOffered(offeredItem)
+        })
     },[])
   return (
     <div>
