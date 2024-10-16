@@ -53,11 +53,12 @@ const Navbar = () => {
             <button className="text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200">
               <PiShoppingCartThin />
             </button>
-            <button className=" md:block font-semibold text-white border-2 rounded-md border-white px-6 py-2 duration-200 hover:bg-brand-color hover:text-white">
-              Login
-            </button>
+            <Link to='/login'>
+              <button className=" md:block font-semibold text-white border-2 rounded-md border-white px-6 py-2 duration-200 hover:bg-brand-color hover:text-white">
+                Login
+              </button>
+            </Link>
           </div>
-          
         </div>
       </nav>
       {/* Mobile Sidebar section  */}

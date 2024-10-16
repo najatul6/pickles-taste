@@ -2,7 +2,7 @@ export const NavMenu = [
   {
     id: "ue6rj4_47",
     name: "dashboard",
-    link: "#",
+    link: "/dashboard",
   },
   {
     id: "ue8rj4_43",
@@ -12,16 +12,16 @@ export const NavMenu = [
   {
     id: "u5erj4_45",
     name: "our menu",
-    link: "#",
+    link: "/our-menu",
   },
   {
     id: "ue76rj4_46",
     name: "our shop",
-    link: "#",
+    link: "/our-shop",
   },
   {
     id: "ue7rj4_44",
     name: "contact us",
-    link: "#",
+    link: "/contact-us",
   },
 ];
