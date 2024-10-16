@@ -3,7 +3,7 @@ import featuredImg from "../../assets/banner/1.jfif";
 
 const Featured = () => {
   return (
-    <div
+    <section
       style={{ backgroundImage: `url(${featuredImg})` }}
       className="relative bg-no-repeat bg-cover bg-fixed bg-center text-white py-10"
     >
@@ -29,7 +29,7 @@ const Featured = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

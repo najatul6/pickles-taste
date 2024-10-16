@@ -2,7 +2,7 @@ import SimpleParallax from "simple-parallax-js";
 import bgImage from "../../assets/banner/01.png";
 const BgParallax = () => {
   return (
-    <div className="relative w-11/12 mx-auto overflow-hidden ">
+    <section className="relative w-11/12 mx-auto overflow-hidden ">
       <SimpleParallax delay={0.4} transition="cubic-bezier(0,0,0,1)">
         <img src={bgImage} alt={"image"} className="blur-[2px]"/>
       </SimpleParallax>
@@ -17,20 +17,10 @@ const BgParallax = () => {
         </p>
       </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default BgParallax;
 
-{
-  /* <div className="text-white text-center px-20 py-20 bg-red-200 my-40 w-2/3 mx-auto">
-        <h1 className="text-4xl font-bold uppercase ">Pickles Taste</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus, libero accusamus laborum deserunt ratione dolor
-          officiis praesentium! Deserunt magni aperiam dolor eius dolore at,
-          nihil iusto ducimus incidunt quibusdam nemo.
-        </p>
-      </div> */
-}
+

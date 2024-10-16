@@ -5,6 +5,7 @@ import Category from "../../components/Category/Category"
 import Featured from "../../components/Featured/Featured"
 import PopularPickles from "../../components/PopularPickles/PopularPickles"
 import Recommended from "../../components/Recommended/Recommended"
+import Testimonial from "../../components/Testimonial/Testimonial"
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <CallUs/>
       <Recommended/>
       <Featured/>
+      <Testimonial/>
     </div>
   )
 }
