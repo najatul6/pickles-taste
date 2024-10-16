@@ -7,9 +7,10 @@ const BgParallax = () => {
         <img src={bgImage} alt={"image"} className="blur-[2px]"/>
       </SimpleParallax>
       <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center px-3">
-      <div className=" text-white text-center md:px-20 md:py-20 bg-black/70 flex flex-col justify-center items-center gap-4 py-4  lg:w-2/3 mx-auto">
+      <div className=" text-white text-center md:px-20 md:py-20 bg-black/70 flex flex-col h-1/2 my-auto justify-center items-center gap-4 py-4  lg:w-2/3 mx-auto">
         <h1 className="lg:text-4xl font-bold uppercase">Pickles Taste</h1>
-        <p className="text-xs text-center">
+        <hr className="w-full"/>
+        <p className="text-xs lg:text-lg text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Necessitatibus, libero accusamus laborum deserunt ratione dolor
           officiis praesentium!
