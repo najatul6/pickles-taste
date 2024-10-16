@@ -4,7 +4,7 @@ import { MdClose, MdMenu } from "react-icons/md";
 import { useState } from "react";
 import { NavMenu } from "../../../Utils/utils";
 import ResponsiveMenu from "../../ResponsiveMenu/ResponsiveMenu";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,12 +37,12 @@ const Navbar = () => {
               {NavMenu?.map((item) => {
                 return (
                   <li key={item?.id}>
-                    <a
-                      href={item?.link}
+                    <NavLink
+                      to={item?.link}
                       className="inline-block py-1 px-3 font-semibold hover:text-brand-color uppercase"
                     >
                       {item?.name}
-                    </a>
+                    </NavLink>
                   </li>
                 );
               })}

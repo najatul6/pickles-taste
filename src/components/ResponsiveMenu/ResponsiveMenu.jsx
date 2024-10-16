@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { NavMenu } from "../../Utils/utils";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 const ResponsiveMenu = ({ open, positionMenu }) => {
   return (
     <AnimatePresence mode="wait">
@@ -18,12 +19,12 @@ const ResponsiveMenu = ({ open, positionMenu }) => {
               {NavMenu.map((item) => {
                 return (
                   <li key={item?.id}>
-                    <a
-                      href={item?.link}
+                    <NavLink
+                      to={item?.link}
                       className="inline-block py-1 uppercase px-3 font-semibold hover:text-brand-color"
                     >
                       {item?.name}
-                    </a>
+                    </NavLink>
                   </li>
                 );
               })}
