@@ -1,18 +1,16 @@
-const ItemCard = ({item}) => {
-    const {name,recipe,image,price}=item
+const ItemCard = ({ item }) => {
+  const { name, recipe, image, price } = item;
   return (
-    <div className="card rounded-none shadow-xl">
-      <figure>
-        <img
-          src={image}
-          alt={name}
-        />
-      </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="card-title">{name}</h2>
-        <p>{recipe}</p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+    <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-full">
+      <div className="relative">
+        <img src={image} alt={name} className="w-full" />
+        <p className="text-xl font-bold absolute top-2 right-0 z-10 bg-black/50 px-5 py-3 rounded-s-full">&#2547; {price}</p>
+      </div>
+      <div className="items-center text-center py-10 px-10 space-y-5">
+        <h2 className="text-2xl font-bold">{name}</h2>
+        <p className="font-light">{recipe}</p>
+        <div className="flex justify-center items-center">
+          <button className="text-white py-5 px-8 rounded-full bg-white/5 border-b-4 uppercase text-xl font-medium hover:bg-brand-color hover:border-white transition-colors duration-300 border-brand-color">Buy Now</button>
         </div>
       </div>
     </div>
