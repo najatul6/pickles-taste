@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SectionHeading from "../Shared/SectionHeading/SectionHeading";
 import MenuItemCard from "../Shared/MenuItemCard/MenuItemCard";
+import MenuBtn from "../Shared/MenuBtn/MenuBtn";
 
 const PopularPickles = () => {
   const [menu, setMenu] = useState([]);
@@ -20,6 +21,7 @@ const PopularPickles = () => {
          <MenuItemCard key={item?._id} item={item}/>
         ))}
       </div>
+      <MenuBtn text="View full Menu"/>
     </section>
   );
 };

@@ -5,7 +5,7 @@ import PopularPickles from "../../components/PopularPickles/PopularPickles"
 
 const Home = () => {
   return (
-    <div className="">
+    <div className="flex flex-col gap-10">
       <Banner/>
       <Category/>
       <BgParallax/>
