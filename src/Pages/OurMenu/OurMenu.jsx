@@ -48,14 +48,14 @@ const OurMenu = () => {
             <MenuBtn text="ORDER YOUR favourite FOOD" />
           </div>
         </div>
-        
+
         {/* DESSERTS ITEMS */}
-          <SectionBanner
-            bgImg={menuBack}
-            description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-            title="DESSERTS"
-          />
-          {/* DESSERTS ITEMS */}
+        <SectionBanner
+          bgImg={menuBack}
+          description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          title="DESSERTS"
+        />
+        {/* DESSERTS ITEMS */}
         <div className="w-11/12 mx-auto">
           <div>
             {/* Show loading and menu item list  */}
@@ -72,14 +72,14 @@ const OurMenu = () => {
             <MenuBtn text="ORDER YOUR favourite FOOD" />
           </div>
         </div>
-        
+
         {/* PIZZA ITEMS */}
-          <SectionBanner
-            bgImg={menuBack}
-            description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-            title="PIZZA"
-          />
-          {/* PIZZA  ITEMS */}
+        <SectionBanner
+          bgImg={menuBack}
+          description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          title="PIZZA"
+        />
+        {/* PIZZA  ITEMS */}
         <div className="w-11/12 mx-auto">
           <div>
             {/* Show loading and menu item list  */}
@@ -96,14 +96,14 @@ const OurMenu = () => {
             <MenuBtn text="ORDER YOUR favourite FOOD" />
           </div>
         </div>
-        
+
         {/* SALAD ITEMS */}
-          <SectionBanner
-            bgImg={menuBack}
-            description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-            title="SALAD"
-          />
-          {/* SALAD  ITEMS */}
+        <SectionBanner
+          bgImg={menuBack}
+          description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          title="SALAD"
+        />
+        {/* SALAD  ITEMS */}
         <div className="w-11/12 mx-auto">
           <div>
             {/* Show loading and menu item list  */}
@@ -120,14 +120,14 @@ const OurMenu = () => {
             <MenuBtn text="ORDER YOUR favourite FOOD" />
           </div>
         </div>
-        
+
         {/* SOUP ITEMS */}
-          <SectionBanner
-            bgImg={menuBack}
-            description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-            title="SOUP"
-          />
-          {/* SOUP  ITEMS */}
+        <SectionBanner
+          bgImg={menuBack}
+          description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          title="SOUP"
+        />
+        {/* SOUP  ITEMS */}
         <div className="w-11/12 mx-auto">
           <div>
             {/* Show loading and menu item list  */}
