@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const SectionBanner = ({ bgImg, title ,description}) => {
   return (
     <Parallax
-      blur={{ min: -10, max: 15 }}
+      blur={{ min: -2, max: 5 }}
       bgImage={bgImg}
       bgImageAlt={title}
       strength={-300}
