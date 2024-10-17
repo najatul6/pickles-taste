@@ -104,7 +104,31 @@ const OurMenu = () => {
             title="SALAD"
           />
         <div className="w-11/12 mx-auto">
-          {/* PIZZA  ITEMS */}
+          {/* SALAD  ITEMS */}
+          <div>
+            {/* Show loading and menu item list  */}
+            {loading ? (
+              <ItemsLoading />
+            ) : (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {dessert?.map((item) => (
+                  <MenuItemCard loading={loading} key={item?._id} item={item} />
+                ))}
+              </div>
+            )}
+            {/* Menu button */}
+            <MenuBtn text="ORDER YOUR favourite FOOD" />
+          </div>
+        </div>
+        
+        {/* SOUP ITEMS */}
+          <SectionBanner
+            bgImg={menuBack}
+            description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            title="SOUP"
+          />
+        <div className="w-11/12 mx-auto">
+          {/* SOUP  ITEMS */}
           <div>
             {/* Show loading and menu item list  */}
             {loading ? (
