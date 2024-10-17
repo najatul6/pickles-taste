@@ -16,10 +16,10 @@ const Featured = () => {
             alt="Featured product"
             className="md:w-[600px] rounded-xl"
           />
-          <div className=" text-justify">
+          <div className="">
             <h4 className="text-xl">March 20, 2023</h4>
             <h5 className="text-xl">WHERE CAN I GET SOME?</h5>
-            <p>
+            <p className="text-left">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
               voluptate facere, deserunt dolores maiores quod nobis quas quasi.
               Eaque repellat recusandae ad laudantium tempore consequatur
