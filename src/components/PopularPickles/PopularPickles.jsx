@@ -21,7 +21,7 @@ const PopularPickles = () => {
           ))}
         </div>
       )}
-
+      {/* Menu button */}
       <MenuBtn text="View full Menu" />
     </section>
   );
