@@ -35,14 +35,11 @@ const OurMenu = () => {
         {/* TODAYS OFFERS */}
         <div className="w-11/12 mx-auto">
           <SectionHeading subTitle="Don't miss" title="TODAY'S OFFER" />
-          {/* TODAY'S OFFER Items */}
-          <div>
-            {/* Show loading and menu item list  */}
-            {loading ? <ItemsLoading /> : <MenuCategory items={offered} />}
-          </div>
+          {/* TODAY'S OFFER ITEMS */}
+          {loading ? <ItemsLoading /> : <MenuCategory items={offered} />}
         </div>
 
-        {/* DESSERTS ITEMS */}
+        {/* DESSERTS CATEGORY */}
         <SectionBanner
           bgImg={menuBack}
           description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -50,18 +47,10 @@ const OurMenu = () => {
         />
         {/* DESSERTS ITEMS */}
         <div className="w-11/12 mx-auto">
-          <div>
-            {/* Show loading and menu item list  */}
-            {loading ? (
-              <ItemsLoading />
-            ) : (
-              <MenuCategory items={dessert}/>
-            )}
-            
-          </div>
+          {loading ? <ItemsLoading /> : <MenuCategory items={dessert} />}
         </div>
 
-        {/* PIZZA ITEMS */}
+        {/* PIZZA CATEGORY */}
         <SectionBanner
           bgImg={menuBack}
           description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -69,17 +58,10 @@ const OurMenu = () => {
         />
         {/* PIZZA  ITEMS */}
         <div className="w-11/12 mx-auto">
-          <div>
-            {/* Show loading and menu item list  */}
-            {loading ? (
-              <ItemsLoading />
-            ) : (
-              <MenuCategory items={pizza}/>
-            )}
-          </div>
+          {loading ? <ItemsLoading /> : <MenuCategory items={pizza} />}
         </div>
 
-        {/* SALAD ITEMS */}
+        {/* SALAD CATEGORY */}
         <SectionBanner
           bgImg={menuBack}
           description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -87,17 +69,10 @@ const OurMenu = () => {
         />
         {/* SALAD  ITEMS */}
         <div className="w-11/12 mx-auto">
-          <div>
-            {/* Show loading and menu item list  */}
-            {loading ? (
-              <ItemsLoading />
-            ) : (
-              <MenuCategory items={salad}/>
-            )}
-          </div>
+          {loading ? <ItemsLoading /> : <MenuCategory items={salad} />}
         </div>
 
-        {/* SOUP ITEMS */}
+        {/* SOUP CATEGORY */}
         <SectionBanner
           bgImg={menuBack}
           description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -105,14 +80,7 @@ const OurMenu = () => {
         />
         {/* SOUP  ITEMS */}
         <div className="w-11/12 mx-auto">
-          <div>
-            {/* Show loading and menu item list  */}
-            {loading ? (
-              <ItemsLoading />
-            ) : (
-              <MenuCategory items={soup}/>
-            )}
-          </div>
+          {loading ? <ItemsLoading /> : <MenuCategory items={soup} />}
         </div>
       </section>
     </div>
