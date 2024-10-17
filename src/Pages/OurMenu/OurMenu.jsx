@@ -4,8 +4,6 @@ import menuBack from "../../assets/banner/9.jfif";
 import useMenu from "../../hooks/useMenu";
 import SectionHeading from "../../components/Shared/SectionHeading/SectionHeading";
 import ItemsLoading from "../../components/Shared/ItemsLoading/ItemsLoading";
-import MenuItemCard from "../../components/Shared/MenuItemCard/MenuItemCard";
-import MenuBtn from "../../components/Shared/MenuBtn/MenuBtn";
 import MenuCategory from "../../components/Shared/MenuCategory/MenuCategory";
 
 const OurMenu = () => {
