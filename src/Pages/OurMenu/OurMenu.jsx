@@ -29,7 +29,7 @@ const OurMenu = () => {
       />
       {/* Page content */}
       <section className="space-y-10">
-        {/* Todays Offer */}
+        {/* TODAYS OFFERS */}
         <div className="w-11/12 mx-auto">
           <SectionHeading subTitle="Don't miss" title="TODAY'S OFFER" />
           {/* TODAY'S OFFER Items */}
@@ -49,7 +49,7 @@ const OurMenu = () => {
           </div>
         </div>
         
-        {/* DESSERTS ITEM */}
+        {/* DESSERTS ITEMS */}
           <SectionBanner
             bgImg={menuBack}
             description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -73,7 +73,7 @@ const OurMenu = () => {
           </div>
         </div>
         
-        {/* PIZZA ITEM */}
+        {/* PIZZA ITEMS */}
           <SectionBanner
             bgImg={menuBack}
             description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -97,7 +97,7 @@ const OurMenu = () => {
           </div>
         </div>
         
-        {/* SALAD ITEM */}
+        {/* SALAD ITEMS */}
           <SectionBanner
             bgImg={menuBack}
             description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
