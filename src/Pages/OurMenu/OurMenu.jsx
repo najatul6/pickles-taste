@@ -23,6 +23,8 @@ const OurMenu = () => {
         <title>Our Menu | Pickles Taste</title>
         <meta name="description" content="Our menu page" />
       </Helmet>
+
+      {/* Menu Banner  */}
       <SectionBanner
         bgImg={menuBack}
         title={"Our menu"}
@@ -74,8 +76,6 @@ const OurMenu = () => {
             ) : (
               <MenuCategory items={pizza}/>
             )}
-            {/* Menu button */}
-            <MenuBtn text="ORDER YOUR favourite FOOD" />
           </div>
         </div>
 
@@ -94,8 +94,6 @@ const OurMenu = () => {
             ) : (
               <MenuCategory items={salad}/>
             )}
-            {/* Menu button */}
-            <MenuBtn text="ORDER YOUR favourite FOOD" />
           </div>
         </div>
 
@@ -114,8 +112,6 @@ const OurMenu = () => {
             ) : (
               <MenuCategory items={soup}/>
             )}
-            {/* Menu button */}
-            <MenuBtn text="ORDER YOUR favourite FOOD" />
           </div>
         </div>
       </section>
