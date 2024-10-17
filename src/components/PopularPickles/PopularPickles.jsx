@@ -5,6 +5,7 @@ import MenuBtn from "../Shared/MenuBtn/MenuBtn";
 
 const PopularPickles = () => {
   const [menu, setMenu] = useState([]);
+  
   useEffect(() => {
     fetch("menu.json")
       .then((response) => response.json())
