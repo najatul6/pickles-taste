@@ -11,10 +11,10 @@ const Footer = () => {
         </div>
 
         <ul className="flex items-center justify-center flex-wrap gap-y-2 md:justify-end space-x-6">
-          <li><a href="javascript:void(0)" className=" hover:underline text-base">Home</a></li>
-          <li><a href="javascript:void(0)" className=" hover:underline text-base">About</a></li>
-          <li><a href="javascript:void(0)" className=" hover:underline text-base">Services</a></li>
-          <li><a href="javascript:void(0)" className=" hover:underline text-base">Contact</a></li>
+          <li><Link to="/" className=" hover:underline text-base">Home</Link></li>
+          <li><Link to="/our-menu" className=" hover:underline text-base">Our Menu</Link></li>
+          <li><Link to="/our-shop" className=" hover:underline text-base">Our Shop</Link></li>
+          <li><Link to="/contact-us" className=" hover:underline text-base">Contact Us</Link></li>
         </ul>
       </div>
 
