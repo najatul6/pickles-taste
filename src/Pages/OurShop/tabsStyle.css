@@ -1,0 +1,23 @@
+/* Custom styles for react-tabs */
+.react-tabs__tab {
+  @apply py-2 px-4 mr-3 text-xs md:text-lg cursor-pointer text-white bg-transparent; /* Default background and text color */
+}
+
+.react-tabs__tab--selected {
+  @apply text-brand-color border-[7px] border-white rounded-t-xl; /* Change text color for the selected tab, remove bottom border */
+}
+
+.react-tabs__tab:focus {
+  @apply outline-none; /* Remove the default focus outline */
+}
+
+.react-tabs__tab--selected:focus {
+  @apply outline-none outline-offset-0 bg-transparent; /* Remove focus outline for selected tab */
+}
+
+.react-tabs__tab-list {
+  @apply pb-0 mb-0 border-b-[7px] border-white flex md:justify-center h-full; /* Basic styles for all sizes */
+  @apply overflow-x-scroll md:overflow-hidden; /* Enable horizontal scrolling only on small devices */
+  @apply overscroll-y-none;
+}
+
