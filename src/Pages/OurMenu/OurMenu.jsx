@@ -28,7 +28,7 @@ const OurMenu = () => {
         description="Would you like to try a dish?"
       />
       {/* Page content */}
-      <section className="space-y-5">
+      <section className="space-y-10">
         {/* Todays Offer */}
         <div className="w-11/12 mx-auto">
           <SectionHeading subTitle="Don't miss" title="TODAY'S OFFER" />
@@ -48,13 +48,14 @@ const OurMenu = () => {
             <MenuBtn text="ORDER YOUR favourite FOOD" />
           </div>
         </div>
-        {/* DESSERTS Item */}
-        <div className="w-11/12 mx-auto">
+        
+        {/* DESSERTS ITEM */}
           <SectionBanner
             bgImg={menuBack}
             description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
             title="DESSERTS"
           />
+        <div className="w-11/12 mx-auto">
           {/* DESSERTS OFFER Items */}
           <div>
             {/* Show loading and menu item list  */}
