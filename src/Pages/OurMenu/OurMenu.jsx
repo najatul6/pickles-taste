@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import SectionBanner from "../../components/Shared/SectionBanner/SectionBanner";
-import menuBack from "../../assets/banner/3.jfif";
+import menuBack from "../../assets/banner/9.jfif";
 import useMenu from "../../hooks/useMenu";
 import SectionHeading from "../../components/Shared/SectionHeading/SectionHeading";
 import ItemsLoading from "../../components/Shared/ItemsLoading/ItemsLoading";
