@@ -111,7 +111,7 @@ const OurMenu = () => {
               <ItemsLoading />
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {dessert?.map((item) => (
+                {salad?.map((item) => (
                   <MenuItemCard loading={loading} key={item?._id} item={item} />
                 ))}
               </div>
@@ -135,7 +135,7 @@ const OurMenu = () => {
               <ItemsLoading />
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {dessert?.map((item) => (
+                {soup?.map((item) => (
                   <MenuItemCard loading={loading} key={item?._id} item={item} />
                 ))}
               </div>
