@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 const MenuItemCard = ({ item }) => {
   const { name, recipe, image, price } = item;
+  
   return (
     <div className="flex flex-col md:flex-row gap-4 text-white">
       <img
@@ -26,6 +27,7 @@ MenuItemCard.propTypes = {
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   }),
+  loading: PropTypes.bool,
 };
 
 export default MenuItemCard;
