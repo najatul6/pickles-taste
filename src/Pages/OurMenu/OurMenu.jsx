@@ -53,14 +53,9 @@ const OurMenu = () => {
             {loading ? (
               <ItemsLoading />
             ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {dessert?.map((item) => (
-                  <MenuItemCard loading={loading} key={item?._id} item={item} />
-                ))}
-              </div>
+              <MenuCategory items={dessert}/>
             )}
-            {/* Menu button */}
-            <MenuBtn text="ORDER YOUR favourite FOOD" />
+            
           </div>
         </div>
 
@@ -77,11 +72,7 @@ const OurMenu = () => {
             {loading ? (
               <ItemsLoading />
             ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {pizza?.map((item) => (
-                  <MenuItemCard loading={loading} key={item?._id} item={item} />
-                ))}
-              </div>
+              <MenuCategory items={pizza}/>
             )}
             {/* Menu button */}
             <MenuBtn text="ORDER YOUR favourite FOOD" />
@@ -101,11 +92,7 @@ const OurMenu = () => {
             {loading ? (
               <ItemsLoading />
             ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {salad?.map((item) => (
-                  <MenuItemCard loading={loading} key={item?._id} item={item} />
-                ))}
-              </div>
+              <MenuCategory items={salad}/>
             )}
             {/* Menu button */}
             <MenuBtn text="ORDER YOUR favourite FOOD" />
@@ -125,11 +112,7 @@ const OurMenu = () => {
             {loading ? (
               <ItemsLoading />
             ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {soup?.map((item) => (
-                  <MenuItemCard loading={loading} key={item?._id} item={item} />
-                ))}
-              </div>
+              <MenuCategory items={soup}/>
             )}
             {/* Menu button */}
             <MenuBtn text="ORDER YOUR favourite FOOD" />
