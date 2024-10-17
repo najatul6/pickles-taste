@@ -28,7 +28,7 @@ const OurMenu = () => {
         description="Would you like to try a dish?"
       />
       {/* Page content */}
-      <section className="space-y-10">
+      <section className="space-y-10 mb-10">
         {/* TODAYS OFFERS */}
         <div className="w-11/12 mx-auto">
           <SectionHeading subTitle="Don't miss" title="TODAY'S OFFER" />
