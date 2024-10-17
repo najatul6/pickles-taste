@@ -17,7 +17,7 @@ const PopularPickles = () => {
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {popular?.map((item) => (
-            <MenuItemCard loading={loading} key={item?._id} item={item} />
+            <MenuItemCard key={item?._id} item={item} />
           ))}
         </div>
       )}

@@ -6,6 +6,7 @@ import SectionHeading from "../../components/Shared/SectionHeading/SectionHeadin
 import ItemsLoading from "../../components/Shared/ItemsLoading/ItemsLoading";
 import MenuItemCard from "../../components/Shared/MenuItemCard/MenuItemCard";
 import MenuBtn from "../../components/Shared/MenuBtn/MenuBtn";
+import MenuCategory from "../../components/Shared/MenuCategory/MenuCategory";
 
 const OurMenu = () => {
   const [menu, loading] = useMenu();
@@ -35,17 +36,7 @@ const OurMenu = () => {
           {/* TODAY'S OFFER Items */}
           <div>
             {/* Show loading and menu item list  */}
-            {loading ? (
-              <ItemsLoading />
-            ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {offered?.map((item) => (
-                  <MenuItemCard loading={loading} key={item?._id} item={item} />
-                ))}
-              </div>
-            )}
-            {/* Menu button */}
-            <MenuBtn text="ORDER YOUR favourite FOOD" />
+            {loading ? <ItemsLoading /> : <MenuCategory items={offered} />}
           </div>
         </div>
 
