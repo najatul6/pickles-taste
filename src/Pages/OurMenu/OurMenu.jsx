@@ -1,7 +1,7 @@
-import { Helmet } from "react-helmet-async"
-import SectionBanner from "../../components/Shared/SectionBanner/SectionBanner"
-import menuBack from "../../assets/banner/3.jfif"
-import PopularPickles from "../../components/PopularPickles/PopularPickles"
+import { Helmet } from "react-helmet-async";
+import SectionBanner from "../../components/Shared/SectionBanner/SectionBanner";
+import menuBack from "../../assets/banner/3.jfif";
+import PopularPickles from "../../components/PopularPickles/PopularPickles";
 
 const OurMenu = () => {
   return (
@@ -11,28 +11,54 @@ const OurMenu = () => {
         <title>Our Menu | Pickles Taste</title>
         <meta name="description" content="Our menu page" />
       </Helmet>
-      <SectionBanner bgImg={menuBack} title={"Our menu"} description="Would you like to try a dish?"/>
+      <SectionBanner
+        bgImg={menuBack}
+        title={"Our menu"}
+        description="Would you like to try a dish?"
+      />
       {/* Page content */}
       <section className="space-y-14 my-10">
         {/* Popular Items  */}
-        <PopularPickles/>
+        <PopularPickles />
         {/* Other menu items */}
-      <SectionBanner bgImg={menuBack} title={"Our menu"} description="Would you like to try a dish?"/>
-        <PopularPickles/>
+        <div>
+          <SectionBanner
+            bgImg={menuBack}
+            title={"Our menu"}
+            description="Would you like to try a dish?"
+          />
+          <PopularPickles />
+        </div>
         {/* Other menu items */}
-      <SectionBanner bgImg={menuBack} title={"Our menu"} description="Would you like to try a dish?"/>
-        <PopularPickles/>
+        <div>
+          <SectionBanner
+            bgImg={menuBack}
+            title={"Our menu"}
+            description="Would you like to try a dish?"
+          />
+          <PopularPickles />
+        </div>
         {/* Other menu items */}
-      <SectionBanner bgImg={menuBack} title={"Our menu"} description="Would you like to try a dish?"/>
-        <PopularPickles/>
+        <div>
+          <SectionBanner
+            bgImg={menuBack}
+            title={"Our menu"}
+            description="Would you like to try a dish?"
+          />
+          <PopularPickles />
+        </div>
         {/* Other menu items */}
-      <SectionBanner bgImg={menuBack} title={"Our menu"} description="Would you like to try a dish?"/>
-        <PopularPickles/>
-
+        <div>
+          <SectionBanner
+            bgImg={menuBack}
+            title={"Our menu"}
+            description="Would you like to try a dish?"
+          />
+          <PopularPickles />
+        </div>
       </section>
-
     </div>
-  )
-}
+  );
+};
 
-export default OurMenu
+export default OurMenu;

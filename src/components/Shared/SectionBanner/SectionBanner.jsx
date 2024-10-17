@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 const SectionBanner = ({ bgImg, title ,description}) => {
   return (
     <Parallax
-      blur={{ min: -50, max: 50 }}
+      blur={{ min: -10, max: 15 }}
       bgImage={bgImg}
       bgImageAlt={title}
       strength={-300}
     >
-      <div className="border w-3/4 my-24 bg-black/40 mx-auto h-60 text-white flex flex-col items-center justify-center">
-        <h1 className="text-2xl lg:text-4xl uppercase">{title}</h1>
-        <p>{description}</p>
+      <div className="border lg:w-3/4 py-5 my-5 md:my-24 bg-black/70 mx-auto lg:h-60 text-center text-white flex flex-col items-center justify-center">
+        <h1 className="text-xl font-bold lg:text-4xl uppercase">{title}</h1>
+        <p className="font-thin md:text-xl">{description}</p>
       </div>
     </Parallax>
   );

@@ -7,7 +7,8 @@ import Featured from "../../components/Featured/Featured";
 import PopularPickles from "../../components/PopularPickles/PopularPickles";
 import Recommended from "../../components/Recommended/Recommended";
 import Testimonial from "../../components/Testimonial/Testimonial";
-
+import SectionBanner from "../../components/Shared/SectionBanner/SectionBanner";
+import bgImage from "../../assets/banner/8.jfif"
 const Home = () => {
   return (
     <div className="flex flex-col gap-10">
@@ -29,7 +30,10 @@ const Home = () => {
       {/* Body start here  */}
       <Banner />
       <Category />
-      <BgParallax />
+      {/* <BgParallax /> */}
+      <SectionBanner bgImg={bgImage} description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus, libero accusamus laborum deserunt ratione dolor
+          officiis praesentium!" title="Pickles Taste"/>
       <PopularPickles />
       <CallUs />
       <Recommended />
