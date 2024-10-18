@@ -1,6 +1,6 @@
 import SectionHeading from "../Shared/SectionHeading/SectionHeading"
 import useMenu from "../../hooks/useMenu"
-import ShopCategroy from "../Shared/ShopCategroy/ShopCategroy"
+import ShopCategroy from "../Shared/ShopCategory/ShopCategory"
 
 const Recommended = () => {
     const [menu] = useMenu()

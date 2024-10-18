@@ -6,7 +6,7 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "./tabsStyle.css";
 import useMenu from "../../hooks/useMenu";
-import ShopCategroy from "../../components/Shared/ShopCategroy/ShopCategroy";
+import ShopCategory from "../../components/Shared/ShopCategory/ShopCategory";
 const OurShop = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [menu] = useMenu();
@@ -50,28 +50,27 @@ const OurShop = () => {
               <Tab>Drinks</Tab>
             </TabList>
             <div className="w-11/12 my-5 mx-auto">
-            
-            <TabPanel>
-              <ShopCategroy items={offered} />
-            </TabPanel>
-            <TabPanel>
-              <ShopCategroy items={popular}/>
-            </TabPanel>
-            <TabPanel>
-              <ShopCategroy items={salad}/>
-            </TabPanel>
-            <TabPanel>
-              <ShopCategroy items={pizza}/>
-            </TabPanel>
-            <TabPanel>
-              <ShopCategroy items={dessert}/>
-            </TabPanel>
-            <TabPanel>
-              <ShopCategroy items={soup}/>
-            </TabPanel>
-            <TabPanel>
-              <ShopCategroy items={drinks}/>
-            </TabPanel>
+              <TabPanel>
+                <ShopCategory items={offered} />
+              </TabPanel>
+              <TabPanel>
+                <ShopCategory items={popular} />
+              </TabPanel>
+              <TabPanel>
+                <ShopCategory items={salad} />
+              </TabPanel>
+              <TabPanel>
+                <ShopCategory items={pizza} />
+              </TabPanel>
+              <TabPanel>
+                <ShopCategory items={dessert} />
+              </TabPanel>
+              <TabPanel>
+                <ShopCategory items={soup} />
+              </TabPanel>
+              <TabPanel>
+                <ShopCategory items={drinks} />
+              </TabPanel>
             </div>
           </Tabs>
         </div>

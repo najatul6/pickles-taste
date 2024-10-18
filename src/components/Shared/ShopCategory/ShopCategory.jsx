@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import ItemCard from "../ItemCard/ItemCard"
-const ShopCategroy = ({items}) => {
+const ShopCategory = ({items}) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {
@@ -9,8 +9,8 @@ const ShopCategroy = ({items}) => {
         </div>
   )
 }
-ShopCategroy.propTypes={
+ShopCategory.propTypes={
     items:PropTypes.any
 }
 
-export default ShopCategroy
+export default ShopCategory
