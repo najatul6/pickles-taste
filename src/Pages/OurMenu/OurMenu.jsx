@@ -13,6 +13,7 @@ const OurMenu = () => {
   const pizza = menu?.filter((item) => item.category === "pizza");
   const salad = menu?.filter((item) => item.category === "salad");
   const soup = menu?.filter((item) => item.category === "soup");
+  const drinks = menu?.filter((item) => item.category === "drinks");
 
   return (
     <div className="min-h-screen">
@@ -34,7 +35,7 @@ const OurMenu = () => {
         <div className="w-11/12 mx-auto">
           <SectionHeading subTitle="Don't miss" title="TODAY'S OFFER" />
           {/* TODAY'S OFFER ITEMS */}
-          {loading ? <ItemsLoading /> : <MenuCategory items={offered} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={offered} title={offered} />}
         </div>
 
         {/* DESSERTS CATEGORY */}
@@ -45,7 +46,7 @@ const OurMenu = () => {
         />
         {/* DESSERTS ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={dessert} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={dessert} title={dessert} />}
         </div>
 
         {/* PIZZA CATEGORY */}
@@ -56,7 +57,7 @@ const OurMenu = () => {
         />
         {/* PIZZA  ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={pizza} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={pizza} title={pizza} />}
         </div>
 
         {/* SALAD CATEGORY */}
@@ -67,7 +68,7 @@ const OurMenu = () => {
         />
         {/* SALAD  ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={salad} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={salad} title={salad} />}
         </div>
 
         {/* SOUP CATEGORY */}
@@ -78,7 +79,18 @@ const OurMenu = () => {
         />
         {/* SOUP  ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={soup} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={soup} title={soup} />}
+        </div>
+
+        {/* DRINKS CATEGORY */}
+        <SectionBanner
+          bgImg={menuBack}
+          description="Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          title="Drinks"
+        />
+        {/* DRINKS  ITEMS */}
+        <div className="w-11/12 mx-auto">
+          {loading ? <ItemsLoading /> : <MenuCategory items={drinks} title={drinks} />}
         </div>
       </section>
     </div>

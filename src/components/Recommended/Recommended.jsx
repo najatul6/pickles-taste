@@ -10,11 +10,7 @@ const Recommended = () => {
     <section className="w-11/12 mx-auto">
         <SectionHeading subTitle="Should Try" title="Our Recommends"/>
         <ShopCategroy items={offeredItem}/>
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {
-                offeredItem?.map(items=><ItemCard key={items?._id} item={items}/>)
-            }
-        </div> */}
+       
     </section>
   )
 }
