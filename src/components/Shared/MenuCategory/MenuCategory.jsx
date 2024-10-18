@@ -3,7 +3,6 @@ import MenuBtn from "../MenuBtn/MenuBtn";
 import MenuItemCard from "../MenuItemCard/MenuItemCard";
 import PropTypes from "prop-types";
 const MenuCategory = ({ items,title }) => {
-  console.log(title);
   return (
     <div className="space-y-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -11,7 +10,7 @@ const MenuCategory = ({ items,title }) => {
           <MenuItemCard key={item?._id} item={item} />
         ))}
       </div>
-      <Link to={title}>
+      <Link to={`/our-shop/${title}`}>
         <MenuBtn text="ORDER YOUR favourite FOOD" />
       </Link>
     </div>
@@ -20,6 +19,7 @@ const MenuCategory = ({ items,title }) => {
 
 MenuCategory.propTypes = {
   items: PropTypes.any,
+  title: PropTypes.string,
 };
 
 export default MenuCategory;
