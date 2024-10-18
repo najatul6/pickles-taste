@@ -5,8 +5,17 @@ import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "./tabsStyle.css";
+import useMenu from "../../hooks/useMenu";
 const OurShop = () => {
   const [tabIndex, setTabIndex] = useState(0);
+  const [menu] =useMenu()
+  const offered = menu?.filter((item) => item.category === "offered");
+  const popular = menu?.filter((item) => item.category === "popular");
+  const salad = menu?.filter((item) => item.category === "salad");
+  const dessert = menu?.filter((item) => item.category === "dessert");
+  const soup = menu?.filter((item) => item.category === "soup");
+  const drinks = menu?.filter((item) => item.category === "drinks");
+
   return (
     <div className="">
       <Helmet>
@@ -30,15 +39,17 @@ const OurShop = () => {
             onSelect={(index) => setTabIndex(index)}
           >
             <TabList>
+              <Tab>Offered</Tab>
               <Tab>Popular</Tab>
-              <Tab>Offer</Tab>
               <Tab>Salad</Tab>
               <Tab>Pizza</Tab>
               <Tab>Desserts</Tab>
               <Tab>Soups</Tab>
               <Tab>Drinks</Tab>
             </TabList>
-            <TabPanel>Popular Items</TabPanel>
+            <TabPanel>
+              
+            </TabPanel>
             <TabPanel>Offered Items</TabPanel>
             <TabPanel>Salad Items</TabPanel>
             <TabPanel>Pizza Items</TabPanel>
