@@ -1,6 +1,4 @@
-import { useState } from "react"
 import SectionHeading from "../Shared/SectionHeading/SectionHeading"
-import { useEffect } from "react"
 import ItemCard from "../Shared/ItemCard/ItemCard"
 import useMenu from "../../hooks/useMenu"
 
