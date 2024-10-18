@@ -14,7 +14,7 @@ const OurShop = () => {
     "popular",
     "salad",
     "pizza",
-    "desserts",
+    "dessert",
     "soups",
     "drinks",
   ]
@@ -29,7 +29,7 @@ const OurShop = () => {
   const soup = menu?.filter((item) => item.category === "soup");
   const drinks = menu?.filter((item) => item.category === "drinks");
   const pizza = menu?.filter((item) => item.category === "pizza");
-  console.log(tabIndex);
+  console.log(initialIndex);
 
   return (
     <div className="">

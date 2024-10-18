@@ -3,6 +3,7 @@ import MenuItemCard from "../Shared/MenuItemCard/MenuItemCard";
 import MenuBtn from "../Shared/MenuBtn/MenuBtn";
 import useMenu from "../../hooks/useMenu";
 import ItemsLoading from "../Shared/ItemsLoading/ItemsLoading";
+import { Link } from "react-router-dom";
 
 const PopularPickles = () => {
   const [menu, loading] = useMenu();
@@ -22,7 +23,9 @@ const PopularPickles = () => {
         </div>
       )}
       {/* Menu button */}
+      <Link to="/our-shop/popular">
       <MenuBtn text="View full Menu" />
+      </Link>
     </section>
   );
 };
