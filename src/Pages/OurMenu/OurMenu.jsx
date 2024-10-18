@@ -35,7 +35,7 @@ const OurMenu = () => {
         <div className="w-11/12 mx-auto">
           <SectionHeading subTitle="Don't miss" title="TODAY'S OFFER" />
           {/* TODAY'S OFFER ITEMS */}
-          {loading ? <ItemsLoading /> : <MenuCategory items={offered} title={offered} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={offered} title={"offered"} />}
         </div>
 
         {/* DESSERTS CATEGORY */}
@@ -46,7 +46,7 @@ const OurMenu = () => {
         />
         {/* DESSERTS ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={dessert} title={dessert} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={dessert} title={"dessert"} />}
         </div>
 
         {/* PIZZA CATEGORY */}
@@ -57,7 +57,7 @@ const OurMenu = () => {
         />
         {/* PIZZA  ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={pizza} title={pizza} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={pizza} title={"pizza"} />}
         </div>
 
         {/* SALAD CATEGORY */}
@@ -68,7 +68,7 @@ const OurMenu = () => {
         />
         {/* SALAD  ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={salad} title={salad} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={salad} title={"salad"} />}
         </div>
 
         {/* SOUP CATEGORY */}
@@ -79,7 +79,7 @@ const OurMenu = () => {
         />
         {/* SOUP  ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={soup} title={soup} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={soup} title={"soup"} />}
         </div>
 
         {/* DRINKS CATEGORY */}
@@ -90,7 +90,7 @@ const OurMenu = () => {
         />
         {/* DRINKS  ITEMS */}
         <div className="w-11/12 mx-auto">
-          {loading ? <ItemsLoading /> : <MenuCategory items={drinks} title={drinks} />}
+          {loading ? <ItemsLoading /> : <MenuCategory items={drinks} title={"drinks"} />}
         </div>
       </section>
     </div>
