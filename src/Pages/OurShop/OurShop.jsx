@@ -6,15 +6,17 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "./tabsStyle.css";
 import useMenu from "../../hooks/useMenu";
+import ShopCategroy from "../../components/Shared/ShopCategroy/ShopCategroy";
 const OurShop = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const [menu] =useMenu()
+  const [menu] = useMenu();
   const offered = menu?.filter((item) => item.category === "offered");
   const popular = menu?.filter((item) => item.category === "popular");
   const salad = menu?.filter((item) => item.category === "salad");
   const dessert = menu?.filter((item) => item.category === "dessert");
   const soup = menu?.filter((item) => item.category === "soup");
   const drinks = menu?.filter((item) => item.category === "drinks");
+  const pizza = menu?.filter((item) => item.category === "pizza");
 
   return (
     <div className="">
@@ -48,14 +50,26 @@ const OurShop = () => {
               <Tab>Drinks</Tab>
             </TabList>
             <TabPanel>
-              
+              <ShopCategroy items={offered} />
             </TabPanel>
-            <TabPanel>Offered Items</TabPanel>
-            <TabPanel>Salad Items</TabPanel>
-            <TabPanel>Pizza Items</TabPanel>
-            <TabPanel>Desserts Items</TabPanel>
-            <TabPanel>Soups Items</TabPanel>
-            <TabPanel>Drinks Items</TabPanel>
+            <TabPanel>
+              <ShopCategroy items={popular}/>
+            </TabPanel>
+            <TabPanel>
+              <ShopCategroy items={salad}/>
+            </TabPanel>
+            <TabPanel>
+              <ShopCategroy items={pizza}/>
+            </TabPanel>
+            <TabPanel>
+              <ShopCategroy items={dessert}/>
+            </TabPanel>
+            <TabPanel>
+              <ShopCategroy items={soup}/>
+            </TabPanel>
+            <TabPanel>
+              <ShopCategroy items={drinks}/>
+            </TabPanel>
           </Tabs>
         </div>
       </div>
