@@ -49,6 +49,8 @@ const OurShop = () => {
               <Tab>Soups</Tab>
               <Tab>Drinks</Tab>
             </TabList>
+            <div className="w-11/12 my-5 mx-auto">
+            
             <TabPanel>
               <ShopCategroy items={offered} />
             </TabPanel>
@@ -70,6 +72,7 @@ const OurShop = () => {
             <TabPanel>
               <ShopCategroy items={drinks}/>
             </TabPanel>
+            </div>
           </Tabs>
         </div>
       </div>
