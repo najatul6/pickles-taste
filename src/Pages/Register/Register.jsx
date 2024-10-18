@@ -6,7 +6,7 @@ const Register = () => {
       <Helmet>
         <title>Register | Pickles Taste</title>
         
-        </Helmet> Register</div>
+        </Helmet>Register</div>
   )
 }
 
