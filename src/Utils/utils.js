@@ -17,7 +17,7 @@ export const NavMenu = [
   {
     id: "ue76rj4_46",
     name: "our shop",
-    link: "/our-shop",
+    link: "/our-shop/offered",
   },
   {
     id: "ue7rj4_44",
