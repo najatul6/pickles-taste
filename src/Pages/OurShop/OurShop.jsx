@@ -72,11 +72,12 @@ const OurShop = () => {
                 <ShopCategory items={popular} />
               </TabPanel>
               <TabPanel>
-              {loading ? <CardLoading /> : <ShopCategory items={offered} />}
-                <ShopCategory items={salad} />
+              {loading ? <CardLoading /> :                <ShopCategory items={salad} />
+            }
               </TabPanel>
               <TabPanel>
-              {loading ? <CardLoading /> : <ShopCategory items={offered} />}
+              {loading ? <CardLoading /> :                 <ShopCategory items={pizza} />
+}
               </TabPanel>
               <TabPanel>
               {loading ? <CardLoading /> :                 <ShopCategory items={dessert} />
