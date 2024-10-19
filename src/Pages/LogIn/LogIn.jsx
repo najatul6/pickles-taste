@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 const LogIn = () => {
+  const [isShow,setIsShow] =useState(false)
   return (
     <div>
       <Helmet>
@@ -20,7 +22,7 @@ const LogIn = () => {
                 className="p-2 mt-8 rounded-xl border"
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Enter Your Email"
               />
               <div className="relative">
                 <input
@@ -28,8 +30,11 @@ const LogIn = () => {
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Password"
+                  placeholder="Enter Your Password"
                 />
+                <button onClick={()=>setIsShow(!isShow)}>
+
+                </button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -47,7 +52,7 @@ const LogIn = () => {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  className="bi bi-eye-slash-fill absolute top-1/2 right-3 -z-1 -translate-y-1/2 cursor-pointer hidden"
+                  className="bi bi-eye-slash-fill absolute top-1/2 right-3 -z-1 -translate-y-1/2 cursor-pointer "
                   id="mama"
                   viewBox="0 0 16 16"
                 >
