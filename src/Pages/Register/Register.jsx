@@ -84,7 +84,7 @@ const Register = () => {
                 className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
                 type="submit"
               >
-                Login
+                Register Now
               </button>
             </form>
 
@@ -122,11 +122,6 @@ const Register = () => {
               </svg>
               Login with Google
             </button>
-
-            {/* Forgot Password  */}
-            <div className="mt-10 text-sm border-b border-gray-500 py-5 playfair tooltip">
-              Forget password?
-            </div>
 
           {/* Register Link  */}
             <div className="mt-4 text-sm flex justify-between items-center container-mr">
