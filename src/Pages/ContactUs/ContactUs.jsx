@@ -13,9 +13,17 @@ const ContactUs = () => {
     e.preventDefault();
     // Here you can add form submission logic, e.g., send data to a server.
     setIsSent(true);
+    // Get All inputs 
+    const formData=new FormData(e.target)
+    const name=formData.get('name')
+    const email=formData.get('email')
+    const phone=formData.get('phone')
+    const message=formData.get('message')
+    const fullInfo=[name,email, phone, message]
 
     // Optionally reset the button state after some time
     setTimeout(() => setIsSent(false), 3000);
+    console.log(fullInfo);
   };
   return (
     <section>
