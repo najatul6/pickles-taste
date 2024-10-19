@@ -68,28 +68,22 @@ const OurShop = () => {
                 {loading ? <CardLoading /> : <ShopCategory items={offered} />}
               </TabPanel>
               <TabPanel>
-              {loading ? <CardLoading /> : <ShopCategory items={offered} />}
-                <ShopCategory items={popular} />
+                {loading ? <CardLoading /> : <ShopCategory items={popular} />}
               </TabPanel>
               <TabPanel>
-              {loading ? <CardLoading /> :                <ShopCategory items={salad} />
-            }
+                {loading ? <CardLoading /> : <ShopCategory items={salad} />}
               </TabPanel>
               <TabPanel>
-              {loading ? <CardLoading /> :                 <ShopCategory items={pizza} />
-}
+                {loading ? <CardLoading /> : <ShopCategory items={pizza} />}
               </TabPanel>
               <TabPanel>
-              {loading ? <CardLoading /> :                 <ShopCategory items={dessert} />
-            }
+                {loading ? <CardLoading /> : <ShopCategory items={dessert} />}
               </TabPanel>
               <TabPanel>
-              {loading ? <CardLoading /> :                <ShopCategory items={soup} />
-            }
+                {loading ? <CardLoading /> : <ShopCategory items={soup} />}
               </TabPanel>
               <TabPanel>
-              {loading ? <CardLoading /> : <ShopCategory items={drinks} />}
-                
+                {loading ? <CardLoading /> : <ShopCategory items={drinks} />}
               </TabPanel>
             </div>
           </Tabs>
