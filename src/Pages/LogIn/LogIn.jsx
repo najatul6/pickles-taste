@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../../assets/banner/5.jfif"
+import { Link } from "react-router-dom";
 
 const LogIn = () => {
   const [isShow, setIsShow] = useState(true);
@@ -125,9 +126,11 @@ const LogIn = () => {
               <p className="mr-3 md:mr-0 ">
                 If you don&apos;t have an account..
               </p>
+              <Link to="/register">
               <button className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
                 Register
               </button>
+              </Link>
             </div>
           </div>
 
