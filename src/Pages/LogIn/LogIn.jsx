@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import bannerImg from "../../assets/banner/5.jfif"
 
 const LogIn = () => {
   const [isShow, setIsShow] = useState(true);
@@ -18,21 +19,28 @@ const LogIn = () => {
             </p>
 
             <form onSubmit="" className="flex flex-col gap-4">
+              {/* Email input field  */}
               <input
                 className="p-2 mt-8 rounded-xl border"
                 type="email"
                 name="email"
                 placeholder="Enter Your Email"
               />
+              {/* Password input  */}
               <div className="relative">
                 <input
                   className="p-2 rounded-xl border w-full"
-                  type={isShow?"password":"text"}
+                  type={isShow ? "password" : "text"}
                   name="password"
                   id="password"
                   placeholder="Enter Your Password"
                 />
-                <button type="button" onClick={() => setIsShow(!isShow)} className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer z-20 opacity-100">
+                {/* Eye Button  */}
+                <button
+                  type="button"
+                  onClick={() => setIsShow(!isShow)}
+                  className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer z-20 opacity-100"
+                >
                   {isShow ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +61,7 @@ const LogIn = () => {
                       height="16"
                       fill="currentColor"
                       className="bi bi-eye-slash-fill "
-                      id="mama"
+                      
                       viewBox="0 0 16 16"
                     >
                       <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"></path>
@@ -62,6 +70,8 @@ const LogIn = () => {
                   )}
                 </button>
               </div>
+
+              {/* Log In button  */}
               <button
                 className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
                 type="submit"
@@ -69,11 +79,15 @@ const LogIn = () => {
                 Login
               </button>
             </form>
+
+            {/* Or Text  */}
             <div className="mt-6  items-center text-gray-100">
               <hr className="border-gray-300" />
-              <p className="text-center text-sm">OR</p>
+              <p className="text-center text-sm my-2">OR</p>
               <hr className="border-gray-300" />
             </div>
+
+            {/* Google Button */}
             <button className="bg-white/10 border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
               <svg
                 className="mr-3"
@@ -100,10 +114,13 @@ const LogIn = () => {
               </svg>
               Login with Google
             </button>
+
+            {/* Forgot Password  */}
             <div className="mt-10 text-sm border-b border-gray-500 py-5 playfair tooltip">
               Forget password?
             </div>
 
+          {/* Register Link  */}
             <div className="mt-4 text-sm flex justify-between items-center container-mr">
               <p className="mr-3 md:mr-0 ">
                 If you don&apos;t have an account..
@@ -113,10 +130,12 @@ const LogIn = () => {
               </button>
             </div>
           </div>
+
+          {/* Banner  */}
           <div className="md:block hidden w-1/2">
             <img
-              className="rounded-2xl max-h-[1600px]"
-              src="https://images.unsplash.com/photo-1552010099-5dc86fcfaa38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxmcmVzaHxlbnwwfDF8fHwxNzEyMTU4MDk0fDA&ixlib=rb-4.0.3&q=80&w=1080"
+              className="rounded-2xl min-h-[500px]"
+              src={bannerImg}
               alt="login form image"
             />
           </div>
