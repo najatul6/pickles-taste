@@ -31,15 +31,24 @@ const LogIn = () => {
               className="flex flex-col gap-4"
             >
               {/* Email input field  */}
-              <div>
+              <div className="w-full">
                 <input
-                  className="p-2 mt-8 rounded-xl border"
-                  {...register("email", { required: true })}
+                  className="p-2 mt-8 rounded-xl border w-full"
+                  type="email"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: "Enter a valid email address",
+                    },
+                  })}
                   aria-invalid={errors.email ? "true" : "false"}
                   placeholder="Enter Your Email"
                 />
-                {errors.email?.type === "required" && (
-                  <p role="alert">Email is required</p>
+                {errors.email && (
+                  <p role="alert" className="text-red-500 text-sm">
+                    {errors.email.message}
+                  </p>
                 )}
               </div>
               {/* Password input  */}
@@ -49,7 +58,13 @@ const LogIn = () => {
                     className="p-2 rounded-xl border w-full"
                     type={isShow ? "password" : "text"}
                     name="password"
-                    {...register("password", { required: true })}
+                    {...register("password", {
+                      required: "Password is required",
+                      minLength: {
+                        value: 6,
+                        message: "Password must be at least 6 characters long",
+                      },
+                    })}
                     aria-invalid={errors.password ? "true" : "false"}
                     placeholder="Enter Your Password"
                   />
@@ -87,8 +102,10 @@ const LogIn = () => {
                     )}
                   </button>
                 </div>
-                {errors.password?.type === "required" && (
-                  <p role="alert">Password is required</p>
+                {errors.password && (
+                  <p role="alert" className="text-red-500 text-sm">
+                    {errors.password.message}
+                  </p>
                 )}
               </div>
 
