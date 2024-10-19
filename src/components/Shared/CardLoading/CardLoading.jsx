@@ -5,7 +5,7 @@ const CardLoading = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/*  Display a loading skeleton for the list  */}
         {[...Array(4)].map((_, index) => (
-          <div key={index} className="relative bg-white  shadow-xl ring-1 ring-gray-900/5 rounded-lg rounded-b-3xl">
+          <div key={index} className="relative bg-white  shadow-xl ring-1 ring-gray-900/5  rounded-b-3xl">
           <div className=" animate-pulse">
             <div className="flex items-center justify-center h-48 w-full bg-gray-300 dark:bg-gray-700">
               <svg
