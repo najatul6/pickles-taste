@@ -7,11 +7,11 @@ const LogIn = () => {
         <title>Log In | Pickles Taste </title>
       </Helmet>
 
-      <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
-        <div className="bg-[#dfa674] rounded-2xl flex max-w-3xl p-5 items-center">
-          <div className="md:w-1/2 px-8">
-            <h2 className="font-bold text-3xl text-[#002D74]">Login</h2>
-            <p className="text-sm mt-4 text-[#002D74]">
+      <section className=" min-h-screen flex box-border justify-center items-center p-2">
+        <div className="bg-white/5 rounded-2xl flex max-w-3xl py-5 md:p-5 items-center text-white">
+          <div className="md:w-1/2 p-5 md:px-8">
+            <h2 className="font-bold text-3xl ">Login</h2>
+            <p className="text-sm mt-4 ">
               If you already a member, easily log in now.
             </p>
 
@@ -67,7 +67,7 @@ const LogIn = () => {
               <p className="text-center text-sm">OR</p>
               <hr className="border-gray-300" />
             </div>
-            <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+            <button className="bg-white/10 border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
               <svg
                 className="mr-3"
                 xmlns="http://www.w3.org/2000/svg"
