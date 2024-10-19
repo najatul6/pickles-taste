@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const ItemCard = ({ item }) => {
   const { name, recipe, image, price } = item;
   return (
-    <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-full">
+    <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-3xl">
       <div className="relative">
         <img src={image} alt={name} className="w-full" />
         <p className="text-xl font-bold absolute top-2 right-0 z-10 bg-black/50 px-5 py-3 rounded-s-full">
