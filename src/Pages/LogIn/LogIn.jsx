@@ -57,7 +57,6 @@ const LogIn = () => {
                   <input
                     className="p-2 rounded-xl border w-full"
                     type={isShow ? "password" : "text"}
-                    name="password"
                     {...register("password", {
                       required: "Password is required",
                       minLength: {
