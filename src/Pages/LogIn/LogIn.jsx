@@ -11,7 +11,7 @@ const LogIn = () => {
       </Helmet>
 
       <section className=" min-h-screen flex box-border justify-center items-center p-2">
-        <div className="bg-white/5 rounded-2xl flex max-w-3xl py-5 md:p-5 items-center text-white">
+        <div className="bg-white/5 rounded-2xl flex lg:w-3/4 py-5 md:p-5 items-center text-white">
           <div className="md:w-1/2 p-5 md:px-8">
             <h2 className="font-bold text-3xl ">Login</h2>
             <p className="text-sm mt-4 ">
