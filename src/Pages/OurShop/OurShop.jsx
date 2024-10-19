@@ -8,8 +8,9 @@ import "./tabsStyle.css";
 import useMenu from "../../hooks/useMenu";
 import ShopCategory from "../../components/Shared/ShopCategory/ShopCategory";
 import { useParams } from "react-router-dom";
+import CardLoading from "../../components/Shared/cardLoading/CardLoading";
 const OurShop = () => {
-  const categories=[
+  const categories = [
     "offered",
     "popular",
     "salad",
@@ -17,11 +18,11 @@ const OurShop = () => {
     "dessert",
     "soups",
     "drinks",
-  ]
-  const {category}=useParams()
-  const initialIndex=categories.indexOf(category)
+  ];
+  const { category } = useParams();
+  const initialIndex = categories.indexOf(category);
   const [tabIndex, setTabIndex] = useState(initialIndex);
-  const [menu] = useMenu();
+  const [menu, loading] = useMenu();
   const offered = menu?.filter((item) => item.category === "offered");
   const popular = menu?.filter((item) => item.category === "popular");
   const salad = menu?.filter((item) => item.category === "salad");
@@ -64,25 +65,30 @@ const OurShop = () => {
             </TabList>
             <div className="w-11/12 my-5 mx-auto">
               <TabPanel>
-                <ShopCategory items={offered} />
+                {loading ? <CardLoading /> : <ShopCategory items={offered} />}
               </TabPanel>
               <TabPanel>
+              {loading ? <CardLoading /> : <ShopCategory items={offered} />}
                 <ShopCategory items={popular} />
               </TabPanel>
               <TabPanel>
+              {loading ? <CardLoading /> : <ShopCategory items={offered} />}
                 <ShopCategory items={salad} />
               </TabPanel>
               <TabPanel>
-                <ShopCategory items={pizza} />
+              {loading ? <CardLoading /> : <ShopCategory items={offered} />}
               </TabPanel>
               <TabPanel>
-                <ShopCategory items={dessert} />
+              {loading ? <CardLoading /> :                 <ShopCategory items={dessert} />
+            }
               </TabPanel>
               <TabPanel>
-                <ShopCategory items={soup} />
+              {loading ? <CardLoading /> :                <ShopCategory items={soup} />
+            }
               </TabPanel>
               <TabPanel>
-                <ShopCategory items={drinks} />
+              {loading ? <CardLoading /> : <ShopCategory items={drinks} />}
+                
               </TabPanel>
             </div>
           </Tabs>
