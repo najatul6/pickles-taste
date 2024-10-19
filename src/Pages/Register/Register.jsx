@@ -14,15 +14,22 @@ const Register = () => {
         <section className=" min-h-screen flex box-border justify-center items-center p-2">
         <div className="bg-white/5 rounded-2xl flex lg:w-3/4 py-5 md:p-5 items-center text-white">
           <div className="md:w-1/2 p-5 md:px-8">
-            <h2 className="font-bold text-3xl ">Login</h2>
+            <h2 className="font-bold text-3xl ">Register</h2>
             <p className="text-sm mt-4 ">
-              If you already a member, easily log in now.
+              Welcome to Pickles Taste, easily Register now.
             </p>
 
             <form onSubmit="" className="flex flex-col gap-4">
-              {/* Email input field  */}
+              {/* Name input field  */}
               <input
                 className="p-2 mt-8 rounded-xl border"
+                type="text"
+                name="name"
+                placeholder="Enter Your Name"
+              />
+              {/* Email input field  */}
+              <input
+                className="p-2 rounded-xl border"
                 type="email"
                 name="email"
                 placeholder="Enter Your Email"
