@@ -4,6 +4,7 @@ import bannerImg from "../../assets/banner/5.jfif";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const LogIn = () => {
   const {
@@ -13,16 +14,35 @@ const LogIn = () => {
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const {logIn}=useContext(AuthContext)
-  const onSubmit = (data) => {
-    logIn(data.email, data.password)
-    .then(result=>{
-      const user =result.user;
-      console.log(user);
-    })
-    .catch(err =>{
-      console.log(err);
-      alert("Invalid email or password")
-    })
+  const onSubmit = async(data) => {
+    
+    // Show a processing toast message
+    const processingToast = toast.loading("Processing...");
+    try {
+      // Attempt to log in the user
+      const result = await logIn(data.email, data.password);
+  
+      // If login is successful, show a success message
+      toast.update(processingToast, {
+        render: "Successfully logged in!",
+        type: "success",
+        isLoading: false,
+        autoClose: 1500,
+        closeButton: true,
+      });
+      console.log("User:", result.user);
+    } catch (error) {
+      // Show an error message if login fails
+      toast.update(processingToast, {
+        render: "Invalid email or password",
+        type: "error",
+        isLoading: false,
+        autoClose: 1500,
+        closeButton: true,
+      });
+      console.error(error);
+    }
+    
   }
 
   return (
