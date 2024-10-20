@@ -15,9 +15,9 @@ const LogIn = () => {
   const [isShow, setIsShow] = useState(true);
   const {logIn}=useContext(AuthContext)
   const onSubmit = async(data) => {
-    
+
     // Show a processing toast message
-    const processingToast = toast.loading("Processing...");
+    const processingToast = toast.loading("Checking User Data...");
     try {
       // Attempt to log in the user
       const result = await logIn(data.email, data.password);
