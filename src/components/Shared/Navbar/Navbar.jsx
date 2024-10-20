@@ -7,15 +7,16 @@ import ResponsiveMenu from "../../ResponsiveMenu/ResponsiveMenu";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import ProfileMenu from "./ProfileMenu";
-
+import { motion } from "framer-motion";
 const Navbar = () => {
-  const { user,logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const variants = {
+    openMenu: { opacity: 1, x: 0 } ,
+    closedMenu: { opacity: 0, x: "100%" },
   };
+
   const positionMenu = {
     position: "absolute",
     top: 0,
@@ -26,7 +27,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className="container relative flex justify-between items-center py-2 bg-gradient-back backdrop-blur">
+        <div className="container relative flex justify-between items-center py-2 bg-gradient-back backdrop-blur-sm">
           {/* Mobile hamburger Menu Section  */}
           <div className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
@@ -84,7 +85,7 @@ const Navbar = () => {
                         height="24px"
                         className="cursor-pointer fill-brand-color"
                         viewBox="0 0 512 512"
-                        onClick={handleToggle}
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
                       >
                         <path
                           d="M437.02 74.981C388.667 26.629 324.38 0 256 0S123.333 26.629 74.98 74.981C26.629 123.333 0 187.62 0 256s26.629 132.667 74.98 181.019C123.333 485.371 187.62 512 256 512s132.667-26.629 181.02-74.981C485.371 388.667 512 324.38 512 256s-26.629-132.667-74.98-181.019zM256 482c-66.869 0-127.037-29.202-168.452-75.511C113.223 338.422 178.948 290 256 290c-49.706 0-90-40.294-90-90s40.294-90 90-90 90 40.294 90 90-40.294 90-90 90c77.052 0 142.777 48.422 168.452 116.489C383.037 452.798 322.869 482 256 482z"
@@ -93,7 +94,17 @@ const Navbar = () => {
                       </svg>
                     )}
 
-                    {isMenuOpen && <ProfileMenu user={user} logOut={logOut} />}
+                    {isMenuOpen && (
+                      <motion.div
+                      initial="closedMenu"
+                        animate={isMenuOpen ? "openMenu" : "closedMenu"}
+                        variants={variants}
+                        transition={{ duration: 0.5 }}
+                      >
+                        {" "}
+                        <ProfileMenu user={user} logOut={logOut} />
+                      </motion.div>
+                    )}
                   </li>
                 </ul>
               </div>

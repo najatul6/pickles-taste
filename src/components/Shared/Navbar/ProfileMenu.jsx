@@ -4,6 +4,7 @@ import { TbCircleCheckFilled } from "react-icons/tb";
 import { toast } from "react-toastify";
 
 const ProfileMenu = ({ user, logOut }) => {
+    
   const handleLogOUt = async () => {
     // Show a processing toast message
     const processingToast = toast.loading("Logging Out...");
@@ -31,7 +32,7 @@ const ProfileMenu = ({ user, logOut }) => {
     }
   };
   return (
-    <div className="bg-darkness/90 z-[999] rounded-xl shadow-inner shadow-white/25 py-6 px-6 text-white sm:min-w-[320px] max-sm:min-w-[250px] absolute right-0 top-10">
+    <div  className="bg-darkness/95 z-[999] rounded-xl shadow-inner shadow-white/25 py-6 px-6 text-white sm:min-w-[320px] max-sm:min-w-[250px] absolute right-0 top-10">
      <div className="mb-5">
      <h6 className="font-semibold text-xl">{user?.displayName ? `${user?.displayName}`:"Author"}</h6>
       <p className="text-sm text-white/50 flex gap-2 justify-start items-center">
@@ -73,7 +74,7 @@ const ProfileMenu = ({ user, logOut }) => {
 };
 ProfileMenu.propTypes={
     user:PropTypes.object,
-    logOut:PropTypes.func.isRequired
+    logOut:PropTypes.func.isRequired,
 
 }
 
