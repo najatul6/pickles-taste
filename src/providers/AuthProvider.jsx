@@ -1,15 +1,44 @@
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import { app } from "../Firebase/firebase.config";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  //   Create User With Email and Password
+  const createUser = (email, password) => {
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  //   Sign In With Email and Password
+  const logIn = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+  //   Sign Out
+  const logOut = () => {
+    return signOut(auth);
+  };
+  //   Reset Password
+  const resetPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
+  //   Check User
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth,currentUser => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
@@ -18,8 +47,12 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
   const authInfo = {
-    loading,
     user,
+    loading,
+    createUser,
+    logIn,
+    resetPassword,
+    logOut,
   };
   console.log("user:", user);
   return (
