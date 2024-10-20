@@ -71,7 +71,7 @@ const Navbar = () => {
             {user ? (
               <div className="flex items-center max-sm:ml-auto space-x-6">
                 <ul>
-                  <li className="relative px-1 after:absolute after:bg-black after:w-full after:h-[2px] after:block after:top-8 after:left-0 after:transition-all after:duration-300">
+                  <li className="relative px-1 after:absolute  after:w-full after:h-[2px] after:block after:top-8 after:left-0 after:transition-all after:duration-300">
                     {user?.photoURL ? (
                       <img
                         src={user?.photoURL}
@@ -82,7 +82,7 @@ const Navbar = () => {
                         xmlns="http://www.w3.org/2000/svg"
                         width="24px"
                         height="24px"
-                        className="cursor-pointer hover:fill-black"
+                        className="cursor-pointer fill-brand-color"
                         viewBox="0 0 512 512"
                         onClick={handleToggle}
                       >

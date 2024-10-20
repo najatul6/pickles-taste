@@ -31,11 +31,13 @@ const ProfileMenu = ({ user, logOut }) => {
     }
   };
   return (
-    <div className="bg-darkness z-[999] rounded-xl shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] absolute right-0 top-10">
-      <h6 className="font-semibold text-[15px]">{`user?.displayName? ${user?.displayName}:"Author"`}</h6>
-      <p className="text-sm text-gray-500 mt-1">
-        {user?.email} {user?.emailVerified?<TbCircleCheckFilled />:<IoIosCloseCircle /> }
+    <div className="bg-darkness/90 z-[999] rounded-xl shadow-inner shadow-white/25 py-6 px-6 text-white sm:min-w-[320px] max-sm:min-w-[250px] absolute right-0 top-10">
+     <div className="mb-5">
+     <h6 className="font-semibold text-xl">{user?.displayName ? `${user?.displayName}`:"Author"}</h6>
+      <p className="text-sm text-white/50 flex gap-2 justify-start items-center">
+        {user?.email} {user?.emailVerified?<TbCircleCheckFilled className="text-green-600" />:<IoIosCloseCircle className="text-red-600" /> }
       </p>
+     </div>
 
       {/* <ul className="space-y-1.5">
         <li>
@@ -62,7 +64,7 @@ const ProfileMenu = ({ user, logOut }) => {
       <button
         onClick={handleLogOUt}
         type="button"
-        className="bg-transparent border-2 border-gray-300 hover:border-black rounded px-4 py-2.5 mt-4 text-sm text-black font-semibold"
+        className="md:block font-semibold mt-5 text-white border-2 rounded-md border-white px-6 py-2 duration-200 hover:bg-brand-color hover:text-white w-full"
       >
         Log Out
       </button>
