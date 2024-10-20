@@ -13,15 +13,14 @@ const LogIn = () => {
     handleSubmit,
   } = useForm();
   const [isShow, setIsShow] = useState(true);
-  const {logIn}=useContext(AuthContext)
-  const onSubmit = async(data) => {
-
+  const { logIn, signInUserWithGoogle } = useContext(AuthContext);
+  const onSubmit = async (data) => {
     // Show a processing toast message
     const processingToast = toast.loading("Checking User Data...");
     try {
       // Attempt to log in the user
       const result = await logIn(data.email, data.password);
-  
+
       // If login is successful, show a success message
       toast.update(processingToast, {
         render: "Successfully logged in!",
@@ -37,13 +36,43 @@ const LogIn = () => {
         render: "Invalid email or password",
         type: "error",
         isLoading: false,
-        autoClose: 1500,
+        autoClose: 3000,
         closeButton: true,
       });
       console.error(error);
     }
-    
-  }
+  };
+
+  // Sign In With Google
+  const handleGoogleSignIn = async () => {
+    // Show a processing toast message
+    const processingToast = toast.loading("Checking User Data...");
+
+    try {
+      // Attempt to sign in the user with Google
+      const result = await signInUserWithGoogle();
+
+      // If login is successful, show a success message
+      toast.update(processingToast, {
+        render: "Successfully logged in!",
+        type: "success",
+        isLoading: false,
+        autoClose: 1500,
+        closeButton: true,
+      });
+      console.log("User:", result.user);
+    } catch (error) {
+      // Show an error message if login fails
+      toast.update(processingToast, {
+        render: "Failed to log in with Google",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+        closeButton: true,
+      });
+      console.error(error);
+    }
+  };
 
   return (
     <div>
@@ -158,7 +187,10 @@ const LogIn = () => {
             </div>
 
             {/* Google Button */}
-            <button className="bg-white/10 border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+            <button
+              onClick={handleGoogleSignIn}
+              className="bg-white/10 border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium"
+            >
               <svg
                 className="mr-3"
                 xmlns="http://www.w3.org/2000/svg"

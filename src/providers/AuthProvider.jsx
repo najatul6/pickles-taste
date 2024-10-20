@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
   };
 
   //  Sign In With Google Account
-  const createUserWithGoogle = () => {
+  const signInUserWithGoogle = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
-  
+
   //   Reset Password
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
@@ -63,7 +63,7 @@ const AuthProvider = ({ children }) => {
     loading,
     createUser,
     logIn,
-    createUserWithGoogle,
+    signInUserWithGoogle,
     logOut,
     resetPassword,
   };
