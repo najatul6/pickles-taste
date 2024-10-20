@@ -92,19 +92,6 @@ const LogIn = () => {
               onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col gap-4"
             >
-              {/* Name input field  */}
-              <div className="w-full">
-                <input
-                  className="p-2 mt-8 rounded-xl border w-full"
-                  type="text"
-                  {...register("Name", { required: true })}
-                  aria-invalid={errors.Name ? "true" : "false"}
-                  placeholder="Enter Your Full Name"
-                />
-                {errors.firstName?.type === "required" && (
-                  <p role="alert">First name is required</p>
-                )}
-              </div>
               {/* Email input field  */}
               <div className="w-full">
                 <input
