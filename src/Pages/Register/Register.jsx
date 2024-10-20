@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async"
 import bannerImg from "../../assets/banner/4.jfif"
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -22,6 +22,7 @@ const Register = () => {
       const result = await createUser(data.email, data.password);
 
       // If login is successful, show a success message
+      <Navigate to="/"/>
       toast.update(processingToast, {
         render: "Account Created Successfully!",
         type: "success",
