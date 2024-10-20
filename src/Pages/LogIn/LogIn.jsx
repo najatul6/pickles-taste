@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../../assets/banner/5.jfif";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
@@ -14,6 +14,11 @@ const LogIn = () => {
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const { logIn, signInUserWithGoogle } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // The path to redirect to after login, defaults to the home page if none is specified
+  const from = location.state?.from?.pathname || "/";
   const onSubmit = async (data) => {
     // Show a processing toast message
     const processingToast = toast.loading("Checking User Data...");
@@ -22,6 +27,7 @@ const LogIn = () => {
       const result = await logIn(data.email, data.password);
 
       // If login is successful, show a success message
+      navigate(from, { replace: true });
       toast.update(processingToast, {
         render: "Successfully logged in!",
         type: "success",

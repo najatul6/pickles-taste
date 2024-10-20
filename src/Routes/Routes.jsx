@@ -8,6 +8,7 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import OurShop from "../Pages/OurShop/OurShop";
 import LogIn from "../Pages/LogIn/LogIn";
 import Register from "../Pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const Routes = createBrowserRouter([
       { path: "/", element: <Home /> },
       {
         path: "/dashboard",
-        element: <DashBoard />,
+        element:<PrivateRoute> <DashBoard /></PrivateRoute>,
       },
       {
         path: "/our-menu",
