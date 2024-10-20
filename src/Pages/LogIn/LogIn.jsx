@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../../assets/banner/5.jfif";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const LogIn = () => {
   const {
@@ -11,8 +12,19 @@ const LogIn = () => {
     handleSubmit,
   } = useForm();
   const [isShow, setIsShow] = useState(true);
-  const onSubmit = (data) => console.log(data);
-  
+  const {logIn}=useContext(AuthContext)
+  const onSubmit = (data) => {
+    logIn(data.email, data.password)
+    .then(result=>{
+      const user =result.user;
+      console.log(user);
+    })
+    .catch(err =>{
+      console.log(err);
+      alert("Invalid email or password")
+    })
+  }
+
   return (
     <div>
       <Helmet>
