@@ -6,6 +6,7 @@ import { NavMenu } from "../../../Utils/utils";
 import ResponsiveMenu from "../../ResponsiveMenu/ResponsiveMenu";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import ProfileMenu from "./ProfileMenu";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
@@ -85,107 +86,12 @@ const Navbar = () => {
                       />
                     </svg>
                     {isMenuOpen && (
-                      <div className="bg-darkness z-[999] shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] absolute right-0 top-10">
-                        <h6 className="font-semibold text-[15px]">Welcome</h6>
-                        <p className="text-sm text-gray-500 mt-1">
-                          To access account and manage orders
-                        </p>
-                        <button
-                          type="button"
-                          className="bg-transparent border-2 border-gray-300 hover:border-black rounded px-4 py-2.5 mt-4 text-sm text-black font-semibold"
-                        >
-                          LOGIN / SIGNUP
-                        </button>
-                        <hr className="border-b-0 my-4" />
-                        <ul className="space-y-1.5">
-                          <li>
-                            <a
-                              href="#"
-                              className="text-sm text-gray-500 hover:text-black"
-                            >
-                              Order
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="text-sm text-gray-500 hover:text-black"
-                            >
-                              Wishlist
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="text-sm text-gray-500 hover:text-black"
-                            >
-                              Gift Cards
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="text-sm text-gray-500 hover:text-black"
-                            >
-                              Contact Us
-                            </a>
-                          </li>
-                        </ul>
-                        <hr className="border-b-0 my-4" />
-                        <ul className="space-y-1.5">
-                          <li>
-                            <a
-                              href="#"
-                              className="text-sm text-gray-500 hover:text-black"
-                            >
-                              Coupons
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="text-sm text-gray-500 hover:text-black"
-                            >
-                              Saved Credits
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="text-sm text-gray-500 hover:text-black"
-                            >
-                              Contact Us
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="text-sm text-gray-500 hover:text-black"
-                            >
-                              Saved Addresses
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
+                      <ProfileMenu/>
                     )}
                   </li>
                 </ul>
 
-                {/* Toggle Button for smaller screens */}
-                <button onClick={handleToggle} className="lg:hidden ml-7">
-                  <svg
-                    className="w-7 h-7"
-                    fill="#000"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
+               
               </div>
             ) : (
               <Link to="/login">
