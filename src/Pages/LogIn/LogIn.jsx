@@ -10,7 +10,7 @@ const LogIn = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
+    handleSubmit,reset
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const { logIn, signInUserWithGoogle } = useContext(AuthContext);
@@ -27,6 +27,7 @@ const LogIn = () => {
       const result = await logIn(data.email, data.password);
 
       // If login is successful, show a success message
+      reset();
       navigate(from, { replace: true });
       toast.update(processingToast, {
         render: "Successfully logged in!",

@@ -10,7 +10,7 @@ const Register = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
+    handleSubmit,reset 
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const {createUser,signInUserWithGoogle}=useContext(AuthContext)
@@ -22,6 +22,7 @@ const Register = () => {
       const result = await createUser(data.email, data.password);
 
       // If login is successful, show a success message
+      reset();
       <Navigate to="/"/>
       toast.update(processingToast, {
         render: "Account Created Successfully!",
