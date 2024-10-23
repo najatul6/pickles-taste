@@ -23,7 +23,7 @@ const Register = () => {
 
       // If login is successful, show a success message
       reset();
-      <Navigate to="/"/>
+      <Navigate to="/"></Navigate>
       toast.update(processingToast, {
         render: "Account Created Successfully!",
         type: "success",
@@ -31,6 +31,7 @@ const Register = () => {
         autoClose: 1500,
         closeButton: true,
       });
+      <Navigate to="/" replace={true}/>
       console.log("User:", result.user);
     } catch (error) {
       // Show an error message if login fails
