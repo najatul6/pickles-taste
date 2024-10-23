@@ -21,7 +21,7 @@ const Register = () => {
     const processingToast = toast.loading("Creating Data...");
     try {
       // Attempt to log in the user
-      const result = await createUser(data.email, data.password);
+      const result = await createUser(data.email, data.password)
       // Update Profile 
       await updateUserProfile(data.name, data.photoURL);
       // If login is successful, show a success message
