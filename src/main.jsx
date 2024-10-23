@@ -15,11 +15,6 @@ createRoot(document.getElementById("root")).render(
         <div className="max-w-screen-7xl mx-auto">
           <ToastContainer
             position="top-center"
-            autoClose={1500}
-            closeOnClick
-            pauseOnFocusLoss
-            pauseOnHover
-            theme="dark"
             transition={Bounce}
           />
           <RouterProvider router={Routes} />
