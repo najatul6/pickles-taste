@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { Helmet } from "react-helmet-async"
-import bannerImg from "../../assets/banner/4.jfif"
+import { Helmet } from "react-helmet-async";
+import bannerImg from "../../assets/banner/4.jfif";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -10,10 +10,12 @@ const Register = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,reset 
+    handleSubmit,
+    reset,
   } = useForm();
   const [isShow, setIsShow] = useState(true);
-  const {createUser,signInUserWithGoogle}=useContext(AuthContext)
+  const [redirect, setRedirect] = useState(false);
+  const { createUser, signInUserWithGoogle } = useContext(AuthContext);
   const onSubmit = async (data) => {
     // Show a processing toast message
     const processingToast = toast.loading("Creating Data...");
@@ -30,7 +32,10 @@ const Register = () => {
         autoClose: 1500,
         closeButton: true,
       });
-      <Navigate to="/" replace={true}/>
+
+      // Set redirect to true to trigger navigation
+      setRedirect(true);
+
       console.log("User:", result.user);
     } catch (error) {
       // Show an error message if login fails
@@ -62,6 +67,9 @@ const Register = () => {
         autoClose: 1500,
         closeButton: true,
       });
+      // Set redirect to true to trigger navigation
+      setRedirect(true);
+
       console.log("User:", result.user);
     } catch (error) {
       // Show an error message if login fails
@@ -75,14 +83,17 @@ const Register = () => {
       console.error(error);
     }
   };
+  if (redirect) {
+    // Conditionally navigate when redirect is true
+    return <Navigate to="/" replace={true} />;
+  }
 
   return (
     <div>
       <Helmet>
         <title>Register | Pickles Taste</title>
-        
-        </Helmet>
-        <section className=" min-h-screen flex box-border justify-center items-center p-2">
+      </Helmet>
+      <section className=" min-h-screen flex box-border justify-center items-center p-2">
         <div className="bg-white/5 rounded-2xl flex lg:w-3/4 py-5 md:p-5 items-center text-white">
           <div className="md:w-1/2 p-5 md:px-8">
             <h2 className="font-bold text-3xl ">Register</h2>
@@ -90,7 +101,10 @@ const Register = () => {
               Welcome to Pickles Taste, easily Register now.
             </p>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="flex flex-col gap-4"
+            >
               {/* Name input field  */}
               <input
                 className="p-2 mt-8 rounded-xl border"
@@ -193,7 +207,10 @@ const Register = () => {
             </div>
 
             {/* Google Button */}
-            <button onClick={handleGoogleSignIn} className="bg-white/10 border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+            <button
+              onClick={handleGoogleSignIn}
+              className="bg-white/10 border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium"
+            >
               <svg
                 className="mr-3"
                 xmlns="http://www.w3.org/2000/svg"
@@ -220,15 +237,13 @@ const Register = () => {
               Login with Google
             </button>
 
-          {/* Register Link  */}
+            {/* Register Link  */}
             <div className="mt-4 text-sm flex justify-between items-center container-mr">
-              <p className="mr-3 md:mr-0 ">
-                Already have an account..
-              </p>
+              <p className="mr-3 md:mr-0 ">Already have an account..</p>
               <Link to="/login">
-              <button className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
-                Log In
-              </button>
+                <button className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
+                  Log In
+                </button>
               </Link>
             </div>
           </div>
@@ -243,8 +258,8 @@ const Register = () => {
           </div>
         </div>
       </section>
-        </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Register
+export default Register;
