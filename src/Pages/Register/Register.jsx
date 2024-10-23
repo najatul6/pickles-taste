@@ -37,7 +37,7 @@ const Register = () => {
       // Set redirect to true to trigger navigation
       setRedirect(true);
 
-      // console.log("User:", result.user);up
+      // console.log("User:", result.user);
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
