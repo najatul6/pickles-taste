@@ -23,7 +23,6 @@ const Register = () => {
 
       // If login is successful, show a success message
       reset();
-      <Navigate to="/"></Navigate>
       toast.update(processingToast, {
         render: "Account Created Successfully!",
         type: "success",
@@ -102,7 +101,7 @@ const Register = () => {
               {/* Email input field  */}
               <div className="w-full">
                 <input
-                  className="p-2 mt-8 rounded-xl border w-full"
+                  className="p-2 rounded-xl border w-full"
                   type="email"
                   {...register("email", {
                     required: "Email is required",
