@@ -15,14 +15,15 @@ const Register = () => {
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const [redirect, setRedirect] = useState(false);
-  const { createUser, signInUserWithGoogle } = useContext(AuthContext);
+  const { createUser, signInUserWithGoogle,updateUserProfile } = useContext(AuthContext);
   const onSubmit = async (data) => {
     // Show a processing toast message
     const processingToast = toast.loading("Creating Data...");
     try {
       // Attempt to log in the user
       const result = await createUser(data.email, data.password);
-
+      // Update Profile 
+      await updateUserProfile(data.name, data.photoURL);
       // If login is successful, show a success message
       reset();
       toast.update(processingToast, {
