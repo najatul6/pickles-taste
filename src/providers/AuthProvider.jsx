@@ -10,6 +10,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 export const AuthContext = createContext(null);
@@ -36,6 +37,13 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+
+  // Update User Profile
+  const updateUserProfile=(name,photo)=>{
+    return updateProfile(auth.currentUser, {
+      displayName: name, photoURL: photo
+    })
+  }
 
   //   Sign Out
   const logOut = () => {
