@@ -58,7 +58,7 @@ const LogIn = () => {
     try {
       // Attempt to sign in the user with Google
       const result = await signInUserWithGoogle();
-
+      navigate(from, { replace: true });
       // If login is successful, show a success message
       toast.update(processingToast, {
         render: "Successfully logged in!",
