@@ -8,10 +8,12 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import ProfileMenu from "./ProfileMenu";
 import { motion } from "framer-motion";
+import useOrders from "../../../hooks/useOrders";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [orders]=useOrders()
   const variants = {
     openMenu: { opacity: 1, x: 0 } ,
     closedMenu: { opacity: 0, x: "100%" },
@@ -27,7 +29,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className="container relative flex justify-between items-center py-2 bg-gradient-back backdrop-blur-sm">
+        <div className="container relative flex justify-between items-center py-2  backdrop-blur-sm">
           {/* Mobile hamburger Menu Section  */}
           <div className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
@@ -65,14 +67,15 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <button className="text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200">
+            <button className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group">
               <PiShoppingCartThin />
+              <p className="absolute top-0  -left-10 text-base group-hover:border-0 group-hover:bg-brand-color border text-white rounded-full px-2 py-1">+ {orders?.length}</p>
             </button>
             {/* User Button  */}
             {user ? (
               <div className="flex items-center max-sm:ml-auto space-x-6">
                 <ul>
-                  <li className="relative px-1 after:absolute  after:w-full after:h-[2px] after:block after:top-8 after:left-0 after:transition-all after:duration-300">
+                  <li className="relative px-1 after:absolute after:w-full after:h-[2px] after:block after:top-8 after:left-0 after:transition-all after:duration-300">
                     {user?.photoURL ? (
                       <img
                         src={user?.photoURL}
