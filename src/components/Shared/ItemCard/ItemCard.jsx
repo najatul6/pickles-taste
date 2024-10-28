@@ -18,7 +18,7 @@ const ItemCard = ({ item }) => {
       // send items to save data base
       const orderItem = {
         menuId: _id,
-        userEmail: user?.email
+        userEmail: user?.email,
         name,
         image,
         price,
