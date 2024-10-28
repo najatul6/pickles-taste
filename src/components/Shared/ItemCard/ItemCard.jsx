@@ -19,6 +19,7 @@ const ItemCard = ({ item }) => {
         image,
         price,
       }
+      
     } else {
       Swal.fire({
         title: "You Are Not Logged In!",
