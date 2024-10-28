@@ -2,13 +2,14 @@ import PropTypes from "prop-types";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
-import { axiosSecure } from "../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const ItemCard = ({ item }) => {
   const { name, recipe, image, price, _id } = item;
   const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
+  const axiosSecure =useAxiosSecure()
   const handleOrder = (food) => {
     // Add order to cart functionality here
     if (user && user?.email) {
