@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import {  useLocation, useNavigate } from "react-router-dom";
+import { axiosSecure } from "../../../hooks/useAxiosSecure";
 
 const ItemCard = ({ item }) => {
   const { name, recipe, image, price,_id } = item;
@@ -19,6 +20,8 @@ const ItemCard = ({ item }) => {
         image,
         price,
       }
+      axiosSecure.post('/orders',orderItem)
+      .then
 
     } else {
       Swal.fire({
