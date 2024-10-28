@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
-import { Navigate, useLocation } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 
 const ItemCard = ({ item }) => {
   const { name, recipe, image, price } = item;
   const { user } = useAuth();
   const location=useLocation()
+  const navigate =useNavigate()
   const handleOrder = (food) => {
     // Add order to cart functionality here
     if (user && user?.email) {
@@ -22,12 +23,12 @@ const ItemCard = ({ item }) => {
         confirmButtonText: "Log In",
       }).then((result) => {
         if (result.isConfirmed) {
-          <Navigate to="/login" state={{from:location}}/>
-          Swal.fire({
-            title: "Log in here!",
-            text: "Provide your data to go to log in!",
-            icon: "success",
-          });
+          navigate("/login", {state:{from:location}})
+          // Swal.fire({
+          //   title: "Log in here!",
+          //   text: "Provide your data to go to log in!",
+          //   icon: "success",
+          // });
         }
       });
     }
