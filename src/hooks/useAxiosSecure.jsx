@@ -4,9 +4,7 @@ export const axiosSecure=axios.create({
     baseURL:"http://localhost:5000"
 })
 const useAxiosSecure = () => {
-  return (
-    <div>useAxiosSecure</div>
-  )
+  return axiosSecure
 }
 
 export default useAxiosSecure
