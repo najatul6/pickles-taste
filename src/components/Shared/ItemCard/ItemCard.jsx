@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 const ItemCard = ({ item }) => {
   const { name, recipe, image, price } = item;
-  const handleOrder = (item) => {
+  const handleOrder = food => {
     // Add order to cart functionality here
-    console.log("Order added to cart",item);
+    console.log("Order added to cart",food);
   };
   return (
     <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-3xl">
@@ -18,7 +18,7 @@ const ItemCard = ({ item }) => {
         <h2 className="text-2xl font-bold">{name}</h2>
         <p className="font-light">{recipe}</p>
         <div className="flex justify-center items-center">
-          <button onClick={handleOrder(item)} className="text-white py-5 px-8 rounded-full bg-white/5 border-b-4 uppercase text-xl font-medium hover:bg-brand-color hover:border-white transition-colors duration-300 border-brand-color">
+          <button onClick={()=>handleOrder(item)} className="text-white py-5 px-8 rounded-full bg-white/5 border-b-4 uppercase text-xl font-medium hover:bg-brand-color hover:border-white transition-colors duration-300 border-brand-color">
             Buy Now
           </button>
         </div>
