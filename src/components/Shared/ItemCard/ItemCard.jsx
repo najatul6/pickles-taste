@@ -1,34 +1,34 @@
 import PropTypes from "prop-types";
 import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const ItemCard = ({ item }) => {
   const { name, recipe, image, price } = item;
-  const {user}=useAuth()
-  const handleOrder = food => {
+  const { user } = useAuth();
+  const handleOrder = (food) => {
     // Add order to cart functionality here
-    if(user && user?.email){
-
-    }
-    else{
+    if (user && user?.email) {
+      // TODO: send to server
+    } else {
       Swal.fire({
-        title: "Are you sure?",
+        title: "You Are Not Logged In!",
         text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire({
             title: "Deleted!",
             text: "Your file has been deleted.",
-            icon: "success"
+            icon: "success",
           });
         }
       });
     }
-    console.log("Order added to cart",food);
+    console.log("Order added to cart", food);
   };
   return (
     <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-3xl">
@@ -42,7 +42,10 @@ const ItemCard = ({ item }) => {
         <h2 className="text-2xl font-bold">{name}</h2>
         <p className="font-light">{recipe}</p>
         <div className="flex justify-center items-center">
-          <button onClick={()=>handleOrder(item)} className="text-white py-5 px-8 rounded-full bg-white/5 border-b-4 uppercase text-xl font-medium hover:bg-brand-color hover:border-white transition-colors duration-300 border-brand-color">
+          <button
+            onClick={() => handleOrder(item)}
+            className="text-white py-5 px-8 rounded-full bg-white/5 border-b-4 uppercase text-xl font-medium hover:bg-brand-color hover:border-white transition-colors duration-300 border-brand-color"
+          >
             Buy Now
           </button>
         </div>
