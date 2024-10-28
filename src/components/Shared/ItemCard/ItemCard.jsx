@@ -21,12 +21,11 @@ const ItemCard = ({ item }) => {
         price,
       };
       axiosSecure.post("/orders", orderItem).then((res) => {
-        console.log(res.data);
         if(res.data.acknowledged===true){
           Swal.fire({
             position: "top-center",
             icon: "success",
-            title: "Your work has been saved",
+            title: `${name} added to your cart`,
             showConfirmButton: false,
             timer: 1500
           });
@@ -52,7 +51,6 @@ const ItemCard = ({ item }) => {
         }
       });
     }
-    console.log("Order added to cart", food);
   };
   return (
     <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-3xl">
