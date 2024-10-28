@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import useAuth from "../../../hooks/useAuth";
 
 const ItemCard = ({ item }) => {
   const { name, recipe, image, price } = item;
+  const {user}=useAuth()
   const handleOrder = food => {
     // Add order to cart functionality here
     console.log("Order added to cart",food);
