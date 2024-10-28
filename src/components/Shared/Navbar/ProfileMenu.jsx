@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { IoIosCloseCircle } from "react-icons/io";
 import { TbCircleCheckFilled } from "react-icons/tb";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ProfileMenu = ({ user, logOut }) => {
@@ -34,9 +35,9 @@ const ProfileMenu = ({ user, logOut }) => {
   return (
     <div  className="bg-darkness/95 z-[999] rounded-xl shadow-inner shadow-white/25 py-6 px-6 text-white sm:min-w-[320px] max-sm:min-w-[250px] absolute right-0 top-10">
      <div className="mb-5">
-     <h6 className="font-semibold text-xl">{user?.displayName ? `${user?.displayName}`:"Author"}</h6>
+     <div className="font-semibold text-xl flex justify-between items-center"><h2>{user?.displayName ? `${user?.displayName}`:"Author"}</h2> <Link className="text-xs text-gray-300">View Profile</Link></div>
       <p className="text-sm text-white/50 flex gap-2 justify-start items-center">
-        {user?.email} {user?.emailVerified?<TbCircleCheckFilled className="text-green-600" />:<IoIosCloseCircle className="text-red-600" /> }
+        {user?.email} {user?.emailVerified?<p className="text-green-600 " >verified</p>:<p className="text-red-600" >un-verified</p> }
       </p>
      </div>
 
