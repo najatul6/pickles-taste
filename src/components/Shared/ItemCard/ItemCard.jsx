@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import {  useLocation, useNavigate } from "react-router-dom";
 
 const ItemCard = ({ item }) => {
-  const { name, recipe, image, price } = item;
+  const { name, recipe, image, price,_id } = item;
   const { user } = useAuth();
   const location=useLocation()
   const navigate =useNavigate()
@@ -12,6 +12,13 @@ const ItemCard = ({ item }) => {
     // Add order to cart functionality here
     if (user && user?.email) {
       // TODO: send to server
+      const orderItem={
+        menuId:_id,
+        userEmail:user?.email,
+        name,
+        image,
+        price,
+      }
     } else {
       Swal.fire({
         title: "You Are Not Logged In!",
@@ -64,6 +71,7 @@ ItemCard.propTypes = {
     recipe: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    _id:PropTypes.string.isRequired, 
   }).isRequired,
 };
 
