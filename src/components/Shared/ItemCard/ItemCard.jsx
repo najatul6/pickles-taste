@@ -22,6 +22,15 @@ const ItemCard = ({ item }) => {
       };
       axiosSecure.post("/orders", orderItem).then((res) => {
         console.log(res.data);
+        if(res.data.acknowledged===true){
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
       });
     } else {
       Swal.fire({
