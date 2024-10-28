@@ -1,30 +1,28 @@
 import PropTypes from "prop-types";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
-import {  useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { axiosSecure } from "../../../hooks/useAxiosSecure";
 
 const ItemCard = ({ item }) => {
-  const { name, recipe, image, price,_id } = item;
+  const { name, recipe, image, price, _id } = item;
   const { user } = useAuth();
-  const location=useLocation()
-  const navigate =useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleOrder = (food) => {
     // Add order to cart functionality here
     if (user && user?.email) {
       // TODO: send to server
-      const orderItem={
-        menuId:_id,
-        userEmail:user?.email,
+      const orderItem = {
+        menuId: _id,
+        userEmail: user?.email,
         name,
         image,
         price,
-      }
-      axiosSecure.post('/orders',orderItem)
-      .then(res=>{
+      };
+      axiosSecure.post("/orders", orderItem).then((res) => {
         console.log(res.data);
-      })
-
+      });
     } else {
       Swal.fire({
         title: "You Are Not Logged In!",
@@ -36,7 +34,7 @@ const ItemCard = ({ item }) => {
         confirmButtonText: "Log In",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/login", {state:{from:location}})
+          navigate("/login", { state: { from: location } });
           Swal.fire({
             title: "Log in here!",
             text: "Provide your data to go to log in!",
@@ -45,7 +43,7 @@ const ItemCard = ({ item }) => {
         }
       });
     }
-    console.log("Order added to cart", food)
+    console.log("Order added to cart", food);
   };
   return (
     <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-3xl">
@@ -77,7 +75,7 @@ ItemCard.propTypes = {
     recipe: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    _id:PropTypes.string.isRequired, 
+    _id: PropTypes.string.isRequired,
   }).isRequired,
 };
 
