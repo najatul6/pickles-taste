@@ -45,7 +45,7 @@ const ItemCard = ({ item }) => {
         }
       });
     }
-    console.log("Order added to cart", food);
+    console.log("Order added to cart", food)
   };
   return (
     <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-3xl">
