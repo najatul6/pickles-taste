@@ -21,7 +21,9 @@ const ItemCard = ({ item }) => {
         price,
       }
       axiosSecure.post('/orders',orderItem)
-      .then
+      .then(res=>{
+        console.log(res.data);
+      })
 
     } else {
       Swal.fire({
