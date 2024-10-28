@@ -51,6 +51,7 @@ const ItemCard = ({ item }) => {
         }
       });
     }
+    console.log(food);
   };
   return (
     <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-3xl">
@@ -83,7 +84,9 @@ ItemCard.propTypes = {
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     _id: PropTypes.string.isRequired,
-  }).isRequired,
+  })
+
+  
 };
 
 export default ItemCard;
