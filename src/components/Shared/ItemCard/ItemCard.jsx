@@ -10,12 +10,12 @@ const ItemCard = ({ item }) => {
   const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const axiosSecure =useAxiosSecure()
-  const [,refetch]=useOrders()
+  const axiosSecure = useAxiosSecure();
+  const [, refetch] = useOrders();
   const handleOrder = (food) => {
     // Add order to cart functionality here
     if (user && user?.email) {
-      // send items to save data base 
+      // send items to save data base
       const orderItem = {
         menuId: _id,
         userEmail: user?.email,
@@ -24,16 +24,16 @@ const ItemCard = ({ item }) => {
         price,
       };
       axiosSecure.post("/orders", orderItem).then((res) => {
-        if(res.data.acknowledged===true){
+        if (res.data.acknowledged === true) {
           Swal.fire({
             position: "top-center",
             icon: "success",
             title: `${name} added to your cart`,
             showConfirmButton: false,
-            timer: 1500
+            timer: 1500,
           });
           // update orders after order is placed
-          refetch() 
+          refetch();
         }
       });
     } else {
@@ -89,9 +89,7 @@ ItemCard.propTypes = {
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     _id: PropTypes.string.isRequired,
-  })
-
-  
+  }),
 };
 
 export default ItemCard;
