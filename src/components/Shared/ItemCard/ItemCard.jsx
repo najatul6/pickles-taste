@@ -6,6 +6,28 @@ const ItemCard = ({ item }) => {
   const {user}=useAuth()
   const handleOrder = food => {
     // Add order to cart functionality here
+    if(user && user?.email){
+
+    }
+    else{
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+        }
+      });
+    }
     console.log("Order added to cart",food);
   };
   return (
