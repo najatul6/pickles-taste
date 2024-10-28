@@ -1,6 +1,4 @@
 import PropTypes from "prop-types";
-import { IoIosCloseCircle } from "react-icons/io";
-import { TbCircleCheckFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
