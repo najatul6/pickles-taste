@@ -8,7 +8,7 @@ import "./tabsStyle.css";
 import useMenu from "../../hooks/useMenu";
 import ShopCategory from "../../components/Shared/ShopCategory/ShopCategory";
 import { useParams } from "react-router-dom";
-import CardLoading from "../../components/Shared/cardLoading/CardLoading";
+import CardsLoading from "../../components/Shared/CardsLoading/CardsLoading";
 const OurShop = () => {
   const categories = [
     "offered",
@@ -64,25 +64,25 @@ const OurShop = () => {
             </TabList>
             <div className="w-11/12 my-5 mx-auto">
               <TabPanel>
-                {loading ? <CardLoading /> : <ShopCategory items={offered} />}
+                {loading ? <CardsLoading /> : <ShopCategory items={offered} />}
               </TabPanel>
               <TabPanel>
-                {loading ? <CardLoading /> : <ShopCategory items={popular} />}
+                {loading ? <CardsLoading /> : <ShopCategory items={popular} />}
               </TabPanel>
               <TabPanel>
-                {loading ? <CardLoading /> : <ShopCategory items={salad} />}
+                {loading ? <CardsLoading /> : <ShopCategory items={salad} />}
               </TabPanel>
               <TabPanel>
-                {loading ? <CardLoading /> : <ShopCategory items={pizza} />}
+                {loading ? <CardsLoading /> : <ShopCategory items={pizza} />}
               </TabPanel>
               <TabPanel>
-                {loading ? <CardLoading /> : <ShopCategory items={dessert} />}
+                {loading ? <CardsLoading /> : <ShopCategory items={dessert} />}
               </TabPanel>
               <TabPanel>
-                {loading ? <CardLoading /> : <ShopCategory items={soup} />}
+                {loading ? <CardsLoading /> : <ShopCategory items={soup} />}
               </TabPanel>
               <TabPanel>
-                {loading ? <CardLoading /> : <ShopCategory items={drinks} />}
+                {loading ? <CardsLoading /> : <ShopCategory items={drinks} />}
               </TabPanel>
             </div>
           </Tabs>
