@@ -12,7 +12,7 @@ const ItemCard = ({ item }) => {
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
   const [, refetch] = useOrders();
-  const handleOrder = (food) => {
+  const handleOrder = () => {
     // Add order to cart functionality here
     if (user && user?.email) {
       // send items to save data base
