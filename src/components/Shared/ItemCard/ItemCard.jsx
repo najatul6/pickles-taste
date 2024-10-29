@@ -71,7 +71,7 @@ const ItemCard = ({ item }) => {
         <p className="font-light">{recipe}</p>
         <div className="flex justify-center items-center">
           <button
-            onClick={() => handleOrder(item)}
+            onClick={handleOrder}
             className="text-white py-5 px-8 rounded-full bg-white/5 border-b-4 uppercase text-xl font-medium hover:bg-brand-color hover:border-white transition-colors duration-300 border-brand-color"
           >
             Buy Now
