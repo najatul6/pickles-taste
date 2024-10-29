@@ -56,7 +56,6 @@ const ItemCard = ({ item }) => {
         }
       });
     }
-    console.log(food);
   };
   return (
     <div className="text-white bg-white/10 shadow-inner shadow-white rounded-b-3xl">
