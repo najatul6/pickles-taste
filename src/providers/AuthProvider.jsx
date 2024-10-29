@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
-import app from "../Firebase/firebase.config";
+import app from "../firebase/firebase.config";
 import {
   createUserWithEmailAndPassword,
   getAuth,
