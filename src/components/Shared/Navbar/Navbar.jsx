@@ -69,7 +69,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <button className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group">
               <PiShoppingCartThin />
-              <p className="absolute top-0  -left-10 text-base group-hover:border-0 group-hover:bg-brand-color border text-white rounded-full px-2 py-1">+ {orders?.length}</p>
+              <p className={`${orders?.length >0 && "hidden"} absolute top-0  -left-10 text-base group-hover:border-0 group-hover:bg-brand-color border text-white rounded-full px-2 py-1`}>+ {orders?.length}</p>
             </button>
             {/* User Button  */}
             {user ? (
