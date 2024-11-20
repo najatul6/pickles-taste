@@ -9,6 +9,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import ProfileMenu from "./ProfileMenu";
 import { motion } from "framer-motion";
 import useOrders from "../../../hooks/useOrders";
+import Cart from "../../Cart/Cart";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -67,7 +68,7 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <button className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group">
+            <button onClick={openCart} className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group">
               <PiShoppingCartThin />
               <p className={`${orders?.length >0 && "hidden"} absolute top-0  -left-10 text-base group-hover:border-0 group-hover:bg-brand-color border text-white rounded-full px-2 py-1`}>+ {orders?.length}</p>
             </button>
@@ -121,6 +122,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <Cart />
       {/* Mobile Sidebar section  */}
       <ResponsiveMenu open={isOpen} positionMenu={positionMenu} />
     </>
