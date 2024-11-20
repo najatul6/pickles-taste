@@ -123,7 +123,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <Cart />
+      <Cart openCart={openCart}/>
       {/* Mobile Sidebar section  */}
       <ResponsiveMenu open={isOpen} positionMenu={positionMenu} />
     </>
