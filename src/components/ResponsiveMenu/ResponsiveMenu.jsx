@@ -13,7 +13,7 @@ const ResponsiveMenu = ({ open, positionMenu }) => {
           transition={{ duration: 0.3 }}
           className={positionMenu}
         >
-          <div className="text-xl font-semibold uppercase shadow-inner text-white py-10 bg-gradient-back backdrop-blur-[50px]">
+          <div className="text-xl font-semibold uppercase shadow-inner text-white py-10 bg-black/90 backdrop-blur-[50px]">
             <ul className="flex flex-col justify-center items-center gap-6">
              
               {NavMenu.map((item) => {

@@ -6,10 +6,10 @@ const MainLayout = () => {
   return (
     <div className="">
       <div className="fixed top-0 z-[999] w-full  mx-auto left-0 right-0">
-      <Navbar />
+        <Navbar />
       </div>
       <div className="mt-[20%] md:mt-[0%] lg:mt-0">
-      <Outlet />
+        <Outlet />
       </div>
       <Footer />
     </div>
