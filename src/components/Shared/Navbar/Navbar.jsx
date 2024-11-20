@@ -70,7 +70,7 @@ const Navbar = () => {
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
             <button
-              onClick={() => setOpenCart(!openCart)}
+              onClick={() => setOpenCart(true)}
               className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group"
             >
               <PiShoppingCartThin />
