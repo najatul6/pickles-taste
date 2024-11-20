@@ -21,7 +21,7 @@ const ResponsiveMenu = ({ setIsOpen, open, positionMenu }) => {
                   <li key={item?.id}>
                     <NavLink
                       to={item?.link}
-                      onclick={() => setIsOpen(true)}
+                      onClick={() => setIsOpen(!open)}
                       className={({ isActive }) =>
                         `inline-block py-1 px-3 font-semibold uppercase ${
                           isActive ? 'text-brand-color' : 'hover:text-brand-color'
