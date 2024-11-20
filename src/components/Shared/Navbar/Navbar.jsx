@@ -14,10 +14,10 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openCart,setOpenCart]=useState(false)
-  const [orders]=useOrders()
+  const [openCart, setOpenCart] = useState(false);
+  const [orders] = useOrders();
   const variants = {
-    openMenu: { opacity: 1, x: 0 } ,
+    openMenu: { opacity: 1, x: 0 },
     closedMenu: { opacity: 0, x: "100%" },
   };
 
@@ -69,9 +69,18 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <button onClick={()=>setOpenCart(!openCart)} className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group">
+            <button
+              onClick={() => setOpenCart(!openCart)}
+              className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group"
+            >
               <PiShoppingCartThin />
-              <p className={`${orders?.length >0 && "hidden"} absolute top-0  -left-10 text-base group-hover:border-0 group-hover:bg-brand-color border text-white rounded-full px-2 py-1`}>+ {orders?.length}</p>
+              <p
+                className={`${
+                  orders?.length > 0 && "hidden"
+                } absolute top-0  -left-10 text-base group-hover:border-0 group-hover:bg-brand-color border text-white rounded-full px-2 py-1`}
+              >
+                + {orders?.length}
+              </p>
             </button>
             {/* User Button  */}
             {user ? (
@@ -101,7 +110,7 @@ const Navbar = () => {
 
                     {isMenuOpen && (
                       <motion.div
-                      initial="closedMenu"
+                        initial="closedMenu"
                         animate={isMenuOpen ? "openMenu" : "closedMenu"}
                         variants={variants}
                         transition={{ duration: 0.5 }}
@@ -123,7 +132,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <Cart openCart={openCart}/>
+      <div className="">
+        <Cart openCart={openCart} />
+      </div>
       {/* Mobile Sidebar section  */}
       <ResponsiveMenu open={isOpen} positionMenu={positionMenu} />
     </>
