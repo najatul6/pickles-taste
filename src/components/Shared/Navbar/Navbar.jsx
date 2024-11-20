@@ -14,6 +14,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openCart,setOpenCart]=useState(false)
   const [orders]=useOrders()
   const variants = {
     openMenu: { opacity: 1, x: 0 } ,
@@ -68,7 +69,7 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <button onClick={openCart} className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group">
+            <button onClick={()=>setOpenCart(!openCart)} className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group">
               <PiShoppingCartThin />
               <p className={`${orders?.length >0 && "hidden"} absolute top-0  -left-10 text-base group-hover:border-0 group-hover:bg-brand-color border text-white rounded-full px-2 py-1`}>+ {orders?.length}</p>
             </button>
