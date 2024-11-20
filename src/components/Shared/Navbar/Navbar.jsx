@@ -132,7 +132,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div className="">
+      <div className="max-w-screen-7xl">
         <Cart openCart={openCart} />
       </div>
       {/* Mobile Sidebar section  */}
