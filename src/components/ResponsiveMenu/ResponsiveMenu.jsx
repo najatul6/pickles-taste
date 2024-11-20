@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NavMenu } from "../../Utils/utils";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-const ResponsiveMenu = ({ open, positionMenu }) => {
+const ResponsiveMenu = ({ setIsOpen, open, positionMenu }) => {
   return (
     <AnimatePresence mode="wait">
       {open && (
@@ -21,6 +21,7 @@ const ResponsiveMenu = ({ open, positionMenu }) => {
                   <li key={item?.id}>
                     <NavLink
                       to={item?.link}
+                      onclick={() => setIsOpen(false)}
                       className={({ isActive }) =>
                         `inline-block py-1 px-3 font-semibold uppercase ${
                           isActive ? 'text-brand-color' : 'hover:text-brand-color'
@@ -44,6 +45,7 @@ const ResponsiveMenu = ({ open, positionMenu }) => {
 ResponsiveMenu.propTypes = {
   open: PropTypes.node.isRequired,
   positionMenu: PropTypes.object.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
 };
 
 export default ResponsiveMenu;

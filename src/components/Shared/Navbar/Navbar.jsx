@@ -136,7 +136,7 @@ const Navbar = () => {
         <Cart openCart={openCart} />
       </div>
       {/* Mobile Sidebar section  */}
-      <ResponsiveMenu open={isOpen} positionMenu={positionMenu} />
+      <ResponsiveMenu setIsOpen={setIsOpen} open={isOpen} positionMenu={positionMenu} />
     </>
   );
 };
