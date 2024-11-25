@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../../assets/banner/4.jfif";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { AuthContext } from "../../providers/AuthProvider";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
   const {
@@ -15,7 +15,7 @@ const Register = () => {
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const [redirect, setRedirect] = useState(false);
-  const { createUser, signInUserWithGoogle,updateUserProfile } = useContext(AuthContext);
+  const { createUser, signInUserWithGoogle,updateUserProfile } = useAuth()
   const onSubmit = async (data) => {
     // Show a processing toast message
     const processingToast = toast.loading("Creating Data...");
