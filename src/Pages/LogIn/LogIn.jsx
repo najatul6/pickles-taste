@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../../assets/banner/5.jfif";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
+import useAuth from "../../hooks/useAuth";
 
 const LogIn = () => {
   const {
@@ -13,7 +13,7 @@ const LogIn = () => {
     handleSubmit,reset
   } = useForm();
   const [isShow, setIsShow] = useState(true);
-  const { logIn, signInUserWithGoogle } = useContext(AuthContext);
+  const { logIn, signInUserWithGoogle } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
