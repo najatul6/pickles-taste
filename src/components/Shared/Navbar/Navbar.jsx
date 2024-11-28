@@ -77,7 +77,7 @@ const Navbar = () => {
               <p
                 className={`${
                   orders?.length > 0 && "hidden"
-                } absolute top-0  -left-10 text-base group-hover:border-0 group-hover:bg-brand-color border text-white rounded-full px-2 py-1`}
+                } absolute top-5  -left-10 text-base group-hover:border-0  text-white rounded-full px-2 py-1`}
               >
                 + {orders?.length}
               </p>
