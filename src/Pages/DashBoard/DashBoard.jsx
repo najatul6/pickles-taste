@@ -4,7 +4,7 @@ const DashBoard = () => {
   return (
     <div>
       <Helmet>
-        <title>Dashboard</title>
+        <title>Dashboard | Pickles-Taste</title>
       </Helmet>
       DashBoard
       </div>
