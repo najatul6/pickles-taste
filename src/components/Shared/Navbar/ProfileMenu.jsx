@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ProfileMenu = ({ user, logOut }) => {
-    
   const handleLogOUt = async () => {
     // Show a processing toast message
     const processingToast = toast.loading("Logging Out...");
@@ -31,13 +30,21 @@ const ProfileMenu = ({ user, logOut }) => {
     }
   };
   return (
-    <div  className="bg-darkness/95 z-[999] rounded-xl shadow-inner shadow-white/25 py-6 px-6 text-white sm:min-w-[320px] max-sm:min-w-[250px] absolute right-0 top-10">
-     <div className="mb-5">
-     <div className="font-semibold text-xl flex justify-between items-center"><h2>{user?.displayName ? `${user?.displayName}`:"Author"}</h2> <Link className="text-xs text-gray-300">View Profile</Link></div>
-      <p className="text-sm text-white/50 flex gap-2 justify-start items-center">
-        {user?.email} {user?.emailVerified?<p className="text-green-600 " >verified</p>:<p className="text-red-600" >un-verified</p> }
-      </p>
-     </div>
+    <div className="bg-darkness/95 z-[999] rounded-xl shadow-inner shadow-white/25 py-6 px-6 text-white sm:min-w-[320px] max-sm:min-w-[250px] absolute right-0 top-10">
+      <div className="mb-5">
+        <div className="font-semibold text-xl flex justify-between items-center">
+          <h2>{user?.displayName ? `${user?.displayName}` : "Author"}</h2>{" "}
+          <Link className="text-xs text-gray-300">View Profile</Link>
+        </div>
+        <p className="text-sm text-white/50 flex gap-2 justify-start items-center">
+          {user?.email}{" "}
+          {user?.emailVerified ? (
+            <p className="text-green-600 ">verified</p>
+          ) : (
+            <p className="text-red-600">un-verified</p>
+          )}
+        </p>
+      </div>
 
       {/* <ul className="space-y-1.5">
         <li>
@@ -71,10 +78,9 @@ const ProfileMenu = ({ user, logOut }) => {
     </div>
   );
 };
-ProfileMenu.propTypes={
-    user:PropTypes.object,
-    logOut:PropTypes.func.isRequired,
-
-}
+ProfileMenu.propTypes = {
+  user: PropTypes.object,
+  logOut: PropTypes.func.isRequired,
+};
 
 export default ProfileMenu;
