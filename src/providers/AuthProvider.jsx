@@ -76,7 +76,7 @@ const AuthProvider = ({ children }) => {
     resetPassword,
     updateUserProfile
   };
-  console.log("user:", user);
+  console.log("user:", user?.email);
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
