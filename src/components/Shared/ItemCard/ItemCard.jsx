@@ -48,11 +48,7 @@ const ItemCard = ({ item }) => {
       }).then((result) => {
         if (result.isConfirmed) {
           navigate("/login", { state: { from: location } });
-          Swal.fire({
-            title: "Log in here!",
-            text: "Provide your data to go to log in!",
-            icon: "success",
-          });
+          
         }
       });
     }
