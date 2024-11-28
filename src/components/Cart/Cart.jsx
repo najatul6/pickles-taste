@@ -7,14 +7,14 @@ const Cart = ({ openCart, setOpenCart }) => {
     <div
       className={`${
         openCart ? "translate-x-0" : "translate-x-full"
-      } w-56 border duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
+      } w-60 border duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
     >
       <div className="flex flex-col justify-between h-full pb-1 border">
-        <div>
-          <h2>My Cart</h2>
+        <div className="flex justify-between items-center px-3 text-white">
+          <h2 className="text-xl font-bold">My Cart</h2>
           <button
             onClick={() => setOpenCart(false)}
-            className="w-full py-1 border"
+            className="px-2 py-2 text-xl"
           >
            <FaArrowRight />
           </button>
