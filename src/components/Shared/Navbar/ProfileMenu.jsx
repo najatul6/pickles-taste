@@ -23,7 +23,7 @@ const ProfileMenu = ({ user, logOut }) => {
         render: "Failed to log out",
         type: "error",
         isLoading: false,
-        autoClose: 3000,
+        autoClose: 1500,
         closeButton: true,
       });
       console.error(error);
