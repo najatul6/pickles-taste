@@ -28,6 +28,7 @@ const Navbar = () => {
     width: "100%",
     height: "100vh",
   };
+  console.log(user);
   return (
     <>
       <nav>
@@ -87,11 +88,8 @@ const Navbar = () => {
               <div className="flex items-center max-sm:ml-auto space-x-6">
                 <ul>
                   <li className="relative px-1 after:absolute after:w-full after:h-[2px] after:block after:top-8 after:left-0 after:transition-all after:duration-300">
-                    {user?.photoURL ? (
-                      <img
-                        src={user?.photoURL}
-                        alt={`${user?.displayName} photo`}
-                      />
+                    {/* {user?.photoURL ? (
+                      
                     ) : (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +104,14 @@ const Navbar = () => {
                           data-original="#000000"
                         />
                       </svg>
-                    )}
+                    )} */}
+                    <div onClick={() => setIsMenuOpen(!isMenuOpen)} className="w-8 h-8 rounded-full border-white border-2 overflow-hidden">
+                    <img
+                        src={user?.photoURL}
+                        alt={`${user?.displayName} photo`}
+                        className="wf-full h-full object-cover"
+                      />
+                    </div>
 
                     {isMenuOpen && (
                       <motion.div
