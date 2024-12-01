@@ -12,8 +12,8 @@ const ItemCard = ({ item }) => {
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
   const [, refetch] = useOrders();
-  const handleOrder = () => {
-    // Add order to cart functionality here
+  const handleCart = () => {
+    // Add to cart functionality here
     if (user && user?.email) {
       // send items to save data base
       const orderItem = {
@@ -23,7 +23,7 @@ const ItemCard = ({ item }) => {
         image,
         price,
       };
-      axiosSecure.post("/orders", orderItem).then((res) => {
+      axiosSecure.post("/carts", orderItem).then((res) => {
         if (res.data.acknowledged === true) {
           Swal.fire({
             position: "top-center",
@@ -32,7 +32,7 @@ const ItemCard = ({ item }) => {
             showConfirmButton: false,
             timer: 1500,
           });
-          // update orders after order is placed
+          // update carts after carts is placed
           refetch();
         }
       });
@@ -66,7 +66,7 @@ const ItemCard = ({ item }) => {
         <p className="font-light">{recipe}</p>
         <div className="flex justify-center items-center">
           <button
-            onClick={handleOrder}
+            onClick={handleCart}
             className="text-white py-5 px-8 rounded-full bg-white/5 border-b-4 uppercase text-xl font-medium hover:bg-brand-color hover:border-white transition-colors duration-300 border-brand-color"
           >
             Buy Now
