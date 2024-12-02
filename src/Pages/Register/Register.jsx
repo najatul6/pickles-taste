@@ -25,6 +25,7 @@ const Register = () => {
       if (result?.user) {
         // Update Profile
         await updateUserProfile(data.name, null);
+
         // If login is successful, show a success message
         reset();
         toast.update(processingToast, {
