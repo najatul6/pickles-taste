@@ -8,37 +8,35 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
 const Cart = ({ openCart, setOpenCart }) => {
-  const [carts,refetch] = useCart(); 
-  const axiosSecure=useAxiosSecure();
+  const [carts, refetch] = useCart();
+  const axiosSecure = useAxiosSecure();
   const cartRef = useRef(null);
   const [previousCartLength, setPreviousCartLength] = useState(
     carts?.length || 0
   );
 
   const totalAmount = carts.reduce((acc, cart) => {
-    const price = parseFloat(cart.price) || 0; 
-    const quantity = parseFloat(cart.quantity) || 0; 
+    const price = parseFloat(cart.price) || 0;
+    const quantity = parseFloat(cart.quantity) || 0;
     return acc + price * quantity;
   }, 0);
 
   useEffect(() => {
-    
     // Open cart if a new item is added
     if (carts.length > previousCartLength) {
       setOpenCart(true);
     }
-    
 
     // Update the previous cart length
-    setPreviousCartLength(carts.length); 
+    setPreviousCartLength(carts.length);
   }, [carts, previousCartLength, setOpenCart]);
 
+  // Delete item functionality here
   const deleteItem = (id) => {
-    // Delete item functionality here
     axiosSecure.delete(`/carts/${id}`).then((res) => {
-      if (res.data.deletedCount >0) {
+      if (res.data.deletedCount > 0) {
         // Update carts after item is deleted
-        refetch()
+        refetch();
         Swal.fire({
           position: "top-center",
           icon: "success",
@@ -48,26 +46,28 @@ const Cart = ({ openCart, setOpenCart }) => {
         });
       }
     });
-  }
+  };
+
+  // <-- Close cart on outside click
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (cartRef.current && !cartRef.current.contains(event.target)) {
-        setOpenCart(false); // <-- Close cart on outside click
+        setOpenCart(false);
       }
     };
 
-    document.addEventListener("mousedown", handleOutsideClick); // <-- Event listener added
+    document.addEventListener("mousedown", handleOutsideClick);
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick); // <-- Cleanup event listener
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [setOpenCart]);
 
   return (
     <div
-    ref={cartRef}
-    className={`${
-      openCart ? "translate-x-0" : "translate-x-full"
-    } w-80 duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
+      ref={cartRef}
+      className={`${
+        openCart ? "translate-x-0" : "translate-x-full"
+      } w-80 duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
     >
       <div className="flex flex-col justify-between h-full pb-1 border">
         <div className="flex justify-between items-center px-3 text-white bg-brand-color">
@@ -83,12 +83,15 @@ const Cart = ({ openCart, setOpenCart }) => {
           <div className="flex justify-between py-2 px-3 text-brand-color">
             <p className="capitalize font-bold">Total Items: {carts?.length}</p>
             <p className="capitalize font-bold flex justify-center items-center">
-              Amount: <HiOutlineCurrencyBangladeshi className="ml-1"/>{totalAmount.toFixed(2)}
+              Amount: <HiOutlineCurrencyBangladeshi className="ml-1" />
+              {totalAmount.toFixed(2)}
             </p>
           </div>
-          <hr  className="mb-4 "/>
+          <hr className="mb-4 " />
           {carts.length === 0 ? (
-            <p className="w-full h-full flex justify-center items-center text-red-500 capitalize">No items in your cart.</p>
+            <p className="w-full h-full flex justify-center items-center text-red-500 capitalize">
+              No items in your cart.
+            </p>
           ) : (
             <ul className="divide-y divide-gray-300">
               {carts.map((cart, index) => {
@@ -103,17 +106,22 @@ const Cart = ({ openCart, setOpenCart }) => {
                   >
                     <div>
                       <p className="font-bold text-white">{cart.name}</p>
-                      <p className="text-sm flex justify-start items-center">Basic Price: <HiOutlineCurrencyBangladeshi className="ml-2"/>{price.toFixed(2)}</p>
+                      <p className="text-sm flex justify-start items-center">
+                        Basic Price:{" "}
+                        <HiOutlineCurrencyBangladeshi className="ml-2" />
+                        {price.toFixed(2)}
+                      </p>
                       <p className="text-sm">Quantity: {quantity} kg</p>
                       <p className="text-sm font-medium flex justify-start items-center">
-                        Total: <HiOutlineCurrencyBangladeshi className="ml-2"/>{total.toFixed(2)}
+                        Total: <HiOutlineCurrencyBangladeshi className="ml-2" />
+                        {total.toFixed(2)}
                       </p>
                     </div>
                     <button
                       onClick={() => deleteItem(cart._id)}
                       className="px-2 py-1 text-white bg-red-500 hover:bg-red-600 rounded"
                     >
-                     <MdDelete />
+                      <MdDelete />
                     </button>
                   </li>
                 );
