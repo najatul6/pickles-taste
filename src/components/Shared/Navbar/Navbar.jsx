@@ -29,7 +29,8 @@ const Navbar = () => {
     width: "100%",
     height: "100vh",
   };
-  console.log(user);
+
+  const totalPrice = carts?.reduce((acc, item) => acc + item?.price, 0);
   return (
     <>
       <nav>
@@ -71,9 +72,9 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <div>
+            <div className="flex justify-center items-center">
               <p className="flex justify-center items-center gap-1 text-brand-color">
-                <HiOutlineCurrencyBangladeshi size={20} /> 0.00
+                <HiOutlineCurrencyBangladeshi size={20} /> {totalPrice===0 ? '0.00' : totalPrice.toFixed(2)}
               </p>
               <button
                 onClick={() => setOpenCart(true)}
