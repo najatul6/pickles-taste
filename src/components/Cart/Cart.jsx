@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
+import useCart from "../../hooks/useCart";
 
 
 const Cart = ({ openCart, setOpenCart }) => {
+  const [carts] = useCart();
+  console.log(carts);
   return (
     <div
       className={`${
@@ -20,6 +23,7 @@ const Cart = ({ openCart, setOpenCart }) => {
            <FaArrowRight />
           </button>
         </div>
+        <p>total carts: {carts?.length}</p>
         <p>No items in your cart.</p>
         <button className="w-full py-2 border flex justify-center items-center gap-4 hover:text-white border-brand-color text-brand-color hover:bg-brand-color text-lg font-bold uppercase duration-300">Checkout <MdOutlineShoppingCartCheckout /></button>
       </div>

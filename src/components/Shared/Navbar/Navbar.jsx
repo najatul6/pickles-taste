@@ -8,14 +8,14 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import ProfileMenu from "./ProfileMenu";
 import { motion } from "framer-motion";
-import useOrders from "../../../hooks/useOrders";
 import Cart from "../../Cart/Cart";
+import useCart from "../../../hooks/useCart";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openCart, setOpenCart] = useState(false);
-  const [orders] = useOrders();
+  const [carts] = useCart();
   const variants = {
     openMenu: { opacity: 1, x: 0 },
     closedMenu: { opacity: 0, x: "100%" },
