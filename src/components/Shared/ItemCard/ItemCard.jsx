@@ -3,7 +3,7 @@ import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import useOrders from "../../../hooks/useOrders";
+import useCart from "../../../hooks/useCart";
 
 const ItemCard = ({ item }) => {
   const { name, recipe, image, price, _id } = item;
@@ -11,20 +11,23 @@ const ItemCard = ({ item }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
-  const [, refetch] = useOrders();
+  const [, refetch] = useCart();
   const handleCart = () => {
     // Add to cart functionality here
     if (user && user?.email) {
       // send items to save data base
-      const orderItem = {
+      const cartsItem = {
         menuId: _id,
         userEmail: user?.email,
         name,
         image,
         price,
       };
-      axiosSecure.post("/carts", orderItem).then((res) => {
+      axiosSecure.post("/carts", cartsItem).then((res) => {
         if (res.data.acknowledged === true) {
+          // update carts after carts is placed
+          refetch();
+
           Swal.fire({
             position: "top-center",
             icon: "success",
@@ -32,8 +35,7 @@ const ItemCard = ({ item }) => {
             showConfirmButton: false,
             timer: 1500,
           });
-          // update carts after carts is placed
-          refetch();
+          
         }
       });
     } else {
