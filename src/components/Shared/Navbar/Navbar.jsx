@@ -71,28 +71,34 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <p><HiOutlineCurrencyBangladeshi /></p>
-            <button
-              onClick={() => setOpenCart(true)}
-              className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group"
-            >
-              <PiShoppingCartThin />
-              <p
-                className={`${
-                  carts?.length === 0 && "hidden"
-                } absolute -top-[5px] flex justify-center items-center w-full left-[17px] text-base group-hover:border-0  text-white rounded-full`}
-              >
-                + {carts?.length}
+            <div>
+              <p className="flex justify-center items-center gap-1 text-brand-color">
+                <HiOutlineCurrencyBangladeshi size={20} /> 0.00
               </p>
-            </button>
+              <button
+                onClick={() => setOpenCart(true)}
+                className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group"
+              >
+                <PiShoppingCartThin />
+                <p
+                  className={`${
+                    carts?.length === 0 && "hidden"
+                  } absolute -top-[5px] flex justify-center items-center w-full left-[17px] text-base group-hover:border-0  text-white rounded-full`}
+                >
+                  + {carts?.length}
+                </p>
+              </button>
+            </div>
             {/* User Button  */}
             {user ? (
               <div className="flex items-center max-sm:ml-auto space-x-6">
                 <ul>
                   <li className="relative px-1 after:absolute after:w-full after:h-[2px] after:block after:top-8 after:left-0 after:transition-all after:duration-300">
-                   
-                    <div onClick={() => setIsMenuOpen(!isMenuOpen)} className="w-8 h-8 rounded-full border-white border-2 overflow-hidden">
-                    <img
+                    <div
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                      className="w-8 h-8 rounded-full border-white border-2 overflow-hidden"
+                    >
+                      <img
                         src={user?.photoURL}
                         alt={`${user?.displayName} photo`}
                         className="wf-full h-full object-cover"
@@ -127,7 +133,11 @@ const Navbar = () => {
         <Cart openCart={openCart} setOpenCart={setOpenCart} />
       </div>
       {/* Mobile Sidebar section  */}
-      <ResponsiveMenu setIsOpen={setIsOpen} open={isOpen} positionMenu={positionMenu} />
+      <ResponsiveMenu
+        setIsOpen={setIsOpen}
+        open={isOpen}
+        positionMenu={positionMenu}
+      />
     </>
   );
 };
