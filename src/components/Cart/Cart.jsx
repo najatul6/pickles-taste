@@ -41,7 +41,7 @@ const Cart = ({ openCart, setOpenCart }) => {
           icon: "success",
           title: "Item removed from your cart",
           showConfirmButton: false,
-          timer: 1500,
+          timer: 500,
         });
       }
     });

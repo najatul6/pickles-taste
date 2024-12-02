@@ -34,7 +34,7 @@ const ItemCard = ({ item }) => {
             icon: "success",
             title: `${name} added to your cart`,
             showConfirmButton: false,
-            timer: 1500,
+            timer: 500,
           });
           
         }
