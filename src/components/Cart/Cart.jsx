@@ -1,46 +1,30 @@
 import PropTypes from "prop-types";
-import { FaArrowRight, FaTrash } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import { useEffect, useState } from "react";
 import useCart from "../../hooks/useCart";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 
 const Cart = ({ openCart, setOpenCart }) => {
-  const [carts, setCarts] = useCart(); // Assume useCart returns [cartItems, setCartItems]
+  const [carts] = useCart(); 
   const [previousCartLength, setPreviousCartLength] = useState(
     carts?.length || 0
   );
 
-  const updateQuantity = (index, action) => {
-    setCarts((prevCarts) => {
-      return prevCarts.map((cart, i) => {
-        if (i === index) {
-          const newQuantity =
-            action === "increment"
-              ? cart.quantity + 1
-              : Math.max(cart.quantity - 1, 1); // Ensure quantity doesn't drop below 1
-          return { ...cart, quantity: newQuantity };
-        }
-        return cart;
-      });
-    });
-  };
-
-  const deleteItem = (index) => {
-    setCarts((prevCarts) => prevCarts.filter((_, i) => i !== index));
-  };
-
   const totalAmount = carts.reduce((acc, cart) => {
-    const price = parseFloat(cart.price) || 0;
-    const quantity = parseFloat(cart.quantity) || 0;
+    const price = parseFloat(cart.price) || 0; 
+    const quantity = parseFloat(cart.quantity) || 0; 
     return acc + price * quantity;
   }, 0);
 
   useEffect(() => {
+    // Open cart if a new item is added
     if (carts.length > previousCartLength) {
       setOpenCart(true);
     }
-    setPreviousCartLength(carts.length);
+
+    // Update the previous cart length
+    setPreviousCartLength(carts.length); 
   }, [carts, previousCartLength, setOpenCart]);
 
   return (
@@ -62,9 +46,8 @@ const Cart = ({ openCart, setOpenCart }) => {
         <div className="flex-1 border px-3">
           <div className="flex justify-between py-2">
             <p className="capitalize font-bold">Total Items: {carts?.length}</p>
-            <p className="capitalize font-bold flex items-center">
-              Amount: <HiOutlineCurrencyBangladeshi className="ml-2" />
-              {totalAmount.toFixed(2)}
+            <p className="capitalize font-bold flex justify-center items-center">
+              Amount: <HiOutlineCurrencyBangladeshi />{totalAmount.toFixed(2)}
             </p>
           </div>
           {carts.length === 0 ? (
@@ -72,8 +55,8 @@ const Cart = ({ openCart, setOpenCart }) => {
           ) : (
             <ul className="divide-y divide-gray-300">
               {carts.map((cart, index) => {
-                const price = parseFloat(cart.price) || 0;
-                const quantity = parseFloat(cart.quantity) || 0;
+                const price = parseFloat(cart.price) || 0; // Ensure price is a number
+                const quantity = parseFloat(cart.quantity) || 0; // Ensure quantity is a number
                 const total = price * quantity;
 
                 return (
@@ -83,37 +66,12 @@ const Cart = ({ openCart, setOpenCart }) => {
                   >
                     <div>
                       <p className="font-bold">{cart.name}</p>
-                      <p className="text-sm flex items-center">
-                        Basic Price:{" "}
-                        <HiOutlineCurrencyBangladeshi className="ml-2" />
-                        {price.toFixed(2)}
-                      </p>
-                      <div className="flex items-center gap-2 mt-2">
-                        <button
-                          className="px-2 py-1 border"
-                          onClick={() => updateQuantity(index, "decrement")}
-                        >
-                          -
-                        </button>
-                        <p className="text-sm">{quantity} kg</p>
-                        <button
-                          className="px-2 py-1 border"
-                          onClick={() => updateQuantity(index, "increment")}
-                        >
-                          +
-                        </button>
-                      </div>
-                      <p className="text-sm font-medium flex items-center">
-                        Total: <HiOutlineCurrencyBangladeshi className="ml-2" />
-                        {total.toFixed(2)}
+                      <p className="text-sm flex justify-start items-center">Basic Price: <HiOutlineCurrencyBangladeshi className="ml-2"/>{price.toFixed(2)}</p>
+                      <p className="text-sm">Quantity: {quantity} kg</p>
+                      <p className="text-sm font-medium flex justify-start items-center">
+                        Total: <HiOutlineCurrencyBangladeshi className="ml-2"/>{total.toFixed(2)}
                       </p>
                     </div>
-                    <button
-                      onClick={() => deleteItem(index)}
-                      className="text-red-500"
-                    >
-                      <FaTrash />
-                    </button>
                   </li>
                 );
               })}
