@@ -3,11 +3,19 @@ import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import { useEffect, useState } from "react";
 import useCart from "../../hooks/useCart";
+import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 
 const Cart = ({ openCart, setOpenCart }) => {
-  const [carts] = useCart();
-  const [previousCartLength, setPreviousCartLength] = useState(carts?.length || 0);
-  const totalAmount = carts.reduce((acc, cart) => acc + cart.price, 0);
+  const [carts] = useCart(); // carts array should include items with `name`, `price`, and `quantity`.
+  const [previousCartLength, setPreviousCartLength] = useState(
+    carts?.length || 0
+  );
+
+  const totalAmount = carts.reduce((acc, cart) => {
+    const price = parseFloat(cart.price) || 0; // Ensure price is numeric
+    const quantity = parseFloat(cart.quantity) || 0; // Ensure quantity is numeric
+    return acc + price * quantity;
+  }, 0);
 
   useEffect(() => {
     // Open cart if a new item is added
@@ -21,7 +29,7 @@ const Cart = ({ openCart, setOpenCart }) => {
     <div
       className={`${
         openCart ? "translate-x-0" : "translate-x-full"
-      } w-60 duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
+      } w-80 duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
     >
       <div className="flex flex-col justify-between h-full pb-1 border">
         <div className="flex justify-between items-center px-3 text-white bg-brand-color">
@@ -33,20 +41,38 @@ const Cart = ({ openCart, setOpenCart }) => {
             <FaArrowRight />
           </button>
         </div>
-        <div className="flex-1 border">
-          <div className="flex justify-between px-2 py-2">
-            <p className="capitalize font-bold">total carts: {carts?.length}</p>
-            <p className="capitalize font-bold">{totalAmount}</p>
+        <div className="flex-1 border px-3">
+          <div className="flex justify-between py-2">
+            <p className="capitalize font-bold">Total Items: {carts?.length}</p>
+            <p className="capitalize font-bold">
+              Total: ${totalAmount.toFixed(2)}
+            </p>
           </div>
           {carts.length === 0 ? (
             <p>No items in your cart.</p>
           ) : (
-            <ul>
-              {carts.map((cart, index) => (
-                <li key={index} className="px-2 py-1">
-                  {cart.name} - ${cart.price}
-                </li>
-              ))}
+            <ul className="divide-y divide-gray-300">
+              {carts.map((cart, index) => {
+                const price = parseFloat(cart.price) || 0; // Ensure price is a number
+                const quantity = parseFloat(cart.quantity) || 0; // Ensure quantity is a number
+                const total = price * quantity;
+
+                return (
+                  <li
+                    key={index}
+                    className="flex justify-between items-center py-2"
+                  >
+                    <div>
+                      <p className="font-bold">{cart.name}</p>
+                      <p className="text-sm">Price: ${price.toFixed(2)}</p>
+                      <p className="text-sm">Quantity: {quantity} kg</p>
+                      <p className="text-sm font-medium flex justify-center items-center">
+                        Total: <HiOutlineCurrencyBangladeshi />{total.toFixed(2)}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </div>
