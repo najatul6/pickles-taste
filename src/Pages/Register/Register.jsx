@@ -22,7 +22,7 @@ const Register = () => {
     try {
       // Attempt to log in the user
       const result = await createUser(data.email, data.password);
-      if (result?.user) {
+      if (!result?.user) throw new Error("User creation failed.");
         // Update Profile
         await updateUserProfile(data.name, null);
 
@@ -38,7 +38,7 @@ const Register = () => {
 
         // Set redirect to true to trigger navigation
         setRedirect(true);
-      }
+      
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
