@@ -6,14 +6,14 @@ import useCart from "../../hooks/useCart";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 
 const Cart = ({ openCart, setOpenCart }) => {
-  const [carts] = useCart(); // carts array should include items with `name`, `price`, and `quantity`.
+  const [carts] = useCart(); 
   const [previousCartLength, setPreviousCartLength] = useState(
     carts?.length || 0
   );
 
   const totalAmount = carts.reduce((acc, cart) => {
-    const price = parseFloat(cart.price) || 0; // Ensure price is numeric
-    const quantity = parseFloat(cart.quantity) || 0; // Ensure quantity is numeric
+    const price = parseFloat(cart.price) || 0; 
+    const quantity = parseFloat(cart.quantity) || 0; 
     return acc + price * quantity;
   }, 0);
 
@@ -22,7 +22,9 @@ const Cart = ({ openCart, setOpenCart }) => {
     if (carts.length > previousCartLength) {
       setOpenCart(true);
     }
-    setPreviousCartLength(carts.length); // Update the previous cart length
+    
+    // Update the previous cart length
+    setPreviousCartLength(carts.length); 
   }, [carts, previousCartLength, setOpenCart]);
 
   return (
