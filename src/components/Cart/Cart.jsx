@@ -4,9 +4,12 @@ import { MdDelete, MdOutlineShoppingCartCheckout } from "react-icons/md";
 import { useEffect, useState } from "react";
 import useCart from "../../hooks/useCart";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const Cart = ({ openCart, setOpenCart }) => {
-  const [carts] = useCart(); 
+  const [carts,refetch] = useCart(); 
+  const axiosSecure=useAxiosSecure();
   const [previousCartLength, setPreviousCartLength] = useState(
     carts?.length || 0
   );
@@ -29,7 +32,19 @@ const Cart = ({ openCart, setOpenCart }) => {
 
   const deleteItem = (id) => {
     // Delete item functionality here
-
+    axiosSecure.delete(`/carts/${id}`).then((res) => {
+      if (res.data.deletedCount === 1) {
+        // Update carts after item is deleted
+        refetch()
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Item removed from your cart",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
   }
 
   return (
