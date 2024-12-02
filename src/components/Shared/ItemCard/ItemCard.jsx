@@ -72,7 +72,7 @@ const ItemCard = ({ item }) => {
             onClick={handleCart}
             className="text-white py-5 px-8 rounded-full bg-white/5 border-b-4 uppercase text-xl font-medium hover:bg-brand-color hover:border-white transition-colors duration-300 border-brand-color"
           >
-            Buy Now
+           Add to Cart
           </button>
         </div>
       </div>
