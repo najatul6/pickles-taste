@@ -77,7 +77,7 @@ const Navbar = () => {
               <PiShoppingCartThin />
               <p
                 className={`${
-                  carts?.length < 0 && "hidden"
+                  carts?.length === 0 && "hidden"
                 } absolute -top-[5px] flex justify-center items-center w-full left-[17px] text-base group-hover:border-0  text-white rounded-full`}
               >
                 + {carts?.length}
