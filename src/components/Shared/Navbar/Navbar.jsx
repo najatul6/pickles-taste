@@ -72,13 +72,13 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <div className="flex justify-center items-center">
-              <p className="flex justify-center items-center gap-1 text-brand-color">
+            <div className="flex justify-center items-center group cursor-pointer" onClick={() => setOpenCart(true)}>
+              <p className="flex justify-center items-center gap-1 text-brand-color group-hover:text-white cursor-pointer">
                 <HiOutlineCurrencyBangladeshi size={20} /> {totalPrice===0 ? '0.00' : totalPrice.toFixed(2)}
               </p>
               <button
-                onClick={() => setOpenCart(true)}
-                className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group"
+                
+                className="relative text-2xl text-brand-color group-hover:text-white font-bold p-2 rounded-full duration-200 group"
               >
                 <PiShoppingCartThin />
                 <p
