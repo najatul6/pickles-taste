@@ -66,7 +66,7 @@ const Cart = ({ openCart, setOpenCart }) => {
     <div
       ref={cartRef}
       className={`${
-        openCart ? "translate-x-0" : "translate-x-full"
+        openCart ? "translate-x-0" : "-translate-y-full "
       } w-80 duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
     >
       <div className="flex flex-col justify-between h-full pb-1 border">
