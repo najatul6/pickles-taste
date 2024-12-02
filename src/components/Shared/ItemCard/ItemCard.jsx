@@ -22,6 +22,7 @@ const ItemCard = ({ item }) => {
         name,
         image,
         price,
+        quantity: '1 kg',
       };
       axiosSecure.post("/carts", cartsItem).then((res) => {
         if (res.data.acknowledged === true) {
