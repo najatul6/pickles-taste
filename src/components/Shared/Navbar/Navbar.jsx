@@ -10,6 +10,7 @@ import ProfileMenu from "./ProfileMenu";
 import { motion } from "framer-motion";
 import Cart from "../../Cart/Cart";
 import useCart from "../../../hooks/useCart";
+import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -70,6 +71,7 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
+            <p><HiOutlineCurrencyBangladeshi /></p>
             <button
               onClick={() => setOpenCart(true)}
               className="relative text-2xl text-brand-color hover:text-white hover:bg-brand-color font-bold p-2 rounded-full duration-200 group"
