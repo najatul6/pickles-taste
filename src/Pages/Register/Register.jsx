@@ -40,7 +40,7 @@ const Register = () => {
           render: `Welcome ${data.name}!`,
           type: "success",
           isLoading: false,
-          autoClose: 1500,
+          autoClose: 500,
           closeButton: true,
         });
 
