@@ -3,29 +3,36 @@ import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import useCart from "../../hooks/useCart";
 
-
 const Cart = ({ openCart, setOpenCart }) => {
   const [carts] = useCart();
+  const totalAmount = carts.reduce((acc, cart) => acc + cart.price, 0);
   console.log(carts);
   return (
     <div
       className={`${
         openCart ? "translate-x-0" : "translate-x-full"
-      } w-60 border duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
+      } w-60  duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
     >
       <div className="flex flex-col justify-between h-full pb-1 border">
-        <div className="flex justify-between items-center px-3 text-white">
+        <div className="flex justify-between items-center px-3 text-white bg-brand-color">
           <h2 className="text-xl font-bold">My Cart</h2>
           <button
             onClick={() => setOpenCart(false)}
             className="px-2 py-2 text-xl"
           >
-           <FaArrowRight />
+            <FaArrowRight />
           </button>
         </div>
-        <p>total carts: {carts?.length}</p>
-        <p>No items in your cart.</p>
-        <button className="w-full py-2 border flex justify-center items-center gap-4 hover:text-white border-brand-color text-brand-color hover:bg-brand-color text-lg font-bold uppercase duration-300">Checkout <MdOutlineShoppingCartCheckout /></button>
+        <div className="flex-1 border ">
+          <div className="flex justify-between px-2 py-2">
+            <p className="capitalize font-bold">total carts: {carts?.length}</p>
+            <p className="capitalize font-bold">{totalAmount}</p>
+          </div>
+          <p>No items in your cart.</p>
+        </div>
+        <button className="w-full py-2 border flex justify-center items-center gap-4 hover:text-white border-brand-color text-brand-color hover:bg-brand-color text-lg font-bold uppercase duration-300">
+          Checkout <MdOutlineShoppingCartCheckout />
+        </button>
       </div>
     </div>
   );
