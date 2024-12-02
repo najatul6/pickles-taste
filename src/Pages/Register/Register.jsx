@@ -22,20 +22,22 @@ const Register = () => {
     try {
       // Attempt to log in the user
       const result = await createUser(data.email, data.password);
-      // Update Profile
-      await updateUserProfile(data.name, null);
-      // If login is successful, show a success message
-      reset();
-      toast.update(processingToast, {
-        render: `Welcome ${data.name}!`,
-        type: "success",
-        isLoading: false,
-        autoClose: 1500,
-        closeButton: true,
-      });
+      if (result?.user) {
+        // Update Profile
+        await updateUserProfile(data.name, null);
+        // If login is successful, show a success message
+        reset();
+        toast.update(processingToast, {
+          render: `Welcome ${data.name}!`,
+          type: "success",
+          isLoading: false,
+          autoClose: 1500,
+          closeButton: true,
+        });
 
-      // Set redirect to true to trigger navigation
-      setRedirect(true);
+        // Set redirect to true to trigger navigation
+        setRedirect(true);
+      }
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
@@ -67,7 +69,6 @@ const Register = () => {
       });
       // Set redirect to true to trigger navigation
       setRedirect(true);
-
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
