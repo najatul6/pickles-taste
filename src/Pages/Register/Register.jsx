@@ -35,7 +35,6 @@ const Register = () => {
         };
         await axiosPublic.post("/users", userData);
         // If login is successful, show a success message
-        reset();
         toast.update(processingToast, {
           render: `Welcome ${data.name}!`,
           type: "success",
@@ -44,6 +43,9 @@ const Register = () => {
           closeButton: true,
         });
 
+        // Reset the form after successful login
+        reset();
+        
         // Set redirect to true to trigger navigation
         setRedirect(true);
       
