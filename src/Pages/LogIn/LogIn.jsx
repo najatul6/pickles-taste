@@ -39,7 +39,7 @@ const LogIn = () => {
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
-        render: "Invalid email or password",
+        render: `Failed to log in with ${error.message}`,
         type: "error",
         isLoading: false,
         autoClose: 3000,
@@ -59,13 +59,12 @@ const LogIn = () => {
       navigate(from, { replace: true });
       // If login is successful, show a success message
       toast.update(processingToast, {
-        render: "Successfully logged in!",
+        render: `Welcome back, ${result.user.displayName}!`,
         type: "success",
         isLoading: false,
         autoClose: 1500,
         closeButton: true,
       });
-      console.log("User:", result.user);
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
