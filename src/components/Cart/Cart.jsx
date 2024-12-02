@@ -64,15 +64,15 @@ const Cart = ({ openCart, setOpenCart }) => {
           </button>
         </div>
         <div className="flex-1 border  overflow-hidden overflow-y-auto">
-          <div className="flex justify-between py-2 px-2">
+          <div className="flex justify-between py-2 px-3 text-brand-color">
             <p className="capitalize font-bold">Total Items: {carts?.length}</p>
             <p className="capitalize font-bold flex justify-center items-center">
-              Amount: <HiOutlineCurrencyBangladeshi />{totalAmount.toFixed(2)}
+              Amount: <HiOutlineCurrencyBangladeshi className="ml-1"/>{totalAmount.toFixed(2)}
             </p>
           </div>
           <hr  className="mb-4 "/>
           {carts.length === 0 ? (
-            <p>No items in your cart.</p>
+            <p className="w-full h-full flex justify-center items-center text-red-500 capitalize">No items in your cart.</p>
           ) : (
             <ul className="divide-y divide-gray-300">
               {carts.map((cart, index) => {
