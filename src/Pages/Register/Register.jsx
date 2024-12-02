@@ -5,6 +5,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Register = () => {
   const {
@@ -15,6 +16,7 @@ const Register = () => {
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const [redirect, setRedirect] = useState(false);
+  const axiosPublic=useAxiosPublic();
   const { createUser, signInUserWithGoogle, updateUserProfile } = useAuth();
   const onSubmit = async (data) => {
     // Show a processing toast message
@@ -31,6 +33,7 @@ const Register = () => {
           email: data.email,
           createdAt: new Date().toISOString(),
         };
+        await axiosPublic.post("/users", userData);
         // If login is successful, show a success message
         reset();
         toast.update(processingToast, {
