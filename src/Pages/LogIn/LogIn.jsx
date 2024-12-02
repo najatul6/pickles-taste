@@ -30,13 +30,12 @@ const LogIn = () => {
       reset();
       navigate(from, { replace: true });
       toast.update(processingToast, {
-        render: "Successfully logged in!",
+        render: `Welcome back, ${result.user.displayName}!`,
         type: "success",
         isLoading: false,
         autoClose: 1500,
         closeButton: true,
       });
-      console.log("User:", result.user);
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
@@ -46,7 +45,6 @@ const LogIn = () => {
         autoClose: 3000,
         closeButton: true,
       });
-      console.error(error);
     }
   };
 
