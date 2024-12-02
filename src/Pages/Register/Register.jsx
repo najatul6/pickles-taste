@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../../assets/banner/4.jfif";
 import { Link, Navigate } from "react-router-dom";
@@ -15,19 +15,19 @@ const Register = () => {
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const [redirect, setRedirect] = useState(false);
-  const { createUser, signInUserWithGoogle,updateUserProfile } = useAuth()
+  const { createUser, signInUserWithGoogle, updateUserProfile } = useAuth();
   const onSubmit = async (data) => {
     // Show a processing toast message
     const processingToast = toast.loading("Creating Data...");
     try {
       // Attempt to log in the user
       const result = await createUser(data.email, data.password);
-      // Update Profile 
+      // Update Profile
       await updateUserProfile(data.name, null);
       // If login is successful, show a success message
       reset();
       toast.update(processingToast, {
-        render: "Account Created Successfully!",
+        render: `Welcome ${data.name}!`,
         type: "success",
         isLoading: false,
         autoClose: 1500,
@@ -36,8 +36,6 @@ const Register = () => {
 
       // Set redirect to true to trigger navigation
       setRedirect(true);
-
-      console.log("User:", result.user);
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
@@ -47,7 +45,6 @@ const Register = () => {
         autoClose: 3000,
         closeButton: true,
       });
-      console.error(error);
     }
   };
 
@@ -62,7 +59,7 @@ const Register = () => {
 
       // If login is successful, show a success message
       toast.update(processingToast, {
-        render: "Successfully logged in!",
+        render: `Welcome ${result.user.displayName}!`,
         type: "success",
         isLoading: false,
         autoClose: 1500,
@@ -71,17 +68,15 @@ const Register = () => {
       // Set redirect to true to trigger navigation
       setRedirect(true);
 
-      console.log("User:", result.user);
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
-        render: "Failed to log in with Google",
+        render: `${error.message}`,
         type: "error",
         isLoading: false,
         autoClose: 3000,
         closeButton: true,
       });
-      console.error(error);
     }
   };
   if (redirect) {
