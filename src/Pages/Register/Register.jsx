@@ -25,7 +25,12 @@ const Register = () => {
       if (!result?.user) throw new Error("User creation failed.");
         // Update Profile
         await updateUserProfile(data.name, null);
-
+        // Post user data to the database
+        const userData = {
+          name: data.name,
+          email: data.email,
+          createdAt: new Date().toISOString(),
+        };
         // If login is successful, show a success message
         reset();
         toast.update(processingToast, {
