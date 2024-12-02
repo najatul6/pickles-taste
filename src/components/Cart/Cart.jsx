@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { FaArrowRight } from "react-icons/fa";
 import { MdDelete, MdOutlineShoppingCartCheckout } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useCart from "../../hooks/useCart";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 const Cart = ({ openCart, setOpenCart }) => {
   const [carts,refetch] = useCart(); 
   const axiosSecure=useAxiosSecure();
+  const cartRef = useRef(null);
   const [previousCartLength, setPreviousCartLength] = useState(
     carts?.length || 0
   );
@@ -21,10 +22,12 @@ const Cart = ({ openCart, setOpenCart }) => {
   }, 0);
 
   useEffect(() => {
+    
     // Open cart if a new item is added
     if (carts.length > previousCartLength) {
       setOpenCart(true);
     }
+    
 
     // Update the previous cart length
     setPreviousCartLength(carts.length); 
@@ -46,12 +49,25 @@ const Cart = ({ openCart, setOpenCart }) => {
       }
     });
   }
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setOpenCart(false); // <-- Close cart on outside click
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick); // <-- Event listener added
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick); // <-- Cleanup event listener
+    };
+  }, [setOpenCart]);
 
   return (
     <div
-      className={`${
-        openCart ? "translate-x-0" : "translate-x-full"
-      } w-80 duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
+    ref={cartRef}
+    className={`${
+      openCart ? "translate-x-0" : "translate-x-full"
+    } w-80 duration-300 h-screen bg-darkness absolute top-0 bottom-0 right-0`}
     >
       <div className="flex flex-col justify-between h-full pb-1 border">
         <div className="flex justify-between items-center px-3 text-white bg-brand-color">
