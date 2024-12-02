@@ -22,7 +22,7 @@ const Cart = ({ openCart, setOpenCart }) => {
     if (carts.length > previousCartLength) {
       setOpenCart(true);
     }
-    
+
     // Update the previous cart length
     setPreviousCartLength(carts.length); 
   }, [carts, previousCartLength, setOpenCart]);
@@ -46,8 +46,8 @@ const Cart = ({ openCart, setOpenCart }) => {
         <div className="flex-1 border px-3">
           <div className="flex justify-between py-2">
             <p className="capitalize font-bold">Total Items: {carts?.length}</p>
-            <p className="capitalize font-bold">
-              Total: ${totalAmount.toFixed(2)}
+            <p className="capitalize font-bold flex justify-center items-center">
+              Amount: <HiOutlineCurrencyBangladeshi />{totalAmount.toFixed(2)}
             </p>
           </div>
           {carts.length === 0 ? (
@@ -66,10 +66,10 @@ const Cart = ({ openCart, setOpenCart }) => {
                   >
                     <div>
                       <p className="font-bold">{cart.name}</p>
-                      <p className="text-sm">Price: ${price.toFixed(2)}</p>
+                      <p className="text-sm flex justify-start items-center">Basic Price: <HiOutlineCurrencyBangladeshi className="ml-2"/>{price.toFixed(2)}</p>
                       <p className="text-sm">Quantity: {quantity} kg</p>
-                      <p className="text-sm font-medium flex justify-center items-center">
-                        Total: <HiOutlineCurrencyBangladeshi />{total.toFixed(2)}
+                      <p className="text-sm font-medium flex justify-start items-center">
+                        Total: <HiOutlineCurrencyBangladeshi className="ml-2"/>{total.toFixed(2)}
                       </p>
                     </div>
                   </li>
