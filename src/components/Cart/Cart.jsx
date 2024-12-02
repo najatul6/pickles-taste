@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { FaArrowRight } from "react-icons/fa";
-import { MdOutlineShoppingCartCheckout } from "react-icons/md";
+import { MdDelete, MdOutlineShoppingCartCheckout } from "react-icons/md";
 import { useEffect, useState } from "react";
 import useCart from "../../hooks/useCart";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
@@ -27,6 +27,11 @@ const Cart = ({ openCart, setOpenCart }) => {
     setPreviousCartLength(carts.length); 
   }, [carts, previousCartLength, setOpenCart]);
 
+  const deleteItem = (id) => {
+    // Delete item functionality here
+
+  }
+
   return (
     <div
       className={`${
@@ -43,7 +48,7 @@ const Cart = ({ openCart, setOpenCart }) => {
             <FaArrowRight />
           </button>
         </div>
-        <div className="flex-1 border px-3">
+        <div className="flex-1 border px-3 overflow-hidden overflow-y-auto">
           <div className="flex justify-between py-2">
             <p className="capitalize font-bold">Total Items: {carts?.length}</p>
             <p className="capitalize font-bold flex justify-center items-center">
@@ -72,6 +77,12 @@ const Cart = ({ openCart, setOpenCart }) => {
                         Total: <HiOutlineCurrencyBangladeshi className="ml-2"/>{total.toFixed(2)}
                       </p>
                     </div>
+                    <button
+                      onClick={() => deleteItem(cart._id)}
+                      className="px-2 py-1 text-white bg-red-500 hover:bg-red-600 rounded"
+                    >
+                     <MdDelete />
+                    </button>
                   </li>
                 );
               })}
