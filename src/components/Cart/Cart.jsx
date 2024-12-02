@@ -63,13 +63,14 @@ const Cart = ({ openCart, setOpenCart }) => {
             <FaArrowRight />
           </button>
         </div>
-        <div className="flex-1 border px-3 overflow-hidden overflow-y-auto">
-          <div className="flex justify-between py-2">
+        <div className="flex-1 border  overflow-hidden overflow-y-auto">
+          <div className="flex justify-between py-2 px-2">
             <p className="capitalize font-bold">Total Items: {carts?.length}</p>
             <p className="capitalize font-bold flex justify-center items-center">
               Amount: <HiOutlineCurrencyBangladeshi />{totalAmount.toFixed(2)}
             </p>
           </div>
+          <hr  className="mb-4 "/>
           {carts.length === 0 ? (
             <p>No items in your cart.</p>
           ) : (
@@ -82,10 +83,10 @@ const Cart = ({ openCart, setOpenCart }) => {
                 return (
                   <li
                     key={index}
-                    className="flex justify-between items-center py-2"
+                    className="flex justify-between items-center py-2 px-3"
                   >
                     <div>
-                      <p className="font-bold">{cart.name}</p>
+                      <p className="font-bold text-white">{cart.name}</p>
                       <p className="text-sm flex justify-start items-center">Basic Price: <HiOutlineCurrencyBangladeshi className="ml-2"/>{price.toFixed(2)}</p>
                       <p className="text-sm">Quantity: {quantity} kg</p>
                       <p className="text-sm font-medium flex justify-start items-center">
