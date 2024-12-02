@@ -33,7 +33,6 @@ const Cart = ({ openCart, setOpenCart }) => {
   const deleteItem = (id) => {
     // Delete item functionality here
     axiosSecure.delete(`/carts/${id}`).then((res) => {
-      console.log(res.data);
       if (res.data.deletedCount >0) {
         // Update carts after item is deleted
         refetch()

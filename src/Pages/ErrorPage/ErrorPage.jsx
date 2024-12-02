@@ -4,9 +4,9 @@ import { Link, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
   const error = useRouteError();
-  console.log(error);
   return (
     <div className="flex flex-col min-h-screen items-center justify-center">
+      <p>{error?.code}</p>
       <Lottie animationData={errorImg} className="max-w-[500px] "></Lottie>
       <Link
         to="/"
