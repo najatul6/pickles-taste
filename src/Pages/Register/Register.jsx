@@ -86,7 +86,7 @@ const Register = () => {
         render: `${error.message}`,
         type: "error",
         isLoading: false,
-        autoClose: 3000,
+        autoClose: 1500,
         closeButton: true,
       });
     }
