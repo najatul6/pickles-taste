@@ -61,7 +61,7 @@ const Footer = () => {
         <p className="text-center  text-base">
           &copy;{" "}
           <Link
-            className="font-bold underline"
+            className="font-bold hover:underline"
             to="https://najatul-islam.vercel.app/"
             target="_blank"
           >
