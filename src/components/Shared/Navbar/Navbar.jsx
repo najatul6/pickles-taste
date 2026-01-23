@@ -30,7 +30,9 @@ const Navbar = () => {
     height: "100vh",
   };
 
-  const totalPrice = carts?.reduce((acc, item) => acc + item?.price, 0);
+  const totalPrice = Array.isArray(carts)
+    ? carts.reduce((acc, item) => acc + (item?.price || 0), 0)
+    : 0;
   return (
     <>
       <nav>
@@ -72,14 +74,15 @@ const Navbar = () => {
           </div>
           {/* Icons Section  */}
           <div className="flex items-center gap-4">
-            <div className="flex justify-center items-center group cursor-pointer" onClick={() => setOpenCart(true)}>
+            <div
+              className="flex justify-center items-center group cursor-pointer"
+              onClick={() => setOpenCart(true)}
+            >
               <p className="flex justify-center items-center gap-1 text-brand-color group-hover:text-white cursor-pointer">
-                <HiOutlineCurrencyBangladeshi size={20} /> {totalPrice===0 ? '0.00' : totalPrice.toFixed(2)}
+                <HiOutlineCurrencyBangladeshi size={20} />{" "}
+                {totalPrice === 0 ? "0.00" : totalPrice.toFixed(2)}
               </p>
-              <button
-                
-                className="relative text-2xl text-brand-color group-hover:text-white font-bold p-2 rounded-full duration-200 group"
-              >
+              <button className="relative text-2xl text-brand-color group-hover:text-white font-bold p-2 rounded-full duration-200 group">
                 <PiShoppingCartThin />
                 <p
                   className={`${
