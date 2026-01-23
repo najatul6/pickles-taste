@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const axiosPublic=axios.create({
-    baseURL:"http://localhost:5000"
+    baseURL: process.env.VITE_SERVER_URL,
 })
 const useAxiosPublic = () => {
     return axiosPublic
