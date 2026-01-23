@@ -6,7 +6,7 @@ const useMenu = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/pickles")
+    fetch(`${process.env.VITE_SERVER_URL}/pickles`)
       .then((res) => res.json())
       .then((data) => {
         setMenu(data);
