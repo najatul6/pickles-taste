@@ -32,7 +32,6 @@ const OurShop = () => {
   const drinks = menu?.filter((item) => item.category === "drinks");
   const pizza = menu?.filter((item) => item.category === "pizza");
 
-  if(loading) return <CardsLoading />
   return (
     <div className="">
       <Helmet>
@@ -65,30 +64,33 @@ const OurShop = () => {
               <Tab>Drinks</Tab>
             </TabList>
             <div className="w-11/12 my-5 mx-auto">
-            {
-              loading ? <CardsLoading /> : <TabPanel>
-                <ShopCategory items={offered} />
-              </TabPanel>
-              <TabPanel>
-                <ShopCategory items={popular} />
-              </TabPanel>
-              <TabPanel>
-                <ShopCategory items={salad} />
-              </TabPanel>
-              <TabPanel>
-                <ShopCategory items={pizza} />
-              </TabPanel>
-              <TabPanel>
-                <ShopCategory items={dessert} />
-              </TabPanel>
-              <TabPanel>
-                <ShopCategory items={soup} />
-              </TabPanel>
-              <TabPanel>
-                <ShopCategory items={drinks} />
-              </TabPanel>
-            }
-              
+              {loading ? (
+                <CardsLoading />
+              ) : (
+                <>
+                  <TabPanel>
+                    <ShopCategory items={offered} />
+                  </TabPanel>
+                  <TabPanel>
+                    <ShopCategory items={popular} />
+                  </TabPanel>
+                  <TabPanel>
+                    <ShopCategory items={salad} />
+                  </TabPanel>
+                  <TabPanel>
+                    <ShopCategory items={pizza} />
+                  </TabPanel>
+                  <TabPanel>
+                    <ShopCategory items={dessert} />
+                  </TabPanel>
+                  <TabPanel>
+                    <ShopCategory items={soup} />
+                  </TabPanel>
+                  <TabPanel>
+                    <ShopCategory items={drinks} />
+                  </TabPanel>
+                </>
+              )}
             </div>
           </Tabs>
         </div>
