@@ -4,7 +4,6 @@ import bgImage from "../../assets/banner/8.jfif";
 import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import "./tabsStyle.css";
 import useMenu from "../../hooks/useMenu";
 import ShopCategory from "../../components/Shared/ShopCategory/ShopCategory";
 import { useParams } from "react-router-dom";
@@ -30,6 +29,7 @@ const OurShop = () => {
   const soup = menu?.filter((item) => item.category === "soup");
   const drinks = menu?.filter((item) => item.category === "drinks");
   const pizza = menu?.filter((item) => item.category === "pizza");
+  import "./tabsStyle.css";
 
   return (
     <div className="">
