@@ -8,6 +8,8 @@ import useMenu from "../../hooks/useMenu";
 import ShopCategory from "../../components/Shared/ShopCategory/ShopCategory";
 import { useParams } from "react-router-dom";
 import CardsLoading from "../../components/Shared/CardsLoading/CardsLoading";
+import "./tabsStyle.css";
+
 const OurShop = () => {
   const categories = [
     "offered",
@@ -29,7 +31,6 @@ const OurShop = () => {
   const soup = menu?.filter((item) => item.category === "soup");
   const drinks = menu?.filter((item) => item.category === "drinks");
   const pizza = menu?.filter((item) => item.category === "pizza");
-  import "./tabsStyle.css";
 
   return (
     <div className="">
