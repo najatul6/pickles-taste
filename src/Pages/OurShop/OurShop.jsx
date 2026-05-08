@@ -65,7 +65,8 @@ const OurShop = () => {
               <Tab>Drinks</Tab>
             </TabList>
             <div className="w-11/12 my-5 mx-auto">
-              <TabPanel>
+            {
+              loading ? <CardsLoading /> : <TabPanel>
                 <ShopCategory items={offered} />
               </TabPanel>
               <TabPanel>
@@ -86,6 +87,8 @@ const OurShop = () => {
               <TabPanel>
                 <ShopCategory items={drinks} />
               </TabPanel>
+            }
+              
             </div>
           </Tabs>
         </div>
