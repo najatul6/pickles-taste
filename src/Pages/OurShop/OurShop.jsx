@@ -32,6 +32,7 @@ const OurShop = () => {
   const drinks = menu?.filter((item) => item.category === "drinks");
   const pizza = menu?.filter((item) => item.category === "pizza");
 
+  if(loading) return <CardsLoading />
   return (
     <div className="">
       <Helmet>
@@ -65,7 +66,7 @@ const OurShop = () => {
             </TabList>
             <div className="w-11/12 my-5 mx-auto">
               <TabPanel>
-                {loading ? <CardsLoading /> : <ShopCategory items={offered} />}
+                <ShopCategory items={offered} />
               </TabPanel>
               <TabPanel>
                 {loading ? <CardsLoading /> : <ShopCategory items={popular} />}
