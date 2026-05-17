@@ -10,7 +10,7 @@ const ErrorPage = () => {
       <Lottie animationData={errorImg} className="max-w-[500px] "></Lottie>
       <Link
         to="/"
-        className="bg-white/5 py-4 px-5 uppercase font-bold rounded-full flex justify-center items-center gap-4 hover:bg-white/10"
+        className="bg-white/5 cursor-pointer py-4 px-5 uppercase font-bold rounded-full flex justify-center items-center gap-4 hover:bg-white/10"
       >
         Go to home
       </Link>
