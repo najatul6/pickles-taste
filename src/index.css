@@ -9,7 +9,6 @@ body {
   @apply font-nunito bg-darkness
 }
 
-/* From Uiverse.io by marcelodolza */
 .button {
   --primary: #ff5569;
   --neutral-1: #f7f8f7;
