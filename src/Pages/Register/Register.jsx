@@ -52,7 +52,7 @@ const Register = () => {
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
-        render: `${error.message}`,
+        render: `${error?.message}`,
         type: "error",
         isLoading: false,
         autoClose: 3000,
@@ -83,7 +83,7 @@ const Register = () => {
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
-        render: `${error.message}`,
+        render: `${error?.message}`,
         type: "error",
         isLoading: false,
         autoClose: 1500,
