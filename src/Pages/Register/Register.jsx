@@ -1,6 +1,6 @@
+import bannerImg from "../../assets/banner/4.jfif";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import bannerImg from "../../assets/banner/4.jfif";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -16,7 +16,7 @@ const Register = () => {
   } = useForm();
   const [isShow, setIsShow] = useState(true);
   const [redirect, setRedirect] = useState(false);
-  const axiosPublic=useAxiosPublic();
+  const axiosPublic = useAxiosPublic();
   const { createUser, signInUserWithGoogle, updateUserProfile } = useAuth();
   const onSubmit = async (data) => {
     // Show a processing toast message
@@ -25,30 +25,30 @@ const Register = () => {
       // Attempt to log in the user
       const result = await createUser(data.email, data.password);
       if (!result?.user) throw new Error("User creation failed.");
-        // Update Profile
-        await updateUserProfile(data.name, null);
-        // Post user data to the database
-        const userData = {
-          name: data.name,
-          email: data.email,
-          createdAt: new Date().toISOString(),
-        };
-        await axiosPublic.post("/users", userData);
-        // If login is successful, show a success message
-        toast.update(processingToast, {
-          render: `Welcome ${data.name}!`,
-          type: "success",
-          isLoading: false,
-          autoClose: 500,
-          closeButton: true,
-        });
+      // Update Profile
+      await updateUserProfile(data.name, null);
+      // Post user data to the database
+      const userData = {
+        name: data.name,
+        email: data.email,
+        createdAt: new Date().toISOString(),
+      };
+      await axiosPublic.post("/users", userData);
+      // If login is successful, show a success message
+      toast.update(processingToast, {
+        render: `Welcome ${data.name}!`,
+        type: "success",
+        isLoading: false,
+        autoClose: 500,
+        closeButton: true,
+      });
 
-        // Reset the form after successful login
-        reset();
-        
-        // Set redirect to true to trigger navigation
-        setRedirect(true);
-      
+      // Reset the form after successful login
+      reset();
+
+      // Set redirect to true to trigger navigation
+      setRedirect(true);
+
     } catch (error) {
       // Show an error message if login fails
       toast.update(processingToast, {
