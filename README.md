@@ -1,127 +1,190 @@
+<div align="center">
+
+# 🌶️ Pickles Taste
+
+### Modern Pickle Store & Organic Food E-Commerce Platform
+
+Pickles Taste is a modern and responsive MERN stack web application that brings traditional homemade pickles to the digital world. Users can explore a variety of delicious pickles, browse categories, and enjoy a seamless online shopping experience with a clean and intuitive interface.
+
+<p align="center">
+
+<a href="https://picklestaste.vercel.app/">
+<img src="https://img.shields.io/badge/🥒 Live Demo -success?style=for-the-badge">
+</a>
+<a href="https://najatul-islam.vercel.app/">
+<img src="https://img.shields.io/badge/🌐 Portfolio-blue?style=for-the-badge">
+</a>
+<a href="https://github.com/najatul6/pickles-taste">
+<img src="https://img.shields.io/badge/Repository-black?style=for-the-badge&logo=github">
+</a>
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white"/>
+<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white"/>
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black"/>
+<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express"/>
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
+
+</p>
+
+</div>
 
 ---
 
-# 🌶️ Pickles Taste - Authentic Culinary Delights
+# 🌐 Live Website
 
-**Pickles Taste** is a vibrant, full-stack restaurant management and food ordering platform. Designed with a focus on high-quality visuals and smooth user interactions, it allows customers to explore a diverse menu, manage their orders, and experience the rich heritage of homemade flavors.
-
-🔗 **Live Site:** [picklestaste.vercel.app](https://picklestaste.vercel.app/)
-
-🔗 **GitHub Repo:** [github.com/najatul6/pickles-taste](https://github.com/najatul6/pickles-taste)
+### https://picklestaste.vercel.app/
 
 ---
 
-## ✨ Features
+# 📖 About
 
-* **Dynamic Menu Explorer:** Categorized food items (Pickles, Soups, Desserts, etc.) with real-time data fetching.
-* **Advanced UI/UX:**
-* **Smooth Animations:** Utilizes `framer-motion` and `lottie-react` for a lively interface.
-* **Parallax Effects:** Immersive scrolling experiences with `react-parallax` and `simple-parallax-js`.
-* **Responsive Carousels:** Featured items showcased via `Swiper` and `react-responsive-carousel`.
-
-
-* **Authentication System:** Secure user management via **Firebase** (Google and Email/Password).
-* **Ordering Workflow:** Interactive cart management and user dashboards for tracking culinary choices.
-* **Efficient Data Handling:** Server-state management powered by **TanStack React Query** for seamless updates.
-* **Feedback System:** Integrated ratings using `@smastrom/react-rating` and beautiful alerts with `SweetAlert2`.
+Pickles Taste is a full-stack MERN application designed for pickle lovers and organic food enthusiasts. The platform allows users to browse premium homemade pickles, explore product categories, discover authentic flavors, and enjoy a fast, secure, and responsive online shopping experience.
 
 ---
 
-## 🛠️ Tech Stack
+# ✨ Features
 
-### Frontend
-
-* **React 18** (Vite Build Tool)
-* **Tailwind CSS & DaisyUI** (Responsive Styling)
-* **Framer Motion** (Motion Graphics)
-* **React Router DOM v6** (Navigation)
-
-### Backend & Integration
-
-* **Firebase:** Identity and Authentication.
-* **Axios:** Promise-based HTTP client for API requests.
-* **React Hook Form:** Performant and extensible form validation.
-* **React Helmet Async:** SEO optimization for dynamic page titles.
+- 🥒 Browse Homemade Pickle Collection
+- 🛍️ Explore Product Categories
+- 🔍 Search & Discover Products
+- 🛒 Easy Shopping Experience
+- 👤 Secure User Authentication
+- ❤️ Personalized User Dashboard
+- 📱 Fully Responsive Design
+- ⚡ Fast & Optimized Performance
+- 🔒 Protected Private Routes
+- 🎨 Clean & Modern User Interface
 
 ---
 
-## 📦 Installation & Environment Setup
+# 🛠 Tech Stack
 
-1. **Clone the Repository:**
-```bash
-git clone https://github.com/najatul6/pickles-taste.git
-cd pickles-taste
+## Frontend
 
-```
+- React.js
+- React Router
+- Tailwind CSS
+- DaisyUI
+- Axios
+- React Icons
 
+## Backend
 
-2. **Install Dependencies:**
-```bash
-npm install
+- Node.js
+- Express.js
 
-```
+## Database
 
+- MongoDB
 
-3. **Configure Environment Variables:**
-Create a `.env` file in the root directory and add your credentials:
-```env
-VITE_FIREBASE_API_CONSOLE=your_api_key
-VITE_FIREBASE_DOMAIN_CONSOLE=your_auth_domain
-VITE_FIREBASE_PROJECTID_CONSOLE=your_project_id
-VITE_FIREBASE_STORAGEBUCKET_CONSOLE=your_storage_bucket
-VITE_FIREBASE_MESSAGINGSENDERID_CONSOLE=your_messaging_id
-VITE_FIREBASE_APPID_CONSOLE=your_app_id
-VITE_FIREBASE_MEASUREMENTID_CONSOLE=your_measurement_id
+## Authentication
 
-VITE_SERVER_URL=https://your-api-server.com
-
-```
-
-
-4. **Run Development Server:**
-```bash
-npm run dev
-
-```
-
-
+- Firebase Authentication
+- JWT
 
 ---
 
-## 🏗️ Available Scripts
-
-* `npm run dev`: Start the local development server.
-* `npm run build`: Build the application for production deployment.
-* `npm run lint`: Identify and report on patterns found in ECMAScript/JavaScript code.
-* `npm run preview`: Preview the production build locally.
-
----
-
-## 📁 Project Structure
+# 📂 Project Structure
 
 ```text
-├── src
-│   ├── assets      
-│   ├── components # Reusable UI components (Navbar, Footer, FoodCard)
-│   ├── hooks      # Custom TanStack Query and Auth hooks
-│   ├── pages      # Page-level components (Home, Menu, Order, Login)
-│   ├── providers  # Context providers (Auth, Helmet)
-│   └── routes     # App routing logic
-└── public         # Static assets and icons
-
+src
+│
+├── assets
+├── components
+├── hooks
+├── layouts
+├── pages
+├── providers
+├── routes
+├── services
+└── utils
 ```
 
 ---
 
-## 📄 License
+# 🚀 Installation
 
-This project is licensed under the MIT License.
+Clone the repository
 
-## 👥 Contact
+```bash
+git clone https://github.com/najatul6/pickles-taste.git
+```
 
-**Md Najatul Islam**
+Move into the project
 
-* Portfolio: [najatul6.github.io](https://www.google.com/search?q=https://najatul6.github.io/)
-* GitHub: [@najatul6](https://github.com/najatul6)
+```bash
+cd pickles-taste
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
 
 ---
+
+# 🔑 Environment Variables
+
+```env
+VITE_API_URL=
+
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+```
+
+---
+
+# 🎯 Future Improvements
+
+- 💳 Secure Payment Gateway Integration
+- ❤️ Wishlist & Favorite Products
+- ⭐ Customer Reviews & Ratings
+- 📦 Order Tracking System
+- 🎁 Discount & Coupon Management
+- 🌙 Dark Mode
+- 📱 Progressive Web App (PWA)
+- 📊 Admin Dashboard & Sales Analytics
+
+---
+
+# 👨‍💻 Developer
+
+## Md Najatul Islam
+
+Full Stack Web Developer
+
+<a href="https://najatul-islam.vercel.app/" target="_blank">🌐 Portfolio</a>
+<a href="mailto:mdnajatulislam.develop@gmail.com">📧 Email</a>
+<a href="https://www.linkedin.com/in/najatul-islam-94193b1b3/" target="_blank">💼 LinkedIn</a>
+<a href="https://github.com/najatul6" target="_blank">🐙 GitHub</a>
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+---
+
+<div align="center">
+
+### Thanks for visiting ❤️
+
+Made with ❤️ by **Md Najatul Islam**
+
+</div>
